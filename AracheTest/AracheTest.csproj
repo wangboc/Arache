@@ -131,11 +131,11 @@
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\XtraReport3.cs">
+    <Compile Include="Reports\XtraReport2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\XtraReport3.Designer.cs">
-      <DependentUpon>XtraReport3.cs</DependentUpon>
+    <Compile Include="Reports\XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
     </Compile>
     <Compile Include="TaskBase.cs" />
     <Compile Include="TaskPool.cs" />
@@ -159,8 +159,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\XtraReport3.resx">
-      <DependentUpon>XtraReport3.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

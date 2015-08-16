@@ -96,12 +96,6 @@
             DevExpress.XtraCharts.SimpleDiagram simpleDiagram1 = new DevExpress.XtraCharts.SimpleDiagram();
             DevExpress.XtraCharts.Series series23 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint1 = new DevExpress.XtraCharts.SeriesPoint("铜损", new object[] {
-            ((object)(100D))}, 0);
-            DevExpress.XtraCharts.SeriesPoint seriesPoint2 = new DevExpress.XtraCharts.SeriesPoint("铁损", new object[] {
-            ((object)(50D))}, 1);
-            DevExpress.XtraCharts.SeriesPoint seriesPoint3 = new DevExpress.XtraCharts.SeriesPoint("总电费", new object[] {
-            ((object)(200D))}, 2);
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle7 = new DevExpress.XtraCharts.ChartTitle();
@@ -240,7 +234,7 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage10 = new DevExpress.XtraTab.XtraTabPage();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.xtraTabPage8 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.xtraTabControl6 = new DevExpress.XtraTab.XtraTabControl();
@@ -323,7 +317,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.chartControlChargeProportion = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
@@ -481,7 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
             this.xtraTabControl2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlChargeProportion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
@@ -1873,18 +1867,19 @@
             // 
             // xtraTabPage10
             // 
-            this.xtraTabPage10.Controls.Add(this.reportViewer1);
+            this.xtraTabPage10.Controls.Add(this.documentViewer1);
             this.xtraTabPage10.Name = "xtraTabPage10";
             this.xtraTabPage10.Size = new System.Drawing.Size(736, 636);
             this.xtraTabPage10.Text = "报表";
             // 
-            // reportViewer1
+            // documentViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(736, 636);
-            this.reportViewer1.TabIndex = 0;
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.IsMetric = true;
+            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(736, 636);
+            this.documentViewer1.TabIndex = 0;
             // 
             // xtraTabPage8
             // 
@@ -2879,47 +2874,43 @@
             // 
             // xtraTabPage3
             // 
-            this.xtraTabPage3.Controls.Add(this.chartControl1);
+            this.xtraTabPage3.Controls.Add(this.chartControlChargeProportion);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(486, 330);
             this.xtraTabPage3.Text = "xtraTabPage3";
             // 
-            // chartControl1
+            // chartControlChargeProportion
             // 
-            this.chartControl1.AppearanceNameSerializable = "Pastel Kit";
-            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            this.chartControlChargeProportion.AppearanceNameSerializable = "Pastel Kit";
+            this.chartControlChargeProportion.BackColor = System.Drawing.Color.Transparent;
             simpleDiagram1.EqualPieSize = false;
-            this.chartControl1.Diagram = simpleDiagram1;
-            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
-            this.chartControl1.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
-            this.chartControl1.Legend.EquallySpacedItems = false;
-            this.chartControl1.Legend.UseCheckBoxes = true;
-            this.chartControl1.Location = new System.Drawing.Point(0, 0);
-            this.chartControl1.Name = "chartControl1";
+            this.chartControlChargeProportion.Diagram = simpleDiagram1;
+            this.chartControlChargeProportion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControlChargeProportion.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
+            this.chartControlChargeProportion.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
+            this.chartControlChargeProportion.Legend.EquallySpacedItems = false;
+            this.chartControlChargeProportion.Legend.UseCheckBoxes = true;
+            this.chartControlChargeProportion.Location = new System.Drawing.Point(0, 0);
+            this.chartControlChargeProportion.Name = "chartControlChargeProportion";
             series23.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             pieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
             pieSeriesLabel1.TextPattern = "{A} {V}   {VP:0.00%} ";
             series23.Label = pieSeriesLabel1;
-            series23.Name = "Series 1";
-            series23.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint1,
-            seriesPoint2,
-            seriesPoint3});
+            series23.Name = "电费组成比例";
             pieSeriesView1.RuntimeExploding = false;
             pieSeriesView1.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
             series23.View = pieSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+            this.chartControlChargeProportion.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series23};
             pieSeriesView2.RuntimeExploding = false;
             pieSeriesView2.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
-            this.chartControl1.SeriesTemplate.View = pieSeriesView2;
-            this.chartControl1.Size = new System.Drawing.Size(486, 330);
-            this.chartControl1.TabIndex = 0;
+            this.chartControlChargeProportion.SeriesTemplate.View = pieSeriesView2;
+            this.chartControlChargeProportion.Size = new System.Drawing.Size(486, 330);
+            this.chartControlChargeProportion.TabIndex = 0;
             chartTitle7.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
             chartTitle7.Text = "电费比例";
             chartTitle7.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            this.chartControlChargeProportion.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle7});
             // 
             // xtraTabPage4
@@ -3189,7 +3180,7 @@
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlChargeProportion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).EndInit();
             this.xtraTabControl3.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
@@ -3350,7 +3341,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private DevExpress.XtraCharts.ChartControl chartControlChargeProportion;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
@@ -3427,7 +3418,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit3;
         private DevExpress.XtraBars.BarButtonItem ChargeDateSelectBtn;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
 
     }
 }

@@ -19,7 +19,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
 
 
-
 namespace AracheTest
 {
     public partial class frmMain : RibbonForm
@@ -204,7 +203,9 @@ namespace AracheTest
 //            PrintingSystem = report.PrintingSystem;
 //            report.CreateDocument(); 
 //            report.LoadLayout(@"到位资金分配一览表.repx");
-        
+
+            XtraReport2 report = new XtraReport2();
+            documentViewer1.DocumentSource = report;
 
             _chargeTable0.Columns.Add("MID");
             _chargeTable0.Columns.Add("MName");
@@ -446,7 +447,7 @@ namespace AracheTest
             _chargeTable1.Rows.Clear();
             _chargeTable2.Rows.Clear();
             _chargeTable3.Rows.Clear();
-             
+
             if (chargeData["第一阶段"] != null)
             {
                 ChargeInfo chargeInfo = chargeData["第一阶段"] as ChargeInfo;
@@ -552,9 +553,20 @@ namespace AracheTest
                 row3[5] = total.ToString("#0.00");
                 _chargeTable3.Rows.Add(row3);
                 gridControl4.DataSource = _chargeTable3;
-         
-                
-                
+
+
+                XtraReport2 report = documentViewer1.DocumentSource as XtraReport2;
+                report.SetReportDataSource(_chargeTable0, _chargeTable1, _chargeTable2, _chargeTable3);
+                report.CreateDocument();
+
+
+                chartControlChargeProportion.Series[0].Points.Clear();
+                chartControlChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
+                {
+                    new SeriesPoint("有功（尖峰）", chargeInfo.EnergySpike),
+                    new SeriesPoint("有功（峰）", chargeInfo.EnergyPeak),
+                    new SeriesPoint("有功（谷）", chargeInfo.EnergyTotal),
+                });
             }
         }
 
@@ -831,7 +843,6 @@ namespace AracheTest
         private void frmMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            this.reportViewer1.RefreshReport();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -844,7 +855,6 @@ namespace AracheTest
 
         private void documentViewer1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

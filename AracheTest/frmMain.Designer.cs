@@ -240,6 +240,7 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage10 = new DevExpress.XtraTab.XtraTabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.xtraTabPage8 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.xtraTabControl6 = new DevExpress.XtraTab.XtraTabControl();
@@ -392,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            this.xtraTabPage10.SuspendLayout();
             this.xtraTabPage8.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl6)).BeginInit();
@@ -820,6 +822,7 @@
             this.barCheckItemCurrentDay.GroupIndex = 10;
             this.barCheckItemCurrentDay.Id = 19;
             this.barCheckItemCurrentDay.Name = "barCheckItemCurrentDay";
+            this.barCheckItemCurrentDay.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentDay_CheckedChanged);
             this.barCheckItemCurrentDay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentDay_ItemClick);
             // 
             // barCheckItemCurrentMonth
@@ -831,6 +834,7 @@
             this.barCheckItemCurrentMonth.GroupIndex = 10;
             this.barCheckItemCurrentMonth.Id = 20;
             this.barCheckItemCurrentMonth.Name = "barCheckItemCurrentMonth";
+            this.barCheckItemCurrentMonth.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentMonth_CheckedChanged);
             this.barCheckItemCurrentMonth.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentMonth_ItemClick);
             // 
             // barCheckItemCurrentYear
@@ -842,6 +846,7 @@
             this.barCheckItemCurrentYear.GroupIndex = 10;
             this.barCheckItemCurrentYear.Id = 21;
             this.barCheckItemCurrentYear.Name = "barCheckItemCurrentYear";
+            this.barCheckItemCurrentYear.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentYear_CheckedChanged);
             this.barCheckItemCurrentYear.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItemCurrentYear_ItemClick);
             // 
             // ChargeDateSelectBtn
@@ -1474,6 +1479,8 @@
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -1481,13 +1488,17 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "表号";
+            this.gridColumn1.FieldName = "MID";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
@@ -1495,6 +1506,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "电表编码";
+            this.gridColumn2.FieldName = "MName";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -1502,6 +1514,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "本期示数";
+            this.gridColumn3.FieldName = "PresentShown";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -1509,6 +1522,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "上期示数";
+            this.gridColumn4.FieldName = "PreviousShown";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -1516,6 +1530,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "倍率";
+            this.gridColumn5.FieldName = "Rate";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
@@ -1523,6 +1538,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "电量(kW.h)";
+            this.gridColumn6.FieldName = "WPP";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
@@ -1567,6 +1583,8 @@
             this.gridView4.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView4.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView4.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn16,
             this.gridColumn17,
@@ -1579,11 +1597,14 @@
             this.gridColumn24});
             this.gridView4.GridControl = this.gridControl3;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsBehavior.ReadOnly = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn16
             // 
             this.gridColumn16.Caption = "受电容量";
+            this.gridColumn16.FieldName = "Capacity";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 0;
@@ -1591,6 +1612,7 @@
             // gridColumn17
             // 
             this.gridColumn17.Caption = "核定需量";
+            this.gridColumn17.FieldName = "Need";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 1;
@@ -1598,6 +1620,7 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "需量示数";
+            this.gridColumn18.FieldName = "Shown";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 2;
@@ -1605,6 +1628,7 @@
             // gridColumn19
             // 
             this.gridColumn19.Caption = "实际需量";
+            this.gridColumn19.FieldName = "NeedInReal";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 3;
@@ -1612,6 +1636,7 @@
             // gridColumn20
             // 
             this.gridColumn20.Caption = "超核需量";
+            this.gridColumn20.FieldName = "NeedExceed";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 4;
@@ -1619,6 +1644,7 @@
             // gridColumn21
             // 
             this.gridColumn21.Caption = "暂停容量";
+            this.gridColumn21.FieldName = "CapacityPause";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 5;
@@ -1626,6 +1652,7 @@
             // gridColumn22
             // 
             this.gridColumn22.Caption = "暂停天数";
+            this.gridColumn22.FieldName = "DaysPause";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 6;
@@ -1633,6 +1660,7 @@
             // gridColumn23
             // 
             this.gridColumn23.Caption = "退补电费";
+            this.gridColumn23.FieldName = "Compensate";
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 7;
@@ -1640,6 +1668,7 @@
             // gridColumn24
             // 
             this.gridColumn24.Caption = "预收电费";
+            this.gridColumn24.FieldName = "Advanced";
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 8;
@@ -1662,6 +1691,8 @@
             this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView3.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn7,
             this.gridColumn8,
@@ -1674,11 +1705,14 @@
             this.gridColumn15});
             this.gridView3.GridControl = this.gridControl2;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsBehavior.ReadOnly = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "有功铜损";
+            this.gridColumn7.FieldName = "PCu";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
@@ -1686,6 +1720,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "有功铁损";
+            this.gridColumn8.FieldName = "PFe";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
@@ -1693,6 +1728,7 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "有功合计";
+            this.gridColumn9.FieldName = "PTotal";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 2;
@@ -1700,6 +1736,7 @@
             // gridColumn10
             // 
             this.gridColumn10.Caption = "无功铜损";
+            this.gridColumn10.FieldName = "QCu";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 3;
@@ -1707,6 +1744,7 @@
             // gridColumn11
             // 
             this.gridColumn11.Caption = "无功铁损";
+            this.gridColumn11.FieldName = "QFe";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 4;
@@ -1714,6 +1752,7 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "无功合计";
+            this.gridColumn12.FieldName = "QTotal";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 5;
@@ -1721,6 +1760,7 @@
             // gridColumn13
             // 
             this.gridColumn13.Caption = "高峰电量";
+            this.gridColumn13.FieldName = "Spike";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 6;
@@ -1728,6 +1768,7 @@
             // gridColumn14
             // 
             this.gridColumn14.Caption = "低谷电量";
+            this.gridColumn14.FieldName = "Valley";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 7;
@@ -1735,6 +1776,7 @@
             // gridColumn15
             // 
             this.gridColumn15.Caption = "尖峰电量";
+            this.gridColumn15.FieldName = "Peak";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 8;
@@ -1757,6 +1799,8 @@
             this.gridView5.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView5.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView5.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView5.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView5.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn25,
             this.gridColumn26,
@@ -1767,11 +1811,14 @@
             this.gridColumn31});
             this.gridView5.GridControl = this.gridControl4;
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsBehavior.Editable = false;
+            this.gridView5.OptionsBehavior.ReadOnly = true;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn25
             // 
             this.gridColumn25.Caption = "计费项目";
+            this.gridColumn25.FieldName = "Items";
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 0;
@@ -1779,6 +1826,7 @@
             // gridColumn26
             // 
             this.gridColumn26.Caption = "计费数量";
+            this.gridColumn26.FieldName = "Quantity";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
             this.gridColumn26.VisibleIndex = 1;
@@ -1786,6 +1834,7 @@
             // gridColumn27
             // 
             this.gridColumn27.Caption = "定量比";
+            this.gridColumn27.FieldName = "Rate";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
             this.gridColumn27.VisibleIndex = 2;
@@ -1793,6 +1842,7 @@
             // gridColumn28
             // 
             this.gridColumn28.Caption = "单位";
+            this.gridColumn28.FieldName = "Unit";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
             this.gridColumn28.VisibleIndex = 3;
@@ -1800,6 +1850,7 @@
             // gridColumn29
             // 
             this.gridColumn29.Caption = "单价";
+            this.gridColumn29.FieldName = "Price";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 4;
@@ -1807,6 +1858,7 @@
             // gridColumn30
             // 
             this.gridColumn30.Caption = "金额";
+            this.gridColumn30.FieldName = "Total";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.Visible = true;
             this.gridColumn30.VisibleIndex = 5;
@@ -1814,15 +1866,25 @@
             // gridColumn31
             // 
             this.gridColumn31.Caption = "备注";
+            this.gridColumn31.FieldName = "Remarks";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 6;
             // 
             // xtraTabPage10
             // 
+            this.xtraTabPage10.Controls.Add(this.reportViewer1);
             this.xtraTabPage10.Name = "xtraTabPage10";
             this.xtraTabPage10.Size = new System.Drawing.Size(736, 636);
             this.xtraTabPage10.Text = "报表";
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(736, 636);
+            this.reportViewer1.TabIndex = 0;
             // 
             // xtraTabPage8
             // 
@@ -2239,6 +2301,8 @@
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnEventTime,
             this.gridColumnMID,
@@ -3030,6 +3094,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            this.xtraTabPage10.ResumeLayout(false);
             this.xtraTabPage8.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl6)).EndInit();
@@ -3362,6 +3427,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit3;
         private DevExpress.XtraBars.BarButtonItem ChargeDateSelectBtn;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
 
     }
 }

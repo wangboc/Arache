@@ -18,8 +18,7 @@ namespace AracheTest.Tools
         public static DataTable ExecuteSql(string sqlcommand)
         {
             using (MySqlConnection connection = new MySqlConnection(constr))
-            {
-                try
+            {try
                 {
                     connection.Open();
                     MySqlCommand mycmd = new MySqlCommand(sqlcommand, connection);

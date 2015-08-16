@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using AracheTest.Data;
+using AracheTest.Reports;
 using DevExpress.Utils;
+using DevExpress.Xpo;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraCharts;
@@ -13,6 +16,8 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+
 
 
 namespace AracheTest
@@ -28,6 +33,14 @@ namespace AracheTest
         private Dictionary<string, Object> chargeData = new Dictionary<string, Object>();
         private ChargeInfo _chargeDataFirst;
         private ChargeInfo _chargeDataSecond;
+
+        //======================================================
+        //分别对应电费栏中的四个表格，从上到下
+        private DataTable _chargeTable0 = new DataTable();
+        private DataTable _chargeTable1 = new DataTable();
+        private DataTable _chargeTable2 = new DataTable();
+        private DataTable _chargeTable3 = new DataTable();
+        //======================================================
 
         private TaskPool taskPool = new TaskPool();
 
@@ -51,7 +64,7 @@ namespace AracheTest
         private void InitTimer()
         {
             InitTimerRealtime();
-            _timer_GetRealtimeData.Interval = 60*1000;
+            _timer_GetRealtimeData.Interval = 5*60*1000;
             _timer_GetRealtimeData.Tick += _timer_GetRealtimeData_Tick;
             _timer_GetRealtimeData.Start();
         }
@@ -179,8 +192,56 @@ namespace AracheTest
             InitChartControl();
             InitNodeTreeControl();
             InitChargeDateSelectCtr();
+            InitChargeTableCtr();
         }
 
+        private void InitChargeTableCtr()
+        {
+//            DevExpress.XtraPrinting.Control.PrintControl
+//            var ds = new XPQuery<>(uw);
+//            XtraReport1 report = new XtraReport1(); 
+//            report. = ds; this.printControl1
+//            PrintingSystem = report.PrintingSystem;
+//            report.CreateDocument(); 
+//            report.LoadLayout(@"到位资金分配一览表.repx");
+        
+
+            _chargeTable0.Columns.Add("MID");
+            _chargeTable0.Columns.Add("MName");
+            _chargeTable0.Columns.Add("PresentShown");
+            _chargeTable0.Columns.Add("PreviousShown");
+            _chargeTable0.Columns.Add("Rate");
+            _chargeTable0.Columns.Add("WPP");
+
+            _chargeTable1.Columns.Add("PCu");
+            _chargeTable1.Columns.Add("PFe");
+            _chargeTable1.Columns.Add("PTotal");
+            _chargeTable1.Columns.Add("QCu");
+            _chargeTable1.Columns.Add("QFe");
+            _chargeTable1.Columns.Add("QTotal");
+            _chargeTable1.Columns.Add("Spike");
+            _chargeTable1.Columns.Add("Valley");
+            _chargeTable1.Columns.Add("Peak");
+
+            _chargeTable2.Columns.Add("Capacity");
+            _chargeTable2.Columns.Add("Need");
+            _chargeTable2.Columns.Add("Shown");
+            _chargeTable2.Columns.Add("NeedInReal");
+            _chargeTable2.Columns.Add("NeedExceed");
+            _chargeTable2.Columns.Add("CapacityPause");
+            _chargeTable2.Columns.Add("DaysPause");
+            _chargeTable2.Columns.Add("Compensate");
+            _chargeTable2.Columns.Add("Advanced");
+
+
+            _chargeTable3.Columns.Add("Items");
+            _chargeTable3.Columns.Add("Quantity");
+            _chargeTable3.Columns.Add("Rate");
+            _chargeTable3.Columns.Add("Unit");
+            _chargeTable3.Columns.Add("Price");
+            _chargeTable3.Columns.Add("Total");
+            _chargeTable3.Columns.Add("Remarks");
+        }
 
         private void InitChartControl()
         {
@@ -380,6 +441,121 @@ namespace AracheTest
         private void SetChargeData(Object dataSource)
         {
             chargeData = dataSource as Dictionary<string, Object>;
+
+            _chargeTable0.Rows.Clear();
+            _chargeTable1.Rows.Clear();
+            _chargeTable2.Rows.Clear();
+            _chargeTable3.Rows.Clear();
+             
+            if (chargeData["第一阶段"] != null)
+            {
+                ChargeInfo chargeInfo = chargeData["第一阶段"] as ChargeInfo;
+
+                DataRow row = _chargeTable0.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（总）";
+                row[2] = chargeInfo.PowerTotal.ToString("#0.00");
+                //  row[3] = chargeInfo.WPPOld.ToString();
+                row[4] = "30";
+                row[5] = chargeInfo.EnergyTotal.ToString("#0.00");
+                _chargeTable0.Rows.Add(row);
+
+                row = _chargeTable0.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（尖峰）";
+                row[2] = chargeInfo.PowerSpike.ToString("#0.00");
+                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[4] = "30";
+                row[5] = chargeInfo.EnergySpike.ToString("#0.00");
+                _chargeTable0.Rows.Add(row);
+
+                row = _chargeTable0.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（峰）";
+                row[2] = chargeInfo.PowerPeak.ToString("#0.00");
+                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[4] = "30";
+                row[5] = chargeInfo.EnergyPeak.ToString("#0.00");
+                _chargeTable0.Rows.Add(row);
+
+                row = _chargeTable0.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（谷）";
+                row[2] = chargeInfo.PowerValley.ToString("#0.00");
+                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[4] = "30";
+                row[5] = chargeInfo.EnergyValley.ToString("#0.00");
+                _chargeTable0.Rows.Add(row);
+                gridControl1.DataSource = _chargeTable0;
+
+
+                DataRow row1 = _chargeTable1.NewRow();
+                row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
+                row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
+                row1[2] = chargeInfo.EnergyTotal.ToString("#0.00");
+                row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
+                row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
+                row1[5] = 0;
+                row1[6] = chargeInfo.EnergySpike.ToString("#0.00");
+                row1[7] = chargeInfo.EnergyValley.ToString("#0.00");
+                row1[8] = chargeInfo.EnergyPeak.ToString("#0.00");
+                _chargeTable1.Rows.Add(row1);
+                gridControl2.DataSource = _chargeTable1;
+
+                DataRow row2 = _chargeTable2.NewRow();
+                row2[0] = 0;
+                row2[1] = 0;
+                row2[2] = 0;
+                row2[3] = 0;
+                row2[4] = 0;
+                row2[5] = 0;
+                row2[6] = 0;
+                row2[7] = 0;
+                row2[8] = 0;
+                _chargeTable2.Rows.Add(row2);
+                gridControl3.DataSource = _chargeTable2;
+
+                DataRow row3 = _chargeTable3.NewRow();
+                Double total = 0;
+                row3[0] = "尖 一般工商";
+                row3[1] = chargeInfo.EnergySpike.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] = 1.39760;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable3.Rows.Add(row3);
+                row3 = _chargeTable3.NewRow();
+                row3[0] = "峰 一般工商";
+                row3[1] = chargeInfo.EnergyPeak.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] = 1.09960;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable3.Rows.Add(row3);
+                row3 = _chargeTable3.NewRow();
+                row3[0] = "谷 一般工商";
+                row3[1] = chargeInfo.EnergyValley.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] = 0.58760;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable3.Rows.Add(row3);
+                row3 = _chargeTable3.NewRow();
+                row3[0] = "合计";
+                row3[1] = "";
+                row3[2] = "";
+                row3[3] = "";
+                row3[4] = "";
+                row3[5] = total.ToString("#0.00");
+                _chargeTable3.Rows.Add(row3);
+                gridControl4.DataSource = _chargeTable3;
+         
+                
+                
+            }
         }
 
         private void SetElectricityData(Object dataSource)
@@ -474,11 +650,32 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
+        }
 
+        private void barCheckItemCurrentDay_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
             var taskCharge = new TaskChargeFilter("获取当天计费信息",
                 new ChargeFilterCondition(
                     new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
                     DateTime.Now, _currentNodeMID), SetChargeData);
+            taskPool.AddTask(taskCharge);
+            taskPool.Run();
+        }
+
+        private void barCheckItemCurrentMonth_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            var taskCharge = new TaskChargeFilter("获取本月计费信息",
+                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
+                    DateTime.Now, _currentNodeMID), SetChargeData);
+            taskPool.AddTask(taskCharge);
+            taskPool.Run();
+        }
+
+        private void barCheckItemCurrentYear_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            var taskCharge = new TaskChargeFilter("获取本年计费信息",
+                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
+                    _currentNodeMID), SetChargeData);
             taskPool.AddTask(taskCharge);
             taskPool.Run();
         }
@@ -492,12 +689,6 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
-
-            var taskCharge = new TaskChargeFilter("获取本月计费信息",
-                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
-                    DateTime.Now, _currentNodeMID), SetChargeData);
-            taskPool.AddTask(taskCharge);
-            taskPool.Run();
         }
 
         private void barCheckItemCurrentYear_ItemClick(object sender, ItemClickEventArgs e)
@@ -511,12 +702,6 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
-
-            var taskCharge = new TaskChargeFilter("获取本年计费信息",
-                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
-                    _currentNodeMID), SetChargeData);
-            taskPool.AddTask(taskCharge);
-            taskPool.Run();
         }
 
         private void ChargeDateSelectBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -536,7 +721,7 @@ namespace AracheTest
             popup.HidePopup();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)  
+        private void btnOK_Click(object sender, EventArgs e)
         {
             PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
             popup.HidePopup();
@@ -546,7 +731,8 @@ namespace AracheTest
             DateEdit lastDate = popup.Controls.Find("lastDate", true)[0] as DateEdit;
 
             if (startDate.EditValue != null && startDate.EditValue != "" && middleDate.EditValue != null &&
-                middleDate.EditValue != "" && lastDate.EditValue != null && lastDate.EditValue != "" && startDate.DateTime <= middleDate.DateTime && middleDate.DateTime <= lastDate.DateTime)
+                middleDate.EditValue != "" && lastDate.EditValue != null && lastDate.EditValue != "" &&
+                startDate.DateTime <= middleDate.DateTime && middleDate.DateTime <= lastDate.DateTime)
             {
                 var taskCharge = new TaskChargeFilter("获取自定义时段计费信息",
                     new ChargeFilterCondition(startDate.DateTime, middleDate.DateTime, lastDate.DateTime,
@@ -556,7 +742,7 @@ namespace AracheTest
             }
             else MessageBox.Show("计费时间设定错误");
         }
-        
+
         #region 凌老师代码
 
         private void ReadUserInfo()
@@ -645,6 +831,7 @@ namespace AracheTest
         private void frmMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            this.reportViewer1.RefreshReport();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -654,5 +841,10 @@ namespace AracheTest
         }
 
         #endregion
+
+        private void documentViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

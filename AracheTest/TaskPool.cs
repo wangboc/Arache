@@ -15,7 +15,7 @@ namespace AracheTest
 
         public delegate void UpdateUIDelegate();
 
-     
+
         private readonly Object _objectLock = new object();
 
         public TaskPool()
@@ -46,27 +46,21 @@ namespace AracheTest
             form.Show();
             bs.RunWorkerCompleted += delegate
             {
-                lock (_objectLock)
+                for (int i = 0; i < TaskList.Count; i++)
                 {
-                    for (int i = 0; i < TaskList.Count; i++)
-                    {
-                        TaskList[i].UpdateDataByDelegate();
-                    }
-                    form.Close();
-                    TaskList.RemoveAll(node => node.IsFinished);
+                    TaskList[i].UpdateDataByDelegate();
                 }
+                form.Close();
+                TaskList.RemoveAll(node => node.IsFinished);
             };
             bs.RunWorkerAsync();
         }
 
         private void RunTask()
         {
-            lock (_objectLock)
+            for (int i = 0; i < TaskList.Count; i++)
             {
-                for (int i = 0; i < TaskList.Count; i++)
-                {
-                    TaskList[i].Run();
-                }
+                TaskList[i].Run();
             }
         }
     }

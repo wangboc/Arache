@@ -14,12 +14,13 @@ namespace AracheTest.Data
         private DateTime secondDatetime;
         
         public bool IsEffective = false;
+       
         
      //输入数据---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //需要计算用的数据源，要求按时间顺序顺序排列（目前只能使用低压表数据进行计算，高压表没有电能数据，后续更换高级表，可以支持高压数据）
         public List<ElectricityOriginalData> DataSourceFirstMeasure; //起始时间到第一次测量计算时间，不计算铜损与铁损
         public List<ElectricityOriginalData> DataSourceSecondMeasure; //第一次测量时间到第二次测量时间，计算铜损与铁损，一次计费可以不用
-        private int MID;
+        public int MID;
 
         public ElectricityParameter electricityparameter ; //计算用数据参数
         public List<ElectricityPeriod> electricitytimeprice; //计算用尖峰谷时段表
@@ -391,6 +392,7 @@ namespace AracheTest.Data
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             StructData.WPPOld = StructData.DataSourceFirstMeasure[0].WPP; //初始测量示数 （有功总）
+            
             StructData.EventTimeOld = StructData.DataSourceFirstMeasure[0].EventTime; //初始测量时间  datetime
 
             StructData.ReactiveEnergyQI = ReactiveEnergyTotal; //无功（QI象限）

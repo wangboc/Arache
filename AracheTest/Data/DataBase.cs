@@ -58,7 +58,6 @@ namespace AracheTest.Data
             LogHelper.WriteLog(typeof (frmMain), "获取24小时数据");
             return list;
         }
-
         public static List<ElectricityOriginalData> GetDatetimeFilteredData(DateTime start, DateTime end, int MID)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();

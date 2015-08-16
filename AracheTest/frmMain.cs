@@ -40,7 +40,6 @@ namespace AracheTest
             InitUIControls();
             InitTimer();
 
-            taskPool.SetUpdateUIDelegate(UpdateAllControlsDataSource);
             RefreshAllData();
 
 
@@ -102,6 +101,7 @@ namespace AracheTest
             lasttimeLabel.TextAlign = ContentAlignment.MiddleRight;
             DateEdit startDate = new DateEdit();
             startDate.Dock = DockStyle.Fill;
+            startDate.Name = "startDate";
             startDate.EditValue = DateTime.Now;
             startDate.Properties.CalendarView = CalendarView.Vista;
             startDate.Properties.VistaDisplayMode = DefaultBoolean.True;
@@ -109,6 +109,7 @@ namespace AracheTest
             startDate.Properties.VistaEditTime = DefaultBoolean.True;
             startDate.Properties.EditMask = "yyyy/MM/dd HH:mm:ss";
             DateEdit middleDate = new DateEdit();
+            middleDate.Name = "middleDate";
             middleDate.Dock = DockStyle.Fill;
             middleDate.EditValue = DateTime.Now;
             middleDate.Properties.CalendarView = CalendarView.Vista;
@@ -119,6 +120,7 @@ namespace AracheTest
             panel.Controls.Add(starttimeLabel, 0, 0);
             DateEdit lastDate = new DateEdit();
             lastDate.Dock = DockStyle.Fill;
+            lastDate.Name = "lastDate";
             lastDate.EditValue = DateTime.Now;
             lastDate.Properties.CalendarView = CalendarView.Vista;
             lastDate.Properties.VistaDisplayMode = DefaultBoolean.True;
@@ -154,18 +156,6 @@ namespace AracheTest
             ChargeDateSelectBtn.DropDownControl = popup;
         }
 
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
-            popup.HidePopup();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
-            popup.HidePopup();
-        }
 
         private void InitUIControls()
         {
@@ -313,17 +303,16 @@ namespace AracheTest
             taskPool.Run();
         }
 
-        private void UpdateAllControlsDataSource()
+        private void UpdateNodesData()
         {
             var nodeTreeEdit = (RepositoryItemTreeListLookUpEdit) nodeTreeCtr.Edit;
             nodeTreeEdit.DataSource = _nodesList;
-
-            UpdateElectricityUI();
         }
 
         private void SetNodesData(Object list)
         {
             _nodesList = list as List<NodeInfo>;
+            UpdateNodesData();
         }
 
         private void RealtimeCheckBtn_DownChanged(object sender, ItemClickEventArgs e)
@@ -361,7 +350,6 @@ namespace AracheTest
                     _currentNodeMID), SetElectricityData, false);
             taskPool.AddTask(task);
 
-          
 
             taskPool.Run();
         }
@@ -394,18 +382,14 @@ namespace AracheTest
             chargeData = dataSource as Dictionary<string, Object>;
         }
 
-
         private void SetElectricityData(Object dataSource)
         {
             _electricityDataList = dataSource as List<ElectricityOriginalData>;
-        }
-
-        private void UpdateElectricityUI()
-        {
             UpdateRealtimeDataGrid();
             UpdateGridControlDetail();
             UpdateChart();
         }
+
 
         private void ResetRealTimeGridDataSource()
         {
@@ -491,12 +475,14 @@ namespace AracheTest
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
 
-            var taskCharge = new TaskChargeFilter("获取阶段计费信息",
-              new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,  DateTime.Now, _currentNodeMID), SetChargeData);
+            var taskCharge = new TaskChargeFilter("获取当天计费信息",
+                new ChargeFilterCondition(
+                    new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
+                    DateTime.Now, _currentNodeMID), SetChargeData);
             taskPool.AddTask(taskCharge);
-
+            taskPool.Run();
         }
-        
+
         private void barCheckItemCurrentMonth_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (ChargeDateSelectBtn.Down)
@@ -506,6 +492,12 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
+
+            var taskCharge = new TaskChargeFilter("获取本月计费信息",
+                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
+                    DateTime.Now, _currentNodeMID), SetChargeData);
+            taskPool.AddTask(taskCharge);
+            taskPool.Run();
         }
 
         private void barCheckItemCurrentYear_ItemClick(object sender, ItemClickEventArgs e)
@@ -519,6 +511,12 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
+
+            var taskCharge = new TaskChargeFilter("获取本年计费信息",
+                new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
+                    _currentNodeMID), SetChargeData);
+            taskPool.AddTask(taskCharge);
+            taskPool.Run();
         }
 
         private void ChargeDateSelectBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -532,6 +530,33 @@ namespace AracheTest
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.DarkGray;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
+            popup.HidePopup();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
+            popup.HidePopup();
+
+            DateEdit startDate = popup.Controls.Find("startDate", true)[0] as DateEdit;
+            DateEdit middleDate = popup.Controls.Find("middleDate", true)[0] as DateEdit;
+            DateEdit lastDate = popup.Controls.Find("lastDate", true)[0] as DateEdit;
+
+            if (startDate.EditValue != null && startDate.EditValue != "" && middleDate.EditValue != null &&
+                middleDate.EditValue != "" && lastDate.EditValue != null && lastDate.EditValue != "" && startDate.DateTime <= middleDate.DateTime && middleDate.DateTime <= lastDate.DateTime)
+            {
+                var taskCharge = new TaskChargeFilter("获取自定义时段计费信息",
+                    new ChargeFilterCondition(startDate.DateTime, middleDate.DateTime, lastDate.DateTime,
+                        _currentNodeMID), SetChargeData);
+                taskPool.AddTask(taskCharge);
+                taskPool.Run();
+            }
+            else MessageBox.Show("计费时间设定错误");
+        }
+        
         #region 凌老师代码
 
         private void ReadUserInfo()

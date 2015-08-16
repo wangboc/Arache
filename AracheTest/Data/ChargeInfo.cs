@@ -21,7 +21,7 @@ namespace AracheTest.Data
         public List<ElectricityOriginalData> DataSourceSecondMeasure; //第一次测量时间到第二次测量时间，计算铜损与铁损，一次计费可以不用
         private int MID;
 
-        public ElectricityParameter electricityparameter; //计算用数据参数
+        public ElectricityParameter electricityparameter ; //计算用数据参数
         public List<ElectricityPeriod> electricitytimeprice; //计算用尖峰谷时段表
 
         public ChargeInfo(DateTime startDatetime, DateTime firstDateTime, DateTime secondDatetime, int MID)
@@ -583,6 +583,8 @@ namespace AracheTest.Data
             int mid)
         {
             ChargeInfo StructData = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid);
+            if (StructData == null)
+                return null;
             ChargeInfo TempStruct1 = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid);
             TempStruct1.DataSourceFirstMeasure = TempStruct1.DataSourceFirstMeasure;
        

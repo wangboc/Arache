@@ -9,23 +9,19 @@ using DevExpress.XtraCharts;
 
 namespace AracheTest
 {
-    class TaskPool
+    internal class TaskPool
     {
         public List<TaskBase> TaskList = new List<TaskBase>();
 
         public delegate void UpdateUIDelegate();
 
-        private UpdateUIDelegate updateUI;
+     
+        private readonly Object _objectLock = new object();
 
         public TaskPool()
         {
-            
         }
 
-        public void SetUpdateUIDelegate(UpdateUIDelegate function)
-        {
-            updateUI = function;
-        }
 
         public void AddTask(TaskBase task)
         {
@@ -50,26 +46,28 @@ namespace AracheTest
             form.Show();
             bs.RunWorkerCompleted += delegate
             {
-                foreach (TaskBase task in TaskList)
+                lock (_objectLock)
                 {
-                    task.UpdateDataByDelegate();
+                    for (int i = 0; i < TaskList.Count; i++)
+                    {
+                        TaskList[i].UpdateDataByDelegate();
+                    }
+                    form.Close();
+                    TaskList.RemoveAll(node => node.IsFinished);
                 }
-                form.Close();
-                updateUI();
-                TaskList.RemoveAll(node=>node.IsFinished);
             };
             bs.RunWorkerAsync();
         }
 
         private void RunTask()
         {
-            lock (TaskList)
+            lock (_objectLock)
             {
-                foreach (TaskBase task in TaskList)
+                for (int i = 0; i < TaskList.Count; i++)
                 {
-                    task.Run();
-                }}
-            
+                    TaskList[i].Run();
+                }
+            }
         }
     }
 }

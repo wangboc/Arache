@@ -361,10 +361,7 @@ namespace AracheTest
                     _currentNodeMID), SetElectricityData, false);
             taskPool.AddTask(task);
 
-            var taskCharge = new TaskChargeFilter("获取阶段计费信息",
-                new ChargeFilterCondition(new DateTime(2015, 6, 24, 0, 0, 0), new DateTime(2015, 6, 25, 1, 1, 1),
-                    new DateTime(2015, 6, 26, 1, 1, 1), 1), SetChargeData);
-            taskPool.AddTask(taskCharge);
+          
 
             taskPool.Run();
         }
@@ -493,6 +490,11 @@ namespace AracheTest
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
+
+            var taskCharge = new TaskChargeFilter("获取阶段计费信息",
+              new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,  DateTime.Now, _currentNodeMID), SetChargeData);
+            taskPool.AddTask(taskCharge);
+
         }
         
         private void barCheckItemCurrentMonth_ItemClick(object sender, ItemClickEventArgs e)

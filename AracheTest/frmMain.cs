@@ -536,7 +536,7 @@ namespace AracheTest
             popup.HidePopup();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)  
         {
             PopupControlContainer popup = ChargeDateSelectBtn.DropDownControl as PopupControlContainer;
             popup.HidePopup();

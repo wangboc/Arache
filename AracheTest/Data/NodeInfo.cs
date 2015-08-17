@@ -11,28 +11,34 @@ namespace AracheTest.Data
     {
         public NodeInfo(DataRow dr)
         {
-            this.NodeID = (int)dr["NodeID"];
+            this.NodeID = Convert.ToInt32(dr["NodeID"]);
 
             if (dr["PID"] != DBNull.Value)
-                this.PID = (int)dr["PID"];
+                this.PID = Convert.ToInt32(dr["PID"]);
             else PID = 1;
 
 
             if (dr["ParentID"] != DBNull.Value)
-                this.ParentID = (int)dr["ParentID"];
+                this.ParentID = Convert.ToInt32(dr["ParentID"]);
 
             if (dr["Name"] != DBNull.Value)
                 this.Name = dr["Name"].ToString();
+
+            MID = new List<int>();
+
+            IsNode = true;
         }
+
+        public bool IsNode { get; set; }
 
         public int NodeID { get; set; }
-        
+
         public int PID { get; set; }
-        
+
         public int ParentID { get; set; }
-        
+
         public String Name { get; set; }
 
-        public int MID { get; set; }
-        }
+        public List<int> MID { get; set; }
+    }
 }

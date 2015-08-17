@@ -17,13 +17,13 @@ namespace AracheTest.Data
                 this.PID = (int)dr["PID"];
 
             if (dr["MID"] != DBNull.Value)
-                this.PID = (int)dr["MID"];
+                this.MID = (int)dr["MID"];
 
             if (dr["NodeID"] != DBNull.Value)
-                this.PID = (int)dr["NodeID"];
+                this.NodeID = (int)dr["NodeID"];
 
             if (dr["TransformerID"] != DBNull.Value)
-                this.PID = (int)dr["TransformerID"];
+                this.TransformerID = (int)dr["TransformerID"];
         }
 
         public int ID { set; get; }

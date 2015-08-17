@@ -779,6 +779,7 @@
             // 
             // nodeTreeCtr
             // 
+            this.nodeTreeCtr.AutoHideEdit = false;
             this.nodeTreeCtr.Caption = "线路：";
             this.nodeTreeCtr.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
             this.nodeTreeCtr.Edit = this.repositoryItemTreeListLookUpEdit2;
@@ -790,9 +791,11 @@
             // 
             // repositoryItemTreeListLookUpEdit2
             // 
+            this.repositoryItemTreeListLookUpEdit2.AutoExpandAllNodes = false;
             this.repositoryItemTreeListLookUpEdit2.AutoHeight = false;
             this.repositoryItemTreeListLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTreeListLookUpEdit2.HideSelection = false;
             this.repositoryItemTreeListLookUpEdit2.Name = "repositoryItemTreeListLookUpEdit2";
             this.repositoryItemTreeListLookUpEdit2.NullText = "";
             this.repositoryItemTreeListLookUpEdit2.TreeList = this.repositoryItemTreeListLookUpEdit2TreeList;
@@ -801,7 +804,9 @@
             // 
             this.repositoryItemTreeListLookUpEdit2TreeList.Location = new System.Drawing.Point(0, 0);
             this.repositoryItemTreeListLookUpEdit2TreeList.Name = "repositoryItemTreeListLookUpEdit2TreeList";
+            this.repositoryItemTreeListLookUpEdit2TreeList.OptionsBehavior.CloseEditorOnLostFocus = false;
             this.repositoryItemTreeListLookUpEdit2TreeList.OptionsBehavior.EnableFiltering = true;
+            this.repositoryItemTreeListLookUpEdit2TreeList.OptionsView.AnimationType = DevExpress.XtraTreeList.TreeListAnimationType.AnimateFocusedNode;
             this.repositoryItemTreeListLookUpEdit2TreeList.Size = new System.Drawing.Size(400, 200);
             this.repositoryItemTreeListLookUpEdit2TreeList.TabIndex = 0;
             // 
@@ -1171,6 +1176,8 @@
             this.sharedImageCollection.ImageSource.Images.SetKeyName(2, "documentmap_16x16.png");
             this.sharedImageCollection.ImageSource.Images.SetKeyName(3, "AlignVerticalCenter2_16x16.png");
             this.sharedImageCollection.ImageSource.Images.SetKeyName(4, "openhighlowclosestock_16x16.png");
+            this.sharedImageCollection.ImageSource.InsertGalleryImage("checkbox_16x16.png", "images/content/checkbox_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/content/checkbox_16x16.png"), 5);
+            this.sharedImageCollection.ImageSource.Images.SetKeyName(5, "checkbox_16x16.png");
             this.sharedImageCollection.ParentControl = this;
             // 
             // buttonEditSearch

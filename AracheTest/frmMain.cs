@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AracheTest.Data;
 using AracheTest.Reports;
@@ -17,6 +19,9 @@ using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraTreeList;
+using DevExpress.XtraTreeList.Native;
+using DevExpress.XtraTreeList.Nodes;
 
 
 namespace AracheTest
@@ -24,7 +29,6 @@ namespace AracheTest
     public partial class frmMain : RibbonForm
     {
         private List<ElectricityOriginalData> _electricityDataList = new List<ElectricityOriginalData>();
-        private int _currentNodeMID = 1; //由于目前只有三个电表信息，暂时不做电表和节点对应，仅查找MID为1、2、3的三组数据。
         private List<NodeInfo> _nodesList = new List<NodeInfo>();
         private List<ChartControl> _chartCtrs = new List<ChartControl>();
         private Timer _timer_GetRealtime = new Timer();
@@ -32,6 +36,7 @@ namespace AracheTest
         private Dictionary<string, Object> chargeData = new Dictionary<string, Object>();
         private ChargeInfo _chargeDataFirst;
         private ChargeInfo _chargeDataSecond;
+        private int _currentNodeMID = 1;
 
         //======================================================
         //分别对应电费栏中的四个表格，从上到下
@@ -41,28 +46,23 @@ namespace AracheTest
         private DataTable _chargeTable3 = new DataTable();
         //======================================================
 
-        private TaskPool taskPool = new TaskPool();
-
         private PopupControlContainer popup = new PopupControlContainer();
 
         public frmMain()
         {
             InitializeComponent();
             ReadUserInfo();
-            InitUIControls();
+
             InitTimer();
+            InitUIControls();
 
+            TaskPool.SetScheduler(TaskScheduler.FromCurrentSynchronizationContext());
             RefreshAllData();
-
-
-            RepositoryItemTreeListLookUpEdit nodetree = nodeTreeCtr.Edit as RepositoryItemTreeListLookUpEdit;
-            nodetree.EditValueChanged += nodetree_EditValueChanged;
-            nodetree.TreeList.MoveFirst();
         }
 
         private void InitTimer()
         {
-            InitTimerRealtime();
+            InitRealTimeTimer();
             _timer_GetRealtimeData.Interval = 5*60*1000;
             _timer_GetRealtimeData.Tick += _timer_GetRealtimeData_Tick;
             _timer_GetRealtimeData.Start();
@@ -76,7 +76,7 @@ namespace AracheTest
             }
         }
 
-        private void InitTimerRealtime()
+        private void InitRealTimeTimer()
         {
             _timer_GetRealtime.Interval = 1000;
             _timer_GetRealtime.Tick += TimerGetTick;
@@ -89,7 +89,32 @@ namespace AracheTest
             EndDatetimeCtr.EditValue = DateTime.Now;
         }
 
-        private void InitChargeDateSelectCtr()
+        private void InitUIControls()
+        {
+            RealtimeCheckBtn.Down = true;
+            var start = StartDatetimeCtr.Edit as RepositoryItemDateEdit;
+            start.CalendarTimeEditing = DefaultBoolean.True;
+            start.EditMask = "yyyy/MM/dd HH:mm:ss";
+            start.Mask.UseMaskAsDisplayFormat = true;
+            var end = EndDatetimeCtr.Edit as RepositoryItemDateEdit;
+            end.EditMask = "yyyy/MM/dd HH:mm:ss";
+            end.CalendarTimeEditing = DefaultBoolean.True;
+            end.Mask.UseMaskAsDisplayFormat = true;
+
+            FilterButton.Visibility = BarItemVisibility.Never;
+            RealtimeCheckBtn.Down = true;
+
+            StartDatetimeCtr.Enabled = false;
+            EndDatetimeCtr.Enabled = false;
+            ((GridView) gridControlDetail.Views[0]).BestFitColumns();
+
+            InitChartControl();
+            InitNodeTreeControl();
+            InitChargeCustomCtr();
+            InitChargeTableCtr();
+        }
+
+        private void InitChargeCustomCtr()
         {
             TableLayoutPanel panel = new TableLayoutPanel();
             panel.Dock = DockStyle.Fill;
@@ -168,31 +193,6 @@ namespace AracheTest
             ChargeDateSelectBtn.DropDownControl = popup;
         }
 
-
-        private void InitUIControls()
-        {
-            RealtimeCheckBtn.Down = true;
-            var start = StartDatetimeCtr.Edit as RepositoryItemDateEdit;
-            start.CalendarTimeEditing = DefaultBoolean.True;
-            start.EditMask = "yyyy/MM/dd HH:mm:ss";
-            start.Mask.UseMaskAsDisplayFormat = true;
-            var end = EndDatetimeCtr.Edit as RepositoryItemDateEdit;
-            end.EditMask = "yyyy/MM/dd HH:mm:ss";
-            end.CalendarTimeEditing = DefaultBoolean.True;
-            end.Mask.UseMaskAsDisplayFormat = true;
-
-            FilterButton.Visibility = BarItemVisibility.Never;
-            RealtimeCheckBtn.Down = true;
-
-            StartDatetimeCtr.Enabled = false;
-            EndDatetimeCtr.Enabled = false;
-            ((GridView) gridControlDetail.Views[0]).BestFitColumns();
-
-            InitChartControl();
-            InitNodeTreeControl();
-            InitChargeDateSelectCtr();
-            InitChargeTableCtr();
-        }
 
         private void InitChargeTableCtr()
         {
@@ -306,7 +306,15 @@ namespace AracheTest
 
         private void InitNodeTreeControl()
         {
-            var nodeTreeEdit = (RepositoryItemTreeListLookUpEdit) nodeTreeCtr.Edit;
+            RepositoryItemTreeListLookUpEdit nodeTreeEdit = nodeTreeCtr.Edit as RepositoryItemTreeListLookUpEdit;
+            nodeTreeEdit.EditValueChanged += nodetree_EditValueChanged;
+            nodeTreeEdit.TreeList.CustomDrawNodeCell += TreeList_CustomDrawNodeCell;
+            nodeTreeEdit.TreeList.StateImageList = sharedImageCollection;
+            nodeTreeEdit.TreeList.GetStateImage += TreeList_GetStateImage;
+            nodeTreeEdit.TreeList.NodeCellStyle += TreeList_NodeCellStyle;
+            nodeTreeEdit.TreeList.MoveFirst();
+
+
             nodeTreeEdit.ValueMember = "NodeID";
             nodeTreeEdit.DisplayMember = "Name";
             var nodeTree = nodeTreeEdit.TreeList;
@@ -342,6 +350,51 @@ namespace AracheTest
 
             nodeTree.KeyFieldName = "NodeID";
             nodeTree.ParentFieldName = "ParentID";
+
+
+            nodeTreeEdit.AutoExpandAllNodes = false;
+        }
+
+        void TreeList_GetStateImage(object sender, GetStateImageEventArgs e)
+        {
+            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
+
+            if (isNode)
+                e.NodeImageIndex = 2;
+            else
+                e.NodeImageIndex = 5;
+        }
+
+        private void TreeList_NodeCellStyle(object sender, GetCustomNodeCellStyleEventArgs e)
+        {
+            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
+            if (isNode == false)
+            {
+                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
+            }
+        }
+
+        private void TreeList_CustomDrawNodeCell(object sender, DevExpress.XtraTreeList.CustomDrawNodeCellEventArgs e)
+        {
+            Brush backBrush, foreBrush;
+            if (e.Node != (sender as TreeList).FocusedNode)
+            {
+                backBrush = new LinearGradientBrush(e.Bounds, Color.PapayaWhip, Color.PeachPuff,
+                    LinearGradientMode.ForwardDiagonal);
+                foreBrush = Brushes.Black;
+            }
+            else
+            {
+                backBrush = Brushes.PeachPuff;
+                foreBrush = new SolidBrush(Color.Black);
+            }
+            // Fill the background.
+            e.Graphics.FillRectangle(backBrush, e.Bounds);
+            // Paint the node value.
+            e.Graphics.DrawString(e.CellText, e.Appearance.Font, foreBrush, e.Bounds,
+                e.Appearance.GetStringFormat());
+            // Prohibit default painting.
+            e.Handled = true;
         }
 
         private void ResetAxisOptions(AxisX xAxis)
@@ -356,19 +409,19 @@ namespace AracheTest
 
         private void RefreshAllData()
         {
-            ResetUISource();
             var task = new TaskElectricityFilter("更新数据",
                 new FilterCondition(DateTime.Now, DateTime.Now, _currentNodeMID), SetElectricityData, true);
-            taskPool.AddTask(task);
+            TaskPool.AddTask(task);
             var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(), SetNodesData);
-            taskPool.AddTask(taskNode);
-            taskPool.Run();
+            TaskPool.AddTask(taskNode);
         }
 
         private void UpdateNodesData()
         {
             var nodeTreeEdit = (RepositoryItemTreeListLookUpEdit) nodeTreeCtr.Edit;
             nodeTreeEdit.DataSource = _nodesList;
+
+            nodeTreeEdit.TreeList.CollapseAll();
         }
 
         private void SetNodesData(Object list)
@@ -410,10 +463,7 @@ namespace AracheTest
             var task = new TaskElectricityFilter("检索数据",
                 new FilterCondition((DateTime) StartDatetimeCtr.EditValue, (DateTime) EndDatetimeCtr.EditValue,
                     _currentNodeMID), SetElectricityData, false);
-            taskPool.AddTask(task);
-
-
-            taskPool.Run();
+            TaskPool.AddTask(task);
         }
 
 
@@ -642,7 +692,11 @@ namespace AracheTest
         {
             TreeListLookUpEdit nodetree = sender as TreeListLookUpEdit;
             NodeInfo node = nodetree.GetSelectedDataRow() as NodeInfo;
-            _currentNodeMID = node.NodeID;
+
+            if (node.IsNode)
+                return;
+
+            _currentNodeMID = node.MID[0];
             if (RealtimeCheckBtn.Down)
             {
                 RefreshAllData();
@@ -670,8 +724,7 @@ namespace AracheTest
                 new ChargeFilterCondition(
                     new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
                     DateTime.Now, _currentNodeMID), SetChargeData);
-            taskPool.AddTask(taskCharge);
-            taskPool.Run();
+            TaskPool.AddTask(taskCharge);
         }
 
         private void barCheckItemCurrentMonth_CheckedChanged(object sender, ItemClickEventArgs e)
@@ -679,8 +732,7 @@ namespace AracheTest
             var taskCharge = new TaskChargeFilter("获取本月计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
                     DateTime.Now, _currentNodeMID), SetChargeData);
-            taskPool.AddTask(taskCharge);
-            taskPool.Run();
+            TaskPool.AddTask(taskCharge);
         }
 
         private void barCheckItemCurrentYear_CheckedChanged(object sender, ItemClickEventArgs e)
@@ -688,8 +740,7 @@ namespace AracheTest
             var taskCharge = new TaskChargeFilter("获取本年计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
                     _currentNodeMID), SetChargeData);
-            taskPool.AddTask(taskCharge);
-            taskPool.Run();
+            TaskPool.AddTask(taskCharge);
         }
 
         private void barCheckItemCurrentMonth_ItemClick(object sender, ItemClickEventArgs e)
@@ -749,8 +800,7 @@ namespace AracheTest
                 var taskCharge = new TaskChargeFilter("获取自定义时段计费信息",
                     new ChargeFilterCondition(startDate.DateTime, middleDate.DateTime, lastDate.DateTime,
                         _currentNodeMID), SetChargeData);
-                taskPool.AddTask(taskCharge);
-                taskPool.Run();
+                TaskPool.AddTask(taskCharge);
             }
             else MessageBox.Show("计费时间设定错误");
         }

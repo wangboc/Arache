@@ -196,14 +196,6 @@ namespace AracheTest
 
         private void InitChargeTableCtr()
         {
-//            DevExpress.XtraPrinting.Control.PrintControl
-//            var ds = new XPQuery<>(uw);
-//            XtraReport1 report = new XtraReport1(); 
-//            report. = ds; this.printControl1
-//            PrintingSystem = report.PrintingSystem;
-//            report.CreateDocument(); 
-//            report.LoadLayout(@"到位资金分配一览表.repx");
-
             XtraReport2 report = new XtraReport2();
             documentViewer1.DocumentSource = report;
 
@@ -312,6 +304,7 @@ namespace AracheTest
             nodeTreeEdit.TreeList.StateImageList = sharedImageCollection;
             nodeTreeEdit.TreeList.GetStateImage += TreeList_GetStateImage;
             nodeTreeEdit.TreeList.NodeCellStyle += TreeList_NodeCellStyle;
+            nodeTreeEdit.QueryCloseUp += nodeTreeEdit_QueryCloseUp;
             nodeTreeEdit.TreeList.MoveFirst();
 
 
@@ -354,6 +347,15 @@ namespace AracheTest
 
             nodeTreeEdit.AutoExpandAllNodes = false;
         }
+        void nodeTreeEdit_QueryCloseUp(object sender, CancelEventArgs e)
+        {
+            TreeListLookUpEdit nodeTreeEdit = sender as TreeListLookUpEdit;
+            var node = nodeTreeEdit.Properties.TreeList.FocusedNode;
+            bool isNode = Convert.ToBoolean(node.GetValue("IsNode"));
+            e.Cancel = isNode;
+        }
+
+ 
 
         void TreeList_GetStateImage(object sender, GetStateImageEventArgs e)
         {

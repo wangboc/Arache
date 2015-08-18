@@ -15,12 +15,16 @@ namespace AracheTest
         private static TaskScheduler _mainUiScheduler;
 
         private readonly Object _objectLock = new object();
-
+ 
+        /// <summary>
+        /// 调用TaskPool类之前，需要调用这个函数，设定TaskScheduler，该变量必须在主线程中赋值，TaskScheduler.FromCurrentSynchronizationContext()
+        /// 这样，才能使子线程通过回调函数控制主线程UI
+        /// </summary>
+        /// <param name="scheduler"></param>
         public static void SetScheduler(TaskScheduler scheduler)
         {
             _mainUiScheduler = scheduler;
         }
-
 
         public static void AddTask(TaskBase task)
         {

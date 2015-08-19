@@ -615,9 +615,9 @@ namespace AracheTest
                 chartControlChargeProportion.Series[0].Points.Clear();
                 chartControlChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
                 {
-                    new SeriesPoint("有功（尖峰）", chargeInfo.EnergySpike),
-                    new SeriesPoint("有功（峰）", chargeInfo.EnergyPeak),
-                    new SeriesPoint("有功（谷）", chargeInfo.EnergyTotal),
+                    new SeriesPoint("尖峰", chargeInfo.EnergySpike),
+                    new SeriesPoint("峰", chargeInfo.EnergyPeak),
+                    new SeriesPoint("谷", chargeInfo.EnergyTotal),
                 });
             }
         }

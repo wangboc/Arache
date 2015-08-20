@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AracheTest.Data;
-using DevExpress.DashboardCommon;
-using DevExpress.XtraBars;
-using DevExpress.XtraPrinting.Native;
+
 
 namespace AracheTest
 {
@@ -18,17 +12,17 @@ namespace AracheTest
 
     public class FilterCondition : ConditionBase
     {
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
-        public int MID { get; set; }
-        public int NodeID { get; set; }
+        public DateTime StartTime { get; private set; }
+        public DateTime EndTime { get; private set; }
+        public int Mid { get; private set; }
+        public int NodeId { get; set; }
 
-        public FilterCondition(DateTime startTime, DateTime endTime, int MID) : base()
+        public FilterCondition(DateTime startTime, DateTime endTime, int mid) 
         {
             StartTime = startTime;
             EndTime = endTime;
-            NodeID = MID;
-            this.MID = NodeID;
+            NodeId = mid;
+            Mid = NodeId;
         }
     }
 
@@ -37,12 +31,12 @@ namespace AracheTest
         /// <summary>
         /// 只用于计算计费信息，第一阶段需要 StartTime 和 SecondTime, 第二阶段需要 SecondTime 和 EndTime
         /// </summary>
-        public DateTime SecondTime { get; set; }
+        public DateTime SecondTime { get; private set; }
 
-        public ChargeFilterCondition(DateTime StartTime, DateTime SecondTime, DateTime EndTime, int NodeID)
-            : base(StartTime, EndTime, NodeID)
+        public ChargeFilterCondition(DateTime startTime, DateTime secondTime, DateTime endTime, int nodeId)
+            : base(startTime, endTime, nodeId)
         {
-            this.SecondTime = SecondTime;
+            SecondTime = secondTime;
         }
     }
 
@@ -53,7 +47,7 @@ namespace AracheTest
 
     public class TaskBase : ITask
     {
-        public delegate void updateDataDelegate(Object dataSource);
+        public delegate void UpdateDataDelegate(Object dataSource);
 
         protected ConditionBase Condition { get; set; }
 
@@ -63,7 +57,7 @@ namespace AracheTest
 
         protected Object DBData = null;
 
-        protected updateDataDelegate _updateDataData;
+        protected UpdateDataDelegate _updateDataData;
 
         public bool IsFinished { get; set; }
 
@@ -78,7 +72,7 @@ namespace AracheTest
             IsFinished = true;
         }
 
-        public TaskBase(String name, ConditionBase condition, updateDataDelegate returnFuc)
+        public TaskBase(String name, ConditionBase condition, UpdateDataDelegate returnFuc)
         {
             this.Name = name;
             this._updateDataData = returnFuc;
@@ -93,7 +87,7 @@ namespace AracheTest
         private Boolean _isRealtime;
         private FilterCondition _condition;
 
-        public TaskElectricityFilter(String name, FilterCondition condition, updateDataDelegate returnFuc,
+        public TaskElectricityFilter(String name, FilterCondition condition, UpdateDataDelegate returnFuc,
             Boolean IsRealtime)
             : base(name, condition, returnFuc)
         {
@@ -110,18 +104,18 @@ namespace AracheTest
 
         private void GetRealtimeData()
         {
-            DBData = DataBase.GetRealTimeData(_condition.MID);
+            DBData = DataBase.GetRealTimeData(_condition.Mid);
         }
 
         public void GetFilteredData()
         {
-            DBData = DataBase.GetDatetimeFilteredData(_condition.StartTime, _condition.EndTime, _condition.MID);
+            DBData = DataBase.GetDatetimeFilteredData(_condition.StartTime, _condition.EndTime, _condition.Mid);
         }
     }
 
     public class TaskFetchNodes : TaskBase
     {
-        public TaskFetchNodes(String name, ConditionBase condition, updateDataDelegate returnFuc)
+        public TaskFetchNodes(String name, ConditionBase condition, UpdateDataDelegate returnFuc)
             : base(name, condition, returnFuc)
         {
         }
@@ -138,18 +132,17 @@ namespace AracheTest
             int nodeTotal = data.Count;
             for (int i = 0; i < nodeTotal; i++)
             {
-                List<Correspondnode> MIDs = DataBase.GetCorrespondMID(data[i].NodeID);
-                
+                List<Correspondnode> MIDs = DataBase.GetCorrespondMid(data[i].NodeID);
+
                 if (MIDs != null && MIDs.Count > 0)
                 {
-                    
                     DataTable dt = new DataTable();
                     dt.Columns.Add("NodeID");
                     dt.Columns.Add("PID");
                     dt.Columns.Add("ParentID");
                     dt.Columns.Add("Name");
                     dt.Columns.Add("MID");
-                    
+
                     foreach (Correspondnode correspondnode in MIDs)
                     {
                         DataRow row = dt.NewRow();
@@ -157,7 +150,8 @@ namespace AracheTest
                         //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
 
                         //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
-                        row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() + correspondnode.MID.ToString();
+                        row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
+                                        correspondnode.MID.ToString();
                         row["PID"] = 1;
                         row["ParentID"] = correspondnode.NodeID;
                         row["Name"] = "电表: " + correspondnode.MID;
@@ -178,7 +172,7 @@ namespace AracheTest
     {
         private ChargeFilterCondition _condition;
 
-        public TaskChargeFilter(String name, ChargeFilterCondition condition, updateDataDelegate returnFuc)
+        public TaskChargeFilter(String name, ChargeFilterCondition condition, UpdateDataDelegate returnFuc)
             : base(name, condition, returnFuc)
         {
             _condition = condition;
@@ -209,14 +203,14 @@ namespace AracheTest
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.FirstMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.MID);
+                _condition.Mid);
         }
 
         private ChargeInfo getSecondCharge()
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.SecondMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.MID);
+                _condition.Mid);
         }
     }
 }

@@ -20,10 +20,7 @@ namespace AracheTest.Data
 
             DataTable dt = DBConnector.ExecuteSql(string.Format("select * from electricityparameter"));
             if (dt != null)
-                foreach (DataRow row in dt.Rows)
-                {
-                    list.Add(new ElectricityParameter(row));
-                }
+                list.AddRange(from DataRow row in dt.Rows select new ElectricityParameter(row));
             LogHelper.WriteLog(typeof (frmMain), "获取电费参数信息");
             return list;
         }
@@ -32,16 +29,13 @@ namespace AracheTest.Data
         {
             List<ElectricityPeriod> list = new List<ElectricityPeriod>();
             DataTable dt = DBConnector.ExecuteSql(string.Format("select * from electricitytime"));
-            if(dt != null)
-                foreach (DataRow row in dt.Rows)
-                {
-                    list.Add(new ElectricityPeriod(row));
-                }
-            LogHelper.WriteLog(typeof(frmMain), "获取电费时段信息");
+            if (dt != null)
+                list.AddRange(from DataRow row in dt.Rows select new ElectricityPeriod(row));
+            LogHelper.WriteLog(typeof (frmMain), "获取电费时段信息");
             return list;
-        } 
+        }
 
-        public static List<ElectricityOriginalData> GetRealTimeData(int MID)
+        public static List<ElectricityOriginalData> GetRealTimeData(int mid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
             DateTime yesterday = DateTime.Now.AddDays(-40);
@@ -49,15 +43,13 @@ namespace AracheTest.Data
                 DBConnector.ExecuteSql(
                     string.Format(
                         "select * from normalreceiveddata where Eventtime > '{0:u}' and MID = '{1}' order by Eventtime",
-                        yesterday, MID));
+                        yesterday, mid));
             if (dt != null)
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new ElectricityOriginalData(dr));
-                }
+                list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取24小时数据");
             return list;
         }
+
         public static List<ElectricityOriginalData> GetDatetimeFilteredData(DateTime start, DateTime end, int MID)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
@@ -67,10 +59,7 @@ namespace AracheTest.Data
                         "select * from normalreceiveddata where (Eventtime between '{0}' and '{1}') and MID = '{2}' order by Eventtime",
                         start, end, MID));
             if (dt != null)
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new ElectricityOriginalData(dr));
-                }
+                list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取" + start + "至" + end + "数据");
             return list;
         }
@@ -80,45 +69,34 @@ namespace AracheTest.Data
             List<NodeInfo> list = new List<NodeInfo>();
             DataTable dt = DBConnector.ExecuteSql("select * from nodeinfo");
             if (dt != null)
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new NodeInfo(dr));
-                }
-            }
+                list.AddRange(from DataRow dr in dt.Rows select new NodeInfo(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取所有节点信息");
             return list;
         }
 
-        public static List<Correspondnode> GetCorrespondMID(int nodeID)
+        public static List<Correspondnode> GetCorrespondMid(int nodeId)
         {
             List<Correspondnode> list = new List<Correspondnode>();
             DataTable dt =
-                DBConnector.ExecuteSql(string.Format("select * from correspondnode where nodeid= '{0}'", nodeID));
+                DBConnector.ExecuteSql(string.Format("select * from correspondnode where nodeid= '{0}'", nodeId));
             if (dt != null)
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new Correspondnode(dr));
-                }
-            LogHelper.WriteLog(typeof (frmMain), string.Format("获取NodeID为'{0}'节点--电表信息", nodeID));
+                list.AddRange(from DataRow dr in dt.Rows select new Correspondnode(dr));
+            LogHelper.WriteLog(typeof (frmMain), string.Format("获取NodeID为'{0}'节点--电表信息", nodeId));
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetElectricityDataByMID(int MID)
+        public static List<ElectricityOriginalData> GetElectricityDataByMid(int mid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
             DataTable dt =
-                DBConnector.ExecuteSql(string.Format("select * from normalreceiveddata where MID = '{0}'", MID));
+                DBConnector.ExecuteSql(string.Format("select * from normalreceiveddata where MID = '{0}'", mid));
             if (dt != null)
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new ElectricityOriginalData(dr));
-                }
-            LogHelper.WriteLog(typeof (frmMain), string.Format("获取MID为'{0}'的电表--电量信息", MID));
+                list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
+            LogHelper.WriteLog(typeof (frmMain), string.Format("获取MID为'{0}'的电表--电量信息", mid));
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetElectricityDataByNodeID(int nodeID)
+        public static List<ElectricityOriginalData> GetElectricityDataByNodeId(int nodeID)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
             DataTable dt =
@@ -127,10 +105,7 @@ namespace AracheTest.Data
                         "select * from normalreceiveddata where MID in (select MID from nodeinfo where nodeid='{0}')",
                         nodeID));
             if (dt != null)
-                foreach (DataRow dr in dt.Rows)
-                {
-                    list.Add(new ElectricityOriginalData(dr));
-                }
+                list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), string.Format("获取NodeID为'{0}'的节点相关电量信息", nodeID));
             return list;
         }

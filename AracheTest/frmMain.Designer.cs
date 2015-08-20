@@ -30,80 +30,80 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            DevExpress.XtraCharts.XYDiagram xyDiagram8 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel2 = new DevExpress.XtraCharts.PointSeriesLabel();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView29 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series28 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView30 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series29 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView31 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView32 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram9 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series30 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView33 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series31 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView34 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series32 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView35 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView36 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle10 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram10 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series33 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView37 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series34 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView38 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series35 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView39 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series36 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView40 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView41 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle11 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram11 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series37 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView42 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series38 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView43 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series39 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView44 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series40 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView45 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView46 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle12 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram12 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series41 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView47 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series42 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView48 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series43 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView49 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series44 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView50 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView51 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle13 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram13 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series45 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView52 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series46 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView53 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series47 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView54 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.Series series48 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView55 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.SplineSeriesView splineSeriesView56 = new DevExpress.XtraCharts.SplineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle14 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.SimpleDiagram simpleDiagram2 = new DevExpress.XtraCharts.SimpleDiagram();
-            DevExpress.XtraCharts.Series series49 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel2 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle15 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram14 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series50 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series51 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series52 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.ChartTitle chartTitle16 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView1 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView2 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView3 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView4 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView5 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView6 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView7 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView8 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView9 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView10 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series9 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView11 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series10 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView12 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView13 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series11 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView14 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series12 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView15 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series13 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView16 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series14 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView17 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView18 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram5 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series15 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView19 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series16 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView20 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series17 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView21 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series18 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView22 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView23 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle5 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram6 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series19 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView24 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series20 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView25 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series21 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView26 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.Series series22 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView27 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.SplineSeriesView splineSeriesView28 = new DevExpress.XtraCharts.SplineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle6 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.SimpleDiagram simpleDiagram1 = new DevExpress.XtraCharts.SimpleDiagram();
+            DevExpress.XtraCharts.Series series23 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle7 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series24 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series25 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle8 = new DevExpress.XtraCharts.ChartTitle();
             this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection(this.components);
@@ -406,89 +406,89 @@
             this.xtraTabPage1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PUChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series31)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PFChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series35)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView39)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView40)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView13)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series39)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series40)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SChartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView52)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView53)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView55)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView56)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView28)).BeginInit();
             this.xtraTabPageCharge.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
             this.xtraTabControl2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlChargeProportion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).BeginInit();
             this.xtraTabControl3.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series51)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series52)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series26)).BeginInit();
             this.SuspendLayout();
             // 
             // barAndDockingController1
@@ -1198,7 +1198,7 @@
             this.dockPanelInfo.ID = new System.Guid("78277e08-1d39-4e32-a648-d8f093eb5840");
             this.dockPanelInfo.Location = new System.Drawing.Point(0, 41);
             this.dockPanelInfo.Name = "dockPanelInfo";
-            this.dockPanelInfo.OriginalSize = new System.Drawing.Size(225, 265);
+            this.dockPanelInfo.OriginalSize = new System.Drawing.Size(0, 0);
             this.dockPanelInfo.Size = new System.Drawing.Size(0, 0);
             this.dockPanelInfo.Text = "基本信息";
             // 
@@ -2541,14 +2541,14 @@
             // 
             this.PCChartControl.AppearanceNameSerializable = "Pastel Kit";
             this.PCChartControl.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/M/d H:mm:ss}";
-            xyDiagram8.AxisX.Label.Angle = -5;
-            xyDiagram8.AxisX.Label.TextPattern = "{A:yyyy-M-d HH:mm}";
-            xyDiagram8.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram8.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram8.EnableAxisXScrolling = true;
-            xyDiagram8.EnableAxisXZooming = true;
-            xyDiagram8.EnableAxisYScrolling = true;
-            this.PCChartControl.Diagram = xyDiagram8;
+            xyDiagram1.AxisX.Label.Angle = -5;
+            xyDiagram1.AxisX.Label.TextPattern = "{A:yyyy-M-d HH:mm}";
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.EnableAxisXScrolling = true;
+            xyDiagram1.EnableAxisXZooming = true;
+            xyDiagram1.EnableAxisYScrolling = true;
+            this.PCChartControl.Diagram = xyDiagram1;
             this.PCChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PCChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.PCChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2557,42 +2557,42 @@
             this.PCChartControl.Legend.UseCheckBoxes = true;
             this.PCChartControl.Location = new System.Drawing.Point(3, 3);
             this.PCChartControl.Name = "PCChartControl";
-            series27.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            pointSeriesLabel2.TextPattern = "{A:yyyy.M.d HH:mm:ss}{V}";
-            series27.Label = pointSeriesLabel2;
-            series27.Name = "A相";
-            series27.View = splineSeriesView29;
-            series28.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series28.Name = "B相";
-            series28.View = splineSeriesView30;
-            series29.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series29.Name = "C相";
-            series29.View = splineSeriesView31;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            pointSeriesLabel1.TextPattern = "{A:yyyy.M.d HH:mm:ss}{V}";
+            series1.Label = pointSeriesLabel1;
+            series1.Name = "A相";
+            series1.View = splineSeriesView1;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series2.Name = "B相";
+            series2.View = splineSeriesView2;
+            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series3.Name = "C相";
+            series3.View = splineSeriesView3;
             this.PCChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series27,
-        series28,
-        series29};
-            this.PCChartControl.SeriesTemplate.View = splineSeriesView32;
+        series1,
+        series2,
+        series3};
+            this.PCChartControl.SeriesTemplate.View = splineSeriesView4;
             this.PCChartControl.Size = new System.Drawing.Size(423, 209);
             this.PCChartControl.TabIndex = 26;
-            chartTitle9.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle9.Text = "电流";
-            chartTitle9.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle1.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle1.Text = "电流";
+            chartTitle1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.PCChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle9});
+            chartTitle1});
             // 
             // PUChartControl
             // 
             this.PUChartControl.AppearanceNameSerializable = "Pastel Kit";
             this.PUChartControl.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram9.AxisX.Label.Angle = -5;
-            xyDiagram9.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram9.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram9.EnableAxisXScrolling = true;
-            xyDiagram9.EnableAxisXZooming = true;
-            xyDiagram9.EnableAxisYScrolling = true;
-            xyDiagram9.EnableAxisYZooming = true;
-            this.PUChartControl.Diagram = xyDiagram9;
+            xyDiagram2.AxisX.Label.Angle = -5;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram2.EnableAxisXScrolling = true;
+            xyDiagram2.EnableAxisXZooming = true;
+            xyDiagram2.EnableAxisYScrolling = true;
+            xyDiagram2.EnableAxisYZooming = true;
+            this.PUChartControl.Diagram = xyDiagram2;
             this.PUChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PUChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.PUChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2602,42 +2602,42 @@
             this.PUChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.PUChartControl.Location = new System.Drawing.Point(432, 3);
             this.PUChartControl.Name = "PUChartControl";
-            series30.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series30.Name = "A相";
-            series30.View = splineSeriesView33;
-            series31.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series31.Name = "B相";
-            series31.View = splineSeriesView34;
-            series32.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series32.Name = "C相";
-            series32.View = splineSeriesView35;
+            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series4.Name = "A相";
+            series4.View = splineSeriesView5;
+            series5.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series5.Name = "B相";
+            series5.View = splineSeriesView6;
+            series6.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series6.Name = "C相";
+            series6.View = splineSeriesView7;
             this.PUChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series30,
-        series31,
-        series32};
-            this.PUChartControl.SeriesTemplate.View = splineSeriesView36;
+        series4,
+        series5,
+        series6};
+            this.PUChartControl.SeriesTemplate.View = splineSeriesView8;
             this.PUChartControl.Size = new System.Drawing.Size(423, 209);
             this.PUChartControl.TabIndex = 25;
-            chartTitle10.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle10.Text = "相电压";
-            chartTitle10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle2.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle2.Text = "相电压";
+            chartTitle2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.PUChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle10});
+            chartTitle2});
             // 
             // PFChartControl
             // 
             this.PFChartControl.AppearanceNameSerializable = "Pastel Kit";
             this.PFChartControl.BackColor = System.Drawing.Color.White;
-            xyDiagram10.AxisX.Label.Angle = -5;
-            xyDiagram10.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram10.AxisX.WholeRange.AutoSideMargins = false;
-            xyDiagram10.AxisX.WholeRange.SideMarginsValue = 0D;
-            xyDiagram10.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram10.EnableAxisXScrolling = true;
-            xyDiagram10.EnableAxisXZooming = true;
-            xyDiagram10.EnableAxisYScrolling = true;
-            xyDiagram10.EnableAxisYZooming = true;
-            this.PFChartControl.Diagram = xyDiagram10;
+            xyDiagram3.AxisX.Label.Angle = -5;
+            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram3.AxisX.WholeRange.AutoSideMargins = false;
+            xyDiagram3.AxisX.WholeRange.SideMarginsValue = 0D;
+            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram3.EnableAxisXScrolling = true;
+            xyDiagram3.EnableAxisXZooming = true;
+            xyDiagram3.EnableAxisYScrolling = true;
+            xyDiagram3.EnableAxisYZooming = true;
+            this.PFChartControl.Diagram = xyDiagram3;
             this.PFChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PFChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.PFChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2647,31 +2647,31 @@
             this.PFChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.PFChartControl.Location = new System.Drawing.Point(861, 3);
             this.PFChartControl.Name = "PFChartControl";
-            series33.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series33.Name = "A相";
-            series33.View = splineSeriesView37;
-            series34.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series34.Name = "B相";
-            series34.View = splineSeriesView38;
-            series35.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series35.Name = "C相";
-            series35.View = splineSeriesView39;
-            series36.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series36.Name = "合相";
-            series36.View = splineSeriesView40;
+            series7.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series7.Name = "A相";
+            series7.View = splineSeriesView9;
+            series8.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series8.Name = "B相";
+            series8.View = splineSeriesView10;
+            series9.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series9.Name = "C相";
+            series9.View = splineSeriesView11;
+            series10.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series10.Name = "合相";
+            series10.View = splineSeriesView12;
             this.PFChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series33,
-        series34,
-        series35,
-        series36};
-            this.PFChartControl.SeriesTemplate.View = splineSeriesView41;
+        series7,
+        series8,
+        series9,
+        series10};
+            this.PFChartControl.SeriesTemplate.View = splineSeriesView13;
             this.PFChartControl.Size = new System.Drawing.Size(424, 209);
             this.PFChartControl.TabIndex = 24;
-            chartTitle11.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle11.Text = "功率因数";
-            chartTitle11.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle3.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle3.Text = "功率因数";
+            chartTitle3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.PFChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle11});
+            chartTitle3});
             // 
             // xtraTabPage2
             // 
@@ -2700,16 +2700,16 @@
             // PChartControl
             // 
             this.PChartControl.AppearanceNameSerializable = "Pastel Kit";
-            xyDiagram11.AxisX.Label.Angle = -5;
-            xyDiagram11.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram11.AxisX.WholeRange.AutoSideMargins = false;
-            xyDiagram11.AxisX.WholeRange.SideMarginsValue = 0D;
-            xyDiagram11.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram11.EnableAxisXScrolling = true;
-            xyDiagram11.EnableAxisXZooming = true;
-            xyDiagram11.EnableAxisYScrolling = true;
-            xyDiagram11.EnableAxisYZooming = true;
-            this.PChartControl.Diagram = xyDiagram11;
+            xyDiagram4.AxisX.Label.Angle = -5;
+            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram4.AxisX.WholeRange.AutoSideMargins = false;
+            xyDiagram4.AxisX.WholeRange.SideMarginsValue = 0D;
+            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram4.EnableAxisXScrolling = true;
+            xyDiagram4.EnableAxisXZooming = true;
+            xyDiagram4.EnableAxisYScrolling = true;
+            xyDiagram4.EnableAxisYZooming = true;
+            this.PChartControl.Diagram = xyDiagram4;
             this.PChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.PChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2719,45 +2719,45 @@
             this.PChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.PChartControl.Location = new System.Drawing.Point(3, 3);
             this.PChartControl.Name = "PChartControl";
-            series37.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series37.Name = "A相";
-            series37.View = splineSeriesView42;
-            series38.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series38.Name = "B相";
-            series38.View = splineSeriesView43;
-            series39.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series39.Name = "C相";
-            series39.View = splineSeriesView44;
-            series40.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series40.Name = "合相";
-            series40.View = splineSeriesView45;
+            series11.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series11.Name = "A相";
+            series11.View = splineSeriesView14;
+            series12.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series12.Name = "B相";
+            series12.View = splineSeriesView15;
+            series13.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series13.Name = "C相";
+            series13.View = splineSeriesView16;
+            series14.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series14.Name = "合相";
+            series14.View = splineSeriesView17;
             this.PChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series37,
-        series38,
-        series39,
-        series40};
-            this.PChartControl.SeriesTemplate.View = splineSeriesView46;
+        series11,
+        series12,
+        series13,
+        series14};
+            this.PChartControl.SeriesTemplate.View = splineSeriesView18;
             this.PChartControl.Size = new System.Drawing.Size(423, 209);
             this.PChartControl.TabIndex = 23;
-            chartTitle12.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle12.Text = "有功功率";
-            chartTitle12.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle4.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle4.Text = "有功功率";
+            chartTitle4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.PChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle12});
+            chartTitle4});
             // 
             // QChartControl
             // 
             this.QChartControl.AppearanceNameSerializable = "Pastel Kit";
-            xyDiagram12.AxisX.Label.Angle = -5;
-            xyDiagram12.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram12.AxisX.WholeRange.AutoSideMargins = false;
-            xyDiagram12.AxisX.WholeRange.SideMarginsValue = 0D;
-            xyDiagram12.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram12.EnableAxisXScrolling = true;
-            xyDiagram12.EnableAxisXZooming = true;
-            xyDiagram12.EnableAxisYScrolling = true;
-            xyDiagram12.EnableAxisYZooming = true;
-            this.QChartControl.Diagram = xyDiagram12;
+            xyDiagram5.AxisX.Label.Angle = -5;
+            xyDiagram5.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram5.AxisX.WholeRange.AutoSideMargins = false;
+            xyDiagram5.AxisX.WholeRange.SideMarginsValue = 0D;
+            xyDiagram5.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram5.EnableAxisXScrolling = true;
+            xyDiagram5.EnableAxisXZooming = true;
+            xyDiagram5.EnableAxisYScrolling = true;
+            xyDiagram5.EnableAxisYZooming = true;
+            this.QChartControl.Diagram = xyDiagram5;
             this.QChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.QChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2767,45 +2767,45 @@
             this.QChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.QChartControl.Location = new System.Drawing.Point(432, 3);
             this.QChartControl.Name = "QChartControl";
-            series41.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series41.Name = "A相";
-            series41.View = splineSeriesView47;
-            series42.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series42.Name = "B相";
-            series42.View = splineSeriesView48;
-            series43.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series43.Name = "C相";
-            series43.View = splineSeriesView49;
-            series44.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series44.Name = "合相";
-            series44.View = splineSeriesView50;
+            series15.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series15.Name = "A相";
+            series15.View = splineSeriesView19;
+            series16.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series16.Name = "B相";
+            series16.View = splineSeriesView20;
+            series17.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series17.Name = "C相";
+            series17.View = splineSeriesView21;
+            series18.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series18.Name = "合相";
+            series18.View = splineSeriesView22;
             this.QChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series41,
-        series42,
-        series43,
-        series44};
-            this.QChartControl.SeriesTemplate.View = splineSeriesView51;
+        series15,
+        series16,
+        series17,
+        series18};
+            this.QChartControl.SeriesTemplate.View = splineSeriesView23;
             this.QChartControl.Size = new System.Drawing.Size(423, 209);
             this.QChartControl.TabIndex = 22;
-            chartTitle13.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle13.Text = "无功功率";
-            chartTitle13.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle5.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle5.Text = "无功功率";
+            chartTitle5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.QChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle13});
+            chartTitle5});
             // 
             // SChartControl
             // 
             this.SChartControl.AppearanceNameSerializable = "Pastel Kit";
-            xyDiagram13.AxisX.Label.Angle = -5;
-            xyDiagram13.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram13.AxisX.WholeRange.AutoSideMargins = false;
-            xyDiagram13.AxisX.WholeRange.SideMarginsValue = 0D;
-            xyDiagram13.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram13.EnableAxisXScrolling = true;
-            xyDiagram13.EnableAxisXZooming = true;
-            xyDiagram13.EnableAxisYScrolling = true;
-            xyDiagram13.EnableAxisYZooming = true;
-            this.SChartControl.Diagram = xyDiagram13;
+            xyDiagram6.AxisX.Label.Angle = -5;
+            xyDiagram6.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram6.AxisX.WholeRange.AutoSideMargins = false;
+            xyDiagram6.AxisX.WholeRange.SideMarginsValue = 0D;
+            xyDiagram6.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram6.EnableAxisXScrolling = true;
+            xyDiagram6.EnableAxisXZooming = true;
+            xyDiagram6.EnableAxisYScrolling = true;
+            xyDiagram6.EnableAxisYZooming = true;
+            this.SChartControl.Diagram = xyDiagram6;
             this.SChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SChartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.SChartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
@@ -2815,31 +2815,31 @@
             this.SChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.SChartControl.Location = new System.Drawing.Point(861, 3);
             this.SChartControl.Name = "SChartControl";
-            series45.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series45.Name = "A相";
-            series45.View = splineSeriesView52;
-            series46.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series46.Name = "B相";
-            series46.View = splineSeriesView53;
-            series47.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series47.Name = "C相";
-            series47.View = splineSeriesView54;
-            series48.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series48.Name = "合相";
-            series48.View = splineSeriesView55;
+            series19.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series19.Name = "A相";
+            series19.View = splineSeriesView24;
+            series20.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series20.Name = "B相";
+            series20.View = splineSeriesView25;
+            series21.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series21.Name = "C相";
+            series21.View = splineSeriesView26;
+            series22.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series22.Name = "合相";
+            series22.View = splineSeriesView27;
             this.SChartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series45,
-        series46,
-        series47,
-        series48};
-            this.SChartControl.SeriesTemplate.View = splineSeriesView56;
+        series19,
+        series20,
+        series21,
+        series22};
+            this.SChartControl.SeriesTemplate.View = splineSeriesView28;
             this.SChartControl.Size = new System.Drawing.Size(424, 209);
             this.SChartControl.TabIndex = 21;
-            chartTitle14.Font = new System.Drawing.Font("Tahoma", 14F);
-            chartTitle14.Text = "视在功率";
-            chartTitle14.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle6.Font = new System.Drawing.Font("Tahoma", 14F);
+            chartTitle6.Text = "视在功率";
+            chartTitle6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.SChartControl.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle14});
+            chartTitle6});
             // 
             // xtraTabPageCharge
             // 
@@ -2883,14 +2883,14 @@
             this.xtraTabPage3.Controls.Add(this.chartControlChargeProportion);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(486, 330);
-            this.xtraTabPage3.Text = "xtraTabPage3";
+            this.xtraTabPage3.Text = "电费比例";
             // 
             // chartControlChargeProportion
             // 
             this.chartControlChargeProportion.AppearanceNameSerializable = "Pastel Kit";
             this.chartControlChargeProportion.BackColor = System.Drawing.Color.Transparent;
-            simpleDiagram2.EqualPieSize = false;
-            this.chartControlChargeProportion.Diagram = simpleDiagram2;
+            simpleDiagram1.EqualPieSize = false;
+            this.chartControlChargeProportion.Diagram = simpleDiagram1;
             this.chartControlChargeProportion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControlChargeProportion.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.chartControlChargeProportion.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
@@ -2898,32 +2898,31 @@
             this.chartControlChargeProportion.Legend.UseCheckBoxes = true;
             this.chartControlChargeProportion.Location = new System.Drawing.Point(0, 0);
             this.chartControlChargeProportion.Name = "chartControlChargeProportion";
-            series49.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            pieSeriesLabel2.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
-            pieSeriesLabel2.TextPattern = "{A} {V}   {VP:0.00%} ";
-            series49.Label = pieSeriesLabel2;
-            series49.Name = "电费组成比例";
-            pieSeriesView3.RuntimeExploding = false;
-            pieSeriesView3.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
-            series49.View = pieSeriesView3;
+            series23.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            pieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
+            pieSeriesLabel1.TextPattern = "{A} {V}   {VP:0.00%} ";
+            series23.Label = pieSeriesLabel1;
+            series23.Name = "电费组成比例";
+            pieSeriesView1.RuntimeExploding = false;
+            pieSeriesView1.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            series23.View = pieSeriesView1;
             this.chartControlChargeProportion.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series49};
-            pieSeriesView4.RuntimeExploding = false;
-            pieSeriesView4.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
-            this.chartControlChargeProportion.SeriesTemplate.View = pieSeriesView4;
+        series23};
+            pieSeriesView2.RuntimeExploding = false;
+            pieSeriesView2.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            this.chartControlChargeProportion.SeriesTemplate.View = pieSeriesView2;
             this.chartControlChargeProportion.Size = new System.Drawing.Size(486, 330);
             this.chartControlChargeProportion.TabIndex = 0;
-            chartTitle15.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            chartTitle15.Text = "电费比例";
-            chartTitle15.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle7.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            chartTitle7.Text = "电费比例";
+            chartTitle7.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.chartControlChargeProportion.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle15});
+            chartTitle7});
             // 
             // xtraTabPage4
             // 
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Size = new System.Drawing.Size(486, 330);
-            this.xtraTabPage4.Text = "xtraTabPage4";
             // 
             // xtraTabControl3
             // 
@@ -2943,14 +2942,14 @@
             this.xtraTabPage5.Controls.Add(this.chartControl2);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.Size = new System.Drawing.Size(486, 330);
-            this.xtraTabPage5.Text = "xtraTabPage5";
+            this.xtraTabPage5.Text = "用电比例";
             // 
             // chartControl2
             // 
             this.chartControl2.AppearanceNameSerializable = "Nature Colors";
-            xyDiagram14.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram14.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram14;
+            xyDiagram7.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram7.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram7;
             this.chartControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl2.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.chartControl2.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
@@ -2958,29 +2957,28 @@
             this.chartControl2.Legend.UseCheckBoxes = true;
             this.chartControl2.Location = new System.Drawing.Point(0, 0);
             this.chartControl2.Name = "chartControl2";
-            series50.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series50.Name = "Series 1";
-            series51.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series51.Name = "Series 2";
-            series52.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series52.Name = "Series 3";
+            series24.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series24.Name = "Series 1";
+            series25.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series25.Name = "Series 2";
+            series26.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series26.Name = "Series 3";
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series50,
-        series51,
-        series52};
+        series24,
+        series25,
+        series26};
             this.chartControl2.Size = new System.Drawing.Size(486, 330);
             this.chartControl2.TabIndex = 0;
-            chartTitle16.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            chartTitle16.Text = "用电(kW.h)";
-            chartTitle16.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            chartTitle8.Text = "用电(kW.h)";
+            chartTitle8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle16});
+            chartTitle8});
             // 
             // xtraTabPage6
             // 
             this.xtraTabPage6.Name = "xtraTabPage6";
             this.xtraTabPage6.Size = new System.Drawing.Size(486, 330);
-            this.xtraTabPage6.Text = "xtraTabPage6";
             // 
             // xtraTabPageStatic
             // 
@@ -3111,89 +3109,89 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCChartControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series31)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PUChartControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView39)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series35)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView40)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PFChartControl)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series39)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series40)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PChartControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QChartControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView52)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView53)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView55)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(splineSeriesView56)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(splineSeriesView28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SChartControl)).EndInit();
             this.xtraTabPageCharge.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
             this.xtraTabControl2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlChargeProportion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).EndInit();
             this.xtraTabControl3.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series51)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series52)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

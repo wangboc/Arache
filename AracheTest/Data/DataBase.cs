@@ -38,7 +38,7 @@ namespace AracheTest.Data
         public static List<ElectricityOriginalData> GetRealTimeData(int mid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
-            DateTime yesterday = DateTime.Now.AddDays(-40);
+            DateTime yesterday = DateTime.Now.AddDays(-50);
             DataTable dt =
                 DBConnector.ExecuteSql(
                     string.Format(

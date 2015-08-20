@@ -123,6 +123,11 @@
     <Compile Include="MyRibbonControl.Designer.cs">
       <DependentUpon>MyRibbonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +136,12 @@
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraReport2.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -141,9 +152,16 @@
     <Compile Include="TaskPool.cs" />
     <Compile Include="Tools\DBConnector.cs" />
     <Compile Include="Tools\LogHelper.cs" />
+    <Compile Include="UIControls\ChargeControls.cs" />
+    <Compile Include="UIControls\ElectricityCharts.cs" />
+    <Compile Include="UIControls\NodeTreeControl.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>
@@ -159,6 +177,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraReport2.resx">
       <DependentUpon>XtraReport2.cs</DependentUpon>
     </EmbeddedResource>

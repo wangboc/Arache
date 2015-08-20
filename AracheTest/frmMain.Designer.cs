@@ -175,6 +175,75 @@
             this.buttonEditSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.dockPanelInfo = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
+            this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
+            this.printPreviewBarItem5 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem9 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem10 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem11 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem12 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem13 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem14 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem15 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.zoomBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomBarEditItem();
+            this.printPreviewRepositoryItemComboBox1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox();
+            this.printPreviewBarItem16 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem17 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem18 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem19 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem20 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem21 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem22 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem23 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem24 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
+            this.printPreviewBarItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
+            this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem6 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem25 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem26 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewSubItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewSubItem();
+            this.printPreviewSubItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewSubItem();
+            this.printPreviewSubItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewSubItem();
+            this.printPreviewBarItem27 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem28 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
+            this.printPreviewSubItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewSubItem();
+            this.printPreviewBarCheckItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem5 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem6 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem9 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem10 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem11 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem12 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem13 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem14 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem15 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem16 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
+            this.printPreviewBarCheckItem17 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem();
             this.xtraTabControl4 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -234,12 +303,67 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage10 = new DevExpress.XtraTab.XtraTabPage();
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.xtraTabPage8 = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.xtraTabControl6 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage11 = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.gridControl7 = new DevExpress.XtraGrid.GridControl();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn55 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl8 = new DevExpress.XtraGrid.GridControl();
+            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn58 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn59 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn61 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn62 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage12 = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.documentViewer2 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.xtraTabControlBasicInfo = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageBasicInfo = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -368,6 +492,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection.ImageSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEditSearch.Properties)).BeginInit();
             this.dockPanelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl4)).BeginInit();
             this.xtraTabControl4.SuspendLayout();
             this.xtraTabPage7.SuspendLayout();
@@ -388,10 +516,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.xtraTabPage10.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.xtraTabPage8.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl6)).BeginInit();
             this.xtraTabControl6.SuspendLayout();
+            this.xtraTabPage11.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            this.tableLayoutPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
+            this.xtraTabPage12.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlBasicInfo)).BeginInit();
             this.xtraTabControlBasicInfo.SuspendLayout();
             this.xtraTabPageBasicInfo.SuspendLayout();
@@ -608,6 +752,7 @@
             this.barButtonItemVoltage.ImageIndex = 1;
             this.barButtonItemVoltage.LargeImageIndex = 8;
             this.barButtonItemVoltage.Name = "barButtonItemVoltage";
+            this.barButtonItemVoltage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemVoltage_ItemClick);
             // 
             // barButtonItemHelp
             // 
@@ -1087,6 +1232,7 @@
             this.dockManager1.Form = this;
             this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
             this.panelContainer1});
+            this.dockManager1.MenuManager = this.documentViewerBarManager1;
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -1208,6 +1354,782 @@
             this.controlContainer1.Name = "controlContainer1";
             this.controlContainer1.Size = new System.Drawing.Size(0, 0);
             this.controlContainer1.TabIndex = 0;
+            // 
+            // documentViewerBarManager1
+            // 
+            this.documentViewerBarManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.previewBar1});
+            this.documentViewerBarManager1.Controller = this.barAndDockingController1;
+            this.documentViewerBarManager1.DockControls.Add(this.barDockControlTop);
+            this.documentViewerBarManager1.DockControls.Add(this.barDockControlBottom);
+            this.documentViewerBarManager1.DockControls.Add(this.barDockControlLeft);
+            this.documentViewerBarManager1.DockControls.Add(this.barDockControlRight);
+            this.documentViewerBarManager1.DockControls.Add(this.standaloneBarDockControl1);
+            this.documentViewerBarManager1.DockControls.Add(this.standaloneBarDockControl2);
+            this.documentViewerBarManager1.DockManager = this.dockManager1;
+            this.documentViewerBarManager1.DocumentViewer = this.documentViewer1;
+            this.documentViewerBarManager1.Form = this;
+            this.documentViewerBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("documentViewerBarManager1.ImageStream")));
+            this.documentViewerBarManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.printPreviewStaticItem1,
+            this.barStaticItem1,
+            this.progressBarEditItem1,
+            this.printPreviewBarItem1,
+            this.barButtonItem1,
+            this.printPreviewStaticItem2,
+            this.zoomTrackBarEditItem1,
+            this.printPreviewBarItem2,
+            this.printPreviewBarItem3,
+            this.printPreviewBarItem4,
+            this.printPreviewBarItem5,
+            this.printPreviewBarItem6,
+            this.printPreviewBarItem7,
+            this.printPreviewBarItem8,
+            this.printPreviewBarItem9,
+            this.printPreviewBarItem10,
+            this.printPreviewBarItem11,
+            this.printPreviewBarItem12,
+            this.printPreviewBarItem13,
+            this.printPreviewBarItem14,
+            this.printPreviewBarItem15,
+            this.zoomBarEditItem1,
+            this.printPreviewBarItem16,
+            this.printPreviewBarItem17,
+            this.printPreviewBarItem18,
+            this.printPreviewBarItem19,
+            this.printPreviewBarItem20,
+            this.printPreviewBarItem21,
+            this.printPreviewBarItem22,
+            this.printPreviewBarItem23,
+            this.printPreviewBarItem24,
+            this.printPreviewBarItem25,
+            this.printPreviewBarItem26,
+            this.printPreviewSubItem1,
+            this.printPreviewSubItem2,
+            this.printPreviewSubItem3,
+            this.printPreviewSubItem4,
+            this.printPreviewBarItem27,
+            this.printPreviewBarItem28,
+            this.barToolbarsListItem1,
+            this.printPreviewBarCheckItem1,
+            this.printPreviewBarCheckItem2,
+            this.printPreviewBarCheckItem3,
+            this.printPreviewBarCheckItem4,
+            this.printPreviewBarCheckItem5,
+            this.printPreviewBarCheckItem6,
+            this.printPreviewBarCheckItem7,
+            this.printPreviewBarCheckItem8,
+            this.printPreviewBarCheckItem9,
+            this.printPreviewBarCheckItem10,
+            this.printPreviewBarCheckItem11,
+            this.printPreviewBarCheckItem12,
+            this.printPreviewBarCheckItem13,
+            this.printPreviewBarCheckItem14,
+            this.printPreviewBarCheckItem15,
+            this.printPreviewBarCheckItem16,
+            this.printPreviewBarCheckItem17});
+            this.documentViewerBarManager1.MaxItemId = 57;
+            this.documentViewerBarManager1.PreviewBar = this.previewBar1;
+            this.documentViewerBarManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemProgressBar1,
+            this.repositoryItemZoomTrackBar1,
+            this.printPreviewRepositoryItemComboBox1});
+            this.documentViewerBarManager1.TransparentEditors = true;
+            // 
+            // previewBar1
+            // 
+            this.previewBar1.BarName = "Toolbar";
+            this.previewBar1.DockCol = 0;
+            this.previewBar1.DockRow = 0;
+            this.previewBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.previewBar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem5, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem8, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem10),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem11),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem12),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem13, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem14),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem15, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.zoomBarEditItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem16),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem17, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem18),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem19),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem20),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem21, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem22),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem23),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem24, true)});
+            this.previewBar1.OptionsBar.AllowQuickCustomization = false;
+            this.previewBar1.OptionsBar.DrawDragBorder = false;
+            this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
+            this.previewBar1.Text = "Toolbar";
+            // 
+            // printPreviewBarItem5
+            // 
+            this.printPreviewBarItem5.Caption = "Customize";
+            this.printPreviewBarItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Customize;
+            this.printPreviewBarItem5.Enabled = false;
+            this.printPreviewBarItem5.Hint = "Customize";
+            this.printPreviewBarItem5.Id = 10;
+            this.printPreviewBarItem5.ImageIndex = 14;
+            this.printPreviewBarItem5.Name = "printPreviewBarItem5";
+            // 
+            // printPreviewBarItem7
+            // 
+            this.printPreviewBarItem7.Caption = "Save";
+            this.printPreviewBarItem7.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Save;
+            this.printPreviewBarItem7.Enabled = false;
+            this.printPreviewBarItem7.Hint = "Save the document";
+            this.printPreviewBarItem7.Id = 12;
+            this.printPreviewBarItem7.ImageIndex = 24;
+            this.printPreviewBarItem7.Name = "printPreviewBarItem7";
+            // 
+            // printPreviewBarItem8
+            // 
+            this.printPreviewBarItem8.Caption = "&Print...";
+            this.printPreviewBarItem8.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
+            this.printPreviewBarItem8.Enabled = false;
+            this.printPreviewBarItem8.Hint = "Print";
+            this.printPreviewBarItem8.Id = 13;
+            this.printPreviewBarItem8.ImageIndex = 0;
+            this.printPreviewBarItem8.Name = "printPreviewBarItem8";
+            // 
+            // printPreviewBarItem9
+            // 
+            this.printPreviewBarItem9.Caption = "P&rint";
+            this.printPreviewBarItem9.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PrintDirect;
+            this.printPreviewBarItem9.Enabled = false;
+            this.printPreviewBarItem9.Hint = "Quick Print";
+            this.printPreviewBarItem9.Id = 14;
+            this.printPreviewBarItem9.ImageIndex = 1;
+            this.printPreviewBarItem9.Name = "printPreviewBarItem9";
+            // 
+            // printPreviewBarItem10
+            // 
+            this.printPreviewBarItem10.Caption = "Page Set&up...";
+            this.printPreviewBarItem10.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageSetup;
+            this.printPreviewBarItem10.Enabled = false;
+            this.printPreviewBarItem10.Hint = "Page Setup";
+            this.printPreviewBarItem10.Id = 15;
+            this.printPreviewBarItem10.ImageIndex = 2;
+            this.printPreviewBarItem10.Name = "printPreviewBarItem10";
+            // 
+            // printPreviewBarItem11
+            // 
+            this.printPreviewBarItem11.Caption = "Header And Footer";
+            this.printPreviewBarItem11.Command = DevExpress.XtraPrinting.PrintingSystemCommand.EditPageHF;
+            this.printPreviewBarItem11.Enabled = false;
+            this.printPreviewBarItem11.Hint = "Header And Footer";
+            this.printPreviewBarItem11.Id = 16;
+            this.printPreviewBarItem11.ImageIndex = 15;
+            this.printPreviewBarItem11.Name = "printPreviewBarItem11";
+            // 
+            // printPreviewBarItem12
+            // 
+            this.printPreviewBarItem12.ActAsDropDown = true;
+            this.printPreviewBarItem12.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem12.Caption = "Scale";
+            this.printPreviewBarItem12.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Scale;
+            this.printPreviewBarItem12.Enabled = false;
+            this.printPreviewBarItem12.Hint = "Scale";
+            this.printPreviewBarItem12.Id = 17;
+            this.printPreviewBarItem12.ImageIndex = 25;
+            this.printPreviewBarItem12.Name = "printPreviewBarItem12";
+            // 
+            // printPreviewBarItem13
+            // 
+            this.printPreviewBarItem13.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem13.Caption = "Hand Tool";
+            this.printPreviewBarItem13.Command = DevExpress.XtraPrinting.PrintingSystemCommand.HandTool;
+            this.printPreviewBarItem13.Enabled = false;
+            this.printPreviewBarItem13.Hint = "Hand Tool";
+            this.printPreviewBarItem13.Id = 18;
+            this.printPreviewBarItem13.ImageIndex = 16;
+            this.printPreviewBarItem13.Name = "printPreviewBarItem13";
+            // 
+            // printPreviewBarItem14
+            // 
+            this.printPreviewBarItem14.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem14.Caption = "Magnifier";
+            this.printPreviewBarItem14.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Magnifier;
+            this.printPreviewBarItem14.Enabled = false;
+            this.printPreviewBarItem14.Hint = "Magnifier";
+            this.printPreviewBarItem14.Id = 19;
+            this.printPreviewBarItem14.ImageIndex = 3;
+            this.printPreviewBarItem14.Name = "printPreviewBarItem14";
+            // 
+            // printPreviewBarItem15
+            // 
+            this.printPreviewBarItem15.Caption = "Zoom Out";
+            this.printPreviewBarItem15.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomOut;
+            this.printPreviewBarItem15.Enabled = false;
+            this.printPreviewBarItem15.Hint = "Zoom Out";
+            this.printPreviewBarItem15.Id = 20;
+            this.printPreviewBarItem15.ImageIndex = 5;
+            this.printPreviewBarItem15.Name = "printPreviewBarItem15";
+            // 
+            // zoomBarEditItem1
+            // 
+            this.zoomBarEditItem1.Caption = "Zoom";
+            this.zoomBarEditItem1.Edit = this.printPreviewRepositoryItemComboBox1;
+            this.zoomBarEditItem1.EditValue = "100%";
+            this.zoomBarEditItem1.Enabled = false;
+            this.zoomBarEditItem1.Hint = "Zoom";
+            this.zoomBarEditItem1.Id = 21;
+            this.zoomBarEditItem1.Name = "zoomBarEditItem1";
+            this.zoomBarEditItem1.Width = 70;
+            // 
+            // printPreviewRepositoryItemComboBox1
+            // 
+            this.printPreviewRepositoryItemComboBox1.AutoComplete = false;
+            this.printPreviewRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.printPreviewRepositoryItemComboBox1.DropDownRows = 11;
+            this.printPreviewRepositoryItemComboBox1.Name = "printPreviewRepositoryItemComboBox1";
+            // 
+            // printPreviewBarItem16
+            // 
+            this.printPreviewBarItem16.Caption = "Zoom In";
+            this.printPreviewBarItem16.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomIn;
+            this.printPreviewBarItem16.Enabled = false;
+            this.printPreviewBarItem16.Hint = "Zoom In";
+            this.printPreviewBarItem16.Id = 22;
+            this.printPreviewBarItem16.ImageIndex = 4;
+            this.printPreviewBarItem16.Name = "printPreviewBarItem16";
+            // 
+            // printPreviewBarItem17
+            // 
+            this.printPreviewBarItem17.Caption = "First Page";
+            this.printPreviewBarItem17.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowFirstPage;
+            this.printPreviewBarItem17.Enabled = false;
+            this.printPreviewBarItem17.Hint = "First Page";
+            this.printPreviewBarItem17.Id = 23;
+            this.printPreviewBarItem17.ImageIndex = 7;
+            this.printPreviewBarItem17.Name = "printPreviewBarItem17";
+            // 
+            // printPreviewBarItem18
+            // 
+            this.printPreviewBarItem18.Caption = "Previous Page";
+            this.printPreviewBarItem18.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowPrevPage;
+            this.printPreviewBarItem18.Enabled = false;
+            this.printPreviewBarItem18.Hint = "Previous Page";
+            this.printPreviewBarItem18.Id = 24;
+            this.printPreviewBarItem18.ImageIndex = 8;
+            this.printPreviewBarItem18.Name = "printPreviewBarItem18";
+            // 
+            // printPreviewBarItem19
+            // 
+            this.printPreviewBarItem19.Caption = "Next Page";
+            this.printPreviewBarItem19.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowNextPage;
+            this.printPreviewBarItem19.Enabled = false;
+            this.printPreviewBarItem19.Hint = "Next Page";
+            this.printPreviewBarItem19.Id = 25;
+            this.printPreviewBarItem19.ImageIndex = 9;
+            this.printPreviewBarItem19.Name = "printPreviewBarItem19";
+            // 
+            // printPreviewBarItem20
+            // 
+            this.printPreviewBarItem20.Caption = "Last Page";
+            this.printPreviewBarItem20.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowLastPage;
+            this.printPreviewBarItem20.Enabled = false;
+            this.printPreviewBarItem20.Hint = "Last Page";
+            this.printPreviewBarItem20.Id = 26;
+            this.printPreviewBarItem20.ImageIndex = 10;
+            this.printPreviewBarItem20.Name = "printPreviewBarItem20";
+            // 
+            // printPreviewBarItem21
+            // 
+            this.printPreviewBarItem21.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem21.Caption = "Multiple Pages";
+            this.printPreviewBarItem21.Command = DevExpress.XtraPrinting.PrintingSystemCommand.MultiplePages;
+            this.printPreviewBarItem21.Enabled = false;
+            this.printPreviewBarItem21.Hint = "Multiple Pages";
+            this.printPreviewBarItem21.Id = 27;
+            this.printPreviewBarItem21.ImageIndex = 11;
+            this.printPreviewBarItem21.Name = "printPreviewBarItem21";
+            // 
+            // printPreviewBarItem22
+            // 
+            this.printPreviewBarItem22.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem22.Caption = "&Color...";
+            this.printPreviewBarItem22.Command = DevExpress.XtraPrinting.PrintingSystemCommand.FillBackground;
+            this.printPreviewBarItem22.Enabled = false;
+            this.printPreviewBarItem22.Hint = "Background";
+            this.printPreviewBarItem22.Id = 28;
+            this.printPreviewBarItem22.ImageIndex = 12;
+            this.printPreviewBarItem22.Name = "printPreviewBarItem22";
+            // 
+            // printPreviewBarItem23
+            // 
+            this.printPreviewBarItem23.Caption = "&Watermark...";
+            this.printPreviewBarItem23.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Watermark;
+            this.printPreviewBarItem23.Enabled = false;
+            this.printPreviewBarItem23.Hint = "Watermark";
+            this.printPreviewBarItem23.Id = 29;
+            this.printPreviewBarItem23.ImageIndex = 21;
+            this.printPreviewBarItem23.Name = "printPreviewBarItem23";
+            // 
+            // printPreviewBarItem24
+            // 
+            this.printPreviewBarItem24.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem24.Caption = "Export Document...";
+            this.printPreviewBarItem24.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportFile;
+            this.printPreviewBarItem24.Enabled = false;
+            this.printPreviewBarItem24.Hint = "Export Document...";
+            this.printPreviewBarItem24.Id = 30;
+            this.printPreviewBarItem24.ImageIndex = 18;
+            this.printPreviewBarItem24.Name = "printPreviewBarItem24";
+            // 
+            // standaloneBarDockControl1
+            // 
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(3, 3);
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(730, 24);
+            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1298, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 831);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1298, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 831);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1298, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 831);
+            // 
+            // standaloneBarDockControl2
+            // 
+            this.standaloneBarDockControl2.CausesValidation = false;
+            this.standaloneBarDockControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.standaloneBarDockControl2.Location = new System.Drawing.Point(3, 3);
+            this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(730, 24);
+            this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
+            // 
+            // documentViewer1
+            // 
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.DocumentSource = typeof(AracheTest.Reports.XtraReport1);
+            this.documentViewer1.IsMetric = true;
+            this.documentViewer1.Location = new System.Drawing.Point(3, 33);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(730, 636);
+            this.documentViewer1.TabIndex = 0;
+            // 
+            // printPreviewStaticItem1
+            // 
+            this.printPreviewStaticItem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.printPreviewStaticItem1.Caption = "Nothing";
+            this.printPreviewStaticItem1.Id = 0;
+            this.printPreviewStaticItem1.LeftIndent = 1;
+            this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
+            this.printPreviewStaticItem1.RightIndent = 1;
+            this.printPreviewStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.printPreviewStaticItem1.Type = "PageOfPages";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.barStaticItem1.Id = 1;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.barStaticItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            // 
+            // progressBarEditItem1
+            // 
+            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
+            this.progressBarEditItem1.EditHeight = 12;
+            this.progressBarEditItem1.Id = 2;
+            this.progressBarEditItem1.Name = "progressBarEditItem1";
+            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.progressBarEditItem1.Width = 150;
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
+            // printPreviewBarItem1
+            // 
+            this.printPreviewBarItem1.Caption = "Stop";
+            this.printPreviewBarItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
+            this.printPreviewBarItem1.Enabled = false;
+            this.printPreviewBarItem1.Hint = "Stop";
+            this.printPreviewBarItem1.Id = 3;
+            this.printPreviewBarItem1.Name = "printPreviewBarItem1";
+            this.printPreviewBarItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            this.barButtonItem1.Enabled = false;
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            // 
+            // printPreviewStaticItem2
+            // 
+            this.printPreviewStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.printPreviewStaticItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.printPreviewStaticItem2.Caption = "100%";
+            this.printPreviewStaticItem2.Id = 5;
+            this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
+            this.printPreviewStaticItem2.TextAlignment = System.Drawing.StringAlignment.Far;
+            this.printPreviewStaticItem2.Type = "ZoomFactor";
+            this.printPreviewStaticItem2.Width = 40;
+            // 
+            // zoomTrackBarEditItem1
+            // 
+            this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.zoomTrackBarEditItem1.Edit = this.repositoryItemZoomTrackBar1;
+            this.zoomTrackBarEditItem1.EditValue = 90;
+            this.zoomTrackBarEditItem1.Enabled = false;
+            this.zoomTrackBarEditItem1.Id = 6;
+            this.zoomTrackBarEditItem1.Name = "zoomTrackBarEditItem1";
+            this.zoomTrackBarEditItem1.Range = new int[] {
+        10,
+        500};
+            this.zoomTrackBarEditItem1.Width = 140;
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar1.AllowFocused = false;
+            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar1.Maximum = 180;
+            this.repositoryItemZoomTrackBar1.Middle = 5;
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            this.repositoryItemZoomTrackBar1.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
+            // 
+            // printPreviewBarItem2
+            // 
+            this.printPreviewBarItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem2.Caption = "Document Map";
+            this.printPreviewBarItem2.Command = DevExpress.XtraPrinting.PrintingSystemCommand.DocumentMap;
+            this.printPreviewBarItem2.Enabled = false;
+            this.printPreviewBarItem2.Hint = "Document Map";
+            this.printPreviewBarItem2.Id = 7;
+            this.printPreviewBarItem2.ImageIndex = 19;
+            this.printPreviewBarItem2.Name = "printPreviewBarItem2";
+            // 
+            // printPreviewBarItem3
+            // 
+            this.printPreviewBarItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem3.Caption = "Parameters";
+            this.printPreviewBarItem3.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Parameters;
+            this.printPreviewBarItem3.Enabled = false;
+            this.printPreviewBarItem3.Hint = "Parameters";
+            this.printPreviewBarItem3.Id = 8;
+            this.printPreviewBarItem3.ImageIndex = 22;
+            this.printPreviewBarItem3.Name = "printPreviewBarItem3";
+            // 
+            // printPreviewBarItem4
+            // 
+            this.printPreviewBarItem4.Caption = "Search";
+            this.printPreviewBarItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Find;
+            this.printPreviewBarItem4.Enabled = false;
+            this.printPreviewBarItem4.Hint = "Search";
+            this.printPreviewBarItem4.Id = 9;
+            this.printPreviewBarItem4.ImageIndex = 20;
+            this.printPreviewBarItem4.Name = "printPreviewBarItem4";
+            // 
+            // printPreviewBarItem6
+            // 
+            this.printPreviewBarItem6.Caption = "Open";
+            this.printPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Open;
+            this.printPreviewBarItem6.Enabled = false;
+            this.printPreviewBarItem6.Hint = "Open a document";
+            this.printPreviewBarItem6.Id = 11;
+            this.printPreviewBarItem6.ImageIndex = 23;
+            this.printPreviewBarItem6.Name = "printPreviewBarItem6";
+            // 
+            // printPreviewBarItem25
+            // 
+            this.printPreviewBarItem25.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem25.Caption = "Send via E-Mail...";
+            this.printPreviewBarItem25.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendFile;
+            this.printPreviewBarItem25.Enabled = false;
+            this.printPreviewBarItem25.Hint = "Send via E-Mail...";
+            this.printPreviewBarItem25.Id = 31;
+            this.printPreviewBarItem25.ImageIndex = 17;
+            this.printPreviewBarItem25.Name = "printPreviewBarItem25";
+            // 
+            // printPreviewBarItem26
+            // 
+            this.printPreviewBarItem26.Caption = "E&xit";
+            this.printPreviewBarItem26.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ClosePreview;
+            this.printPreviewBarItem26.Enabled = false;
+            this.printPreviewBarItem26.Hint = "Close Preview";
+            this.printPreviewBarItem26.Id = 32;
+            this.printPreviewBarItem26.ImageIndex = 13;
+            this.printPreviewBarItem26.Name = "printPreviewBarItem26";
+            // 
+            // printPreviewSubItem1
+            // 
+            this.printPreviewSubItem1.Caption = "&File";
+            this.printPreviewSubItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.File;
+            this.printPreviewSubItem1.Id = 33;
+            this.printPreviewSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem10),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem9),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem24, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem25),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem26, true)});
+            this.printPreviewSubItem1.Name = "printPreviewSubItem1";
+            // 
+            // printPreviewSubItem2
+            // 
+            this.printPreviewSubItem2.Caption = "&View";
+            this.printPreviewSubItem2.Command = DevExpress.XtraPrinting.PrintingSystemCommand.View;
+            this.printPreviewSubItem2.Id = 34;
+            this.printPreviewSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewSubItem4, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barToolbarsListItem1, true)});
+            this.printPreviewSubItem2.Name = "printPreviewSubItem2";
+            // 
+            // printPreviewSubItem4
+            // 
+            this.printPreviewSubItem4.Caption = "&Page Layout";
+            this.printPreviewSubItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageLayout;
+            this.printPreviewSubItem4.Id = 36;
+            this.printPreviewSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem27),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem28)});
+            this.printPreviewSubItem4.Name = "printPreviewSubItem4";
+            // 
+            // printPreviewBarItem27
+            // 
+            this.printPreviewBarItem27.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem27.Caption = "&Facing";
+            this.printPreviewBarItem27.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageLayoutFacing;
+            this.printPreviewBarItem27.Enabled = false;
+            this.printPreviewBarItem27.GroupIndex = 100;
+            this.printPreviewBarItem27.Id = 37;
+            this.printPreviewBarItem27.Name = "printPreviewBarItem27";
+            // 
+            // printPreviewBarItem28
+            // 
+            this.printPreviewBarItem28.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem28.Caption = "&Continuous";
+            this.printPreviewBarItem28.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageLayoutContinuous;
+            this.printPreviewBarItem28.Enabled = false;
+            this.printPreviewBarItem28.GroupIndex = 100;
+            this.printPreviewBarItem28.Id = 38;
+            this.printPreviewBarItem28.Name = "printPreviewBarItem28";
+            // 
+            // barToolbarsListItem1
+            // 
+            this.barToolbarsListItem1.Caption = "Bars";
+            this.barToolbarsListItem1.Id = 39;
+            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
+            // 
+            // printPreviewSubItem3
+            // 
+            this.printPreviewSubItem3.Caption = "&Background";
+            this.printPreviewSubItem3.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Background;
+            this.printPreviewSubItem3.Id = 35;
+            this.printPreviewSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem22),
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem23)});
+            this.printPreviewSubItem3.Name = "printPreviewSubItem3";
+            // 
+            // printPreviewBarCheckItem1
+            // 
+            this.printPreviewBarCheckItem1.BindableChecked = true;
+            this.printPreviewBarCheckItem1.Caption = "PDF File";
+            this.printPreviewBarCheckItem1.Checked = true;
+            this.printPreviewBarCheckItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportPdf;
+            this.printPreviewBarCheckItem1.Enabled = false;
+            this.printPreviewBarCheckItem1.GroupIndex = 2;
+            this.printPreviewBarCheckItem1.Hint = "PDF File";
+            this.printPreviewBarCheckItem1.Id = 40;
+            this.printPreviewBarCheckItem1.Name = "printPreviewBarCheckItem1";
+            // 
+            // printPreviewBarCheckItem2
+            // 
+            this.printPreviewBarCheckItem2.Caption = "HTML File";
+            this.printPreviewBarCheckItem2.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportHtm;
+            this.printPreviewBarCheckItem2.Enabled = false;
+            this.printPreviewBarCheckItem2.GroupIndex = 2;
+            this.printPreviewBarCheckItem2.Hint = "HTML File";
+            this.printPreviewBarCheckItem2.Id = 41;
+            this.printPreviewBarCheckItem2.Name = "printPreviewBarCheckItem2";
+            // 
+            // printPreviewBarCheckItem3
+            // 
+            this.printPreviewBarCheckItem3.Caption = "MHT File";
+            this.printPreviewBarCheckItem3.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportMht;
+            this.printPreviewBarCheckItem3.Enabled = false;
+            this.printPreviewBarCheckItem3.GroupIndex = 2;
+            this.printPreviewBarCheckItem3.Hint = "MHT File";
+            this.printPreviewBarCheckItem3.Id = 42;
+            this.printPreviewBarCheckItem3.Name = "printPreviewBarCheckItem3";
+            // 
+            // printPreviewBarCheckItem4
+            // 
+            this.printPreviewBarCheckItem4.Caption = "RTF File";
+            this.printPreviewBarCheckItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportRtf;
+            this.printPreviewBarCheckItem4.Enabled = false;
+            this.printPreviewBarCheckItem4.GroupIndex = 2;
+            this.printPreviewBarCheckItem4.Hint = "RTF File";
+            this.printPreviewBarCheckItem4.Id = 43;
+            this.printPreviewBarCheckItem4.Name = "printPreviewBarCheckItem4";
+            // 
+            // printPreviewBarCheckItem5
+            // 
+            this.printPreviewBarCheckItem5.Caption = "XLS File";
+            this.printPreviewBarCheckItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXls;
+            this.printPreviewBarCheckItem5.Enabled = false;
+            this.printPreviewBarCheckItem5.GroupIndex = 2;
+            this.printPreviewBarCheckItem5.Hint = "XLS File";
+            this.printPreviewBarCheckItem5.Id = 44;
+            this.printPreviewBarCheckItem5.Name = "printPreviewBarCheckItem5";
+            // 
+            // printPreviewBarCheckItem6
+            // 
+            this.printPreviewBarCheckItem6.Caption = "XLSX File";
+            this.printPreviewBarCheckItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXlsx;
+            this.printPreviewBarCheckItem6.Enabled = false;
+            this.printPreviewBarCheckItem6.GroupIndex = 2;
+            this.printPreviewBarCheckItem6.Hint = "XLSX File";
+            this.printPreviewBarCheckItem6.Id = 45;
+            this.printPreviewBarCheckItem6.Name = "printPreviewBarCheckItem6";
+            // 
+            // printPreviewBarCheckItem7
+            // 
+            this.printPreviewBarCheckItem7.Caption = "CSV File";
+            this.printPreviewBarCheckItem7.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportCsv;
+            this.printPreviewBarCheckItem7.Enabled = false;
+            this.printPreviewBarCheckItem7.GroupIndex = 2;
+            this.printPreviewBarCheckItem7.Hint = "CSV File";
+            this.printPreviewBarCheckItem7.Id = 46;
+            this.printPreviewBarCheckItem7.Name = "printPreviewBarCheckItem7";
+            // 
+            // printPreviewBarCheckItem8
+            // 
+            this.printPreviewBarCheckItem8.Caption = "Text File";
+            this.printPreviewBarCheckItem8.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportTxt;
+            this.printPreviewBarCheckItem8.Enabled = false;
+            this.printPreviewBarCheckItem8.GroupIndex = 2;
+            this.printPreviewBarCheckItem8.Hint = "Text File";
+            this.printPreviewBarCheckItem8.Id = 47;
+            this.printPreviewBarCheckItem8.Name = "printPreviewBarCheckItem8";
+            // 
+            // printPreviewBarCheckItem9
+            // 
+            this.printPreviewBarCheckItem9.Caption = "Image File";
+            this.printPreviewBarCheckItem9.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportGraphic;
+            this.printPreviewBarCheckItem9.Enabled = false;
+            this.printPreviewBarCheckItem9.GroupIndex = 2;
+            this.printPreviewBarCheckItem9.Hint = "Image File";
+            this.printPreviewBarCheckItem9.Id = 48;
+            this.printPreviewBarCheckItem9.Name = "printPreviewBarCheckItem9";
+            // 
+            // printPreviewBarCheckItem10
+            // 
+            this.printPreviewBarCheckItem10.BindableChecked = true;
+            this.printPreviewBarCheckItem10.Caption = "PDF File";
+            this.printPreviewBarCheckItem10.Checked = true;
+            this.printPreviewBarCheckItem10.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendPdf;
+            this.printPreviewBarCheckItem10.Enabled = false;
+            this.printPreviewBarCheckItem10.GroupIndex = 1;
+            this.printPreviewBarCheckItem10.Hint = "PDF File";
+            this.printPreviewBarCheckItem10.Id = 49;
+            this.printPreviewBarCheckItem10.Name = "printPreviewBarCheckItem10";
+            // 
+            // printPreviewBarCheckItem11
+            // 
+            this.printPreviewBarCheckItem11.Caption = "MHT File";
+            this.printPreviewBarCheckItem11.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendMht;
+            this.printPreviewBarCheckItem11.Enabled = false;
+            this.printPreviewBarCheckItem11.GroupIndex = 1;
+            this.printPreviewBarCheckItem11.Hint = "MHT File";
+            this.printPreviewBarCheckItem11.Id = 50;
+            this.printPreviewBarCheckItem11.Name = "printPreviewBarCheckItem11";
+            // 
+            // printPreviewBarCheckItem12
+            // 
+            this.printPreviewBarCheckItem12.Caption = "RTF File";
+            this.printPreviewBarCheckItem12.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendRtf;
+            this.printPreviewBarCheckItem12.Enabled = false;
+            this.printPreviewBarCheckItem12.GroupIndex = 1;
+            this.printPreviewBarCheckItem12.Hint = "RTF File";
+            this.printPreviewBarCheckItem12.Id = 51;
+            this.printPreviewBarCheckItem12.Name = "printPreviewBarCheckItem12";
+            // 
+            // printPreviewBarCheckItem13
+            // 
+            this.printPreviewBarCheckItem13.Caption = "XLS File";
+            this.printPreviewBarCheckItem13.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXls;
+            this.printPreviewBarCheckItem13.Enabled = false;
+            this.printPreviewBarCheckItem13.GroupIndex = 1;
+            this.printPreviewBarCheckItem13.Hint = "XLS File";
+            this.printPreviewBarCheckItem13.Id = 52;
+            this.printPreviewBarCheckItem13.Name = "printPreviewBarCheckItem13";
+            // 
+            // printPreviewBarCheckItem14
+            // 
+            this.printPreviewBarCheckItem14.Caption = "XLSX File";
+            this.printPreviewBarCheckItem14.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXlsx;
+            this.printPreviewBarCheckItem14.Enabled = false;
+            this.printPreviewBarCheckItem14.GroupIndex = 1;
+            this.printPreviewBarCheckItem14.Hint = "XLSX File";
+            this.printPreviewBarCheckItem14.Id = 53;
+            this.printPreviewBarCheckItem14.Name = "printPreviewBarCheckItem14";
+            // 
+            // printPreviewBarCheckItem15
+            // 
+            this.printPreviewBarCheckItem15.Caption = "CSV File";
+            this.printPreviewBarCheckItem15.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendCsv;
+            this.printPreviewBarCheckItem15.Enabled = false;
+            this.printPreviewBarCheckItem15.GroupIndex = 1;
+            this.printPreviewBarCheckItem15.Hint = "CSV File";
+            this.printPreviewBarCheckItem15.Id = 54;
+            this.printPreviewBarCheckItem15.Name = "printPreviewBarCheckItem15";
+            // 
+            // printPreviewBarCheckItem16
+            // 
+            this.printPreviewBarCheckItem16.Caption = "Text File";
+            this.printPreviewBarCheckItem16.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendTxt;
+            this.printPreviewBarCheckItem16.Enabled = false;
+            this.printPreviewBarCheckItem16.GroupIndex = 1;
+            this.printPreviewBarCheckItem16.Hint = "Text File";
+            this.printPreviewBarCheckItem16.Id = 55;
+            this.printPreviewBarCheckItem16.Name = "printPreviewBarCheckItem16";
+            // 
+            // printPreviewBarCheckItem17
+            // 
+            this.printPreviewBarCheckItem17.Caption = "Image File";
+            this.printPreviewBarCheckItem17.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendGraphic;
+            this.printPreviewBarCheckItem17.Enabled = false;
+            this.printPreviewBarCheckItem17.GroupIndex = 1;
+            this.printPreviewBarCheckItem17.Hint = "Image File";
+            this.printPreviewBarCheckItem17.Id = 56;
+            this.printPreviewBarCheckItem17.Name = "printPreviewBarCheckItem17";
             // 
             // xtraTabControl4
             // 
@@ -1873,19 +2795,25 @@
             // 
             // xtraTabPage10
             // 
-            this.xtraTabPage10.Controls.Add(this.documentViewer1);
+            this.xtraTabPage10.Controls.Add(this.tableLayoutPanel13);
             this.xtraTabPage10.Name = "xtraTabPage10";
             this.xtraTabPage10.Size = new System.Drawing.Size(736, 636);
             this.xtraTabPage10.Text = "报表";
             // 
-            // documentViewer1
+            // tableLayoutPanel13
             // 
-            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(736, 636);
-            this.documentViewer1.TabIndex = 0;
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.standaloneBarDockControl1, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.documentViewer1, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(736, 636);
+            this.tableLayoutPanel13.TabIndex = 2;
             // 
             // xtraTabPage8
             // 
@@ -1916,22 +2844,654 @@
             this.xtraTabControl6.Name = "xtraTabControl6";
             this.xtraTabControl6.SelectedTabPage = this.xtraTabPage11;
             this.xtraTabControl6.Size = new System.Drawing.Size(738, 662);
-            this.xtraTabControl6.TabIndex = 0;
+            this.xtraTabControl6.TabIndex = 1;
             this.xtraTabControl6.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage11,
             this.xtraTabPage12});
             // 
             // xtraTabPage11
             // 
+            this.xtraTabPage11.Controls.Add(this.tableLayoutPanel14);
             this.xtraTabPage11.Name = "xtraTabPage11";
             this.xtraTabPage11.Size = new System.Drawing.Size(736, 636);
             this.xtraTabPage11.Text = "数据";
             // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel16, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.gridControl5, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel17, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.gridControl8, 0, 4);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 5;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(736, 636);
+            this.tableLayoutPanel14.TabIndex = 0;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel15.ColumnCount = 4;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel15.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label12, 2, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label13, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label14, 3, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(730, 44);
+            this.tableLayoutPanel15.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(6, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 38);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "户号";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(369, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(101, 38);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "地址";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(116, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(244, 38);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "53535322";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(479, 3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(245, 38);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "浙江省宁波市慈溪市观海卫镇泽山居委会";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel16.ColumnCount = 6;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.Controls.Add(this.label15, 5, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label16, 4, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label17, 3, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label18, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel16.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 53);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.72727F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(730, 44);
+            this.tableLayoutPanel16.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(621, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(103, 38);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "15861524316";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(548, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 38);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "电话号码";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(439, 3);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 38);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "2000 143";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(115, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(242, 38);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "慈溪市观海卫镇新泽村经济合作社";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(366, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 38);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "区页码";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(6, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 38);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "户名";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gridControl5
+            // 
+            this.gridControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl5.Location = new System.Drawing.Point(3, 103);
+            this.gridControl5.MainView = this.gridView6;
+            this.gridControl5.MenuManager = this.ribbonControl;
+            this.gridControl5.Name = "gridControl5";
+            this.gridControl5.Size = new System.Drawing.Size(730, 212);
+            this.gridControl5.TabIndex = 2;
+            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6});
+            // 
+            // gridView6
+            // 
+            this.gridView6.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView6.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView6.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView6.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView6.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView6.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn32,
+            this.gridColumn33,
+            this.gridColumn34,
+            this.gridColumn35,
+            this.gridColumn36,
+            this.gridColumn37});
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.GridControl = this.gridControl5;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsBehavior.Editable = false;
+            this.gridView6.OptionsBehavior.ReadOnly = true;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "表号";
+            this.gridColumn32.FieldName = "MID";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 0;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "电表编码";
+            this.gridColumn33.FieldName = "MName";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 1;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "本期示数";
+            this.gridColumn34.FieldName = "PresentShown";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 2;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "上期示数";
+            this.gridColumn35.FieldName = "PreviousShown";
+            this.gridColumn35.Name = "gridColumn35";
+            this.gridColumn35.Visible = true;
+            this.gridColumn35.VisibleIndex = 3;
+            // 
+            // gridColumn36
+            // 
+            this.gridColumn36.Caption = "倍率";
+            this.gridColumn36.FieldName = "Rate";
+            this.gridColumn36.Name = "gridColumn36";
+            this.gridColumn36.Visible = true;
+            this.gridColumn36.VisibleIndex = 4;
+            // 
+            // gridColumn37
+            // 
+            this.gridColumn37.Caption = "电量(kW.h)";
+            this.gridColumn37.FieldName = "WPP";
+            this.gridColumn37.Name = "gridColumn37";
+            this.gridColumn37.Visible = true;
+            this.gridColumn37.VisibleIndex = 5;
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 1;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.Controls.Add(this.gridControl7, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.gridControl6, 0, 0);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 321);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 2;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(730, 94);
+            this.tableLayoutPanel17.TabIndex = 3;
+            // 
+            // gridControl7
+            // 
+            this.gridControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl7.Location = new System.Drawing.Point(3, 50);
+            this.gridControl7.MainView = this.gridView7;
+            this.gridControl7.MenuManager = this.ribbonControl;
+            this.gridControl7.Name = "gridControl7";
+            this.gridControl7.Size = new System.Drawing.Size(724, 41);
+            this.gridControl7.TabIndex = 1;
+            this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView7});
+            // 
+            // gridView7
+            // 
+            this.gridView7.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView7.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView7.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView7.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView7.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView7.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn38,
+            this.gridColumn39,
+            this.gridColumn40,
+            this.gridColumn41,
+            this.gridColumn42,
+            this.gridColumn43,
+            this.gridColumn44,
+            this.gridColumn45,
+            this.gridColumn46});
+            this.gridView7.GridControl = this.gridControl7;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.Editable = false;
+            this.gridView7.OptionsBehavior.ReadOnly = true;
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn38
+            // 
+            this.gridColumn38.Caption = "受电容量";
+            this.gridColumn38.FieldName = "Capacity";
+            this.gridColumn38.Name = "gridColumn38";
+            this.gridColumn38.Visible = true;
+            this.gridColumn38.VisibleIndex = 0;
+            // 
+            // gridColumn39
+            // 
+            this.gridColumn39.Caption = "核定需量";
+            this.gridColumn39.FieldName = "Need";
+            this.gridColumn39.Name = "gridColumn39";
+            this.gridColumn39.Visible = true;
+            this.gridColumn39.VisibleIndex = 1;
+            // 
+            // gridColumn40
+            // 
+            this.gridColumn40.Caption = "需量示数";
+            this.gridColumn40.FieldName = "Shown";
+            this.gridColumn40.Name = "gridColumn40";
+            this.gridColumn40.Visible = true;
+            this.gridColumn40.VisibleIndex = 2;
+            // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Caption = "实际需量";
+            this.gridColumn41.FieldName = "NeedInReal";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 3;
+            // 
+            // gridColumn42
+            // 
+            this.gridColumn42.Caption = "超核需量";
+            this.gridColumn42.FieldName = "NeedExceed";
+            this.gridColumn42.Name = "gridColumn42";
+            this.gridColumn42.Visible = true;
+            this.gridColumn42.VisibleIndex = 4;
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.Caption = "暂停容量";
+            this.gridColumn43.FieldName = "CapacityPause";
+            this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.Visible = true;
+            this.gridColumn43.VisibleIndex = 5;
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Caption = "暂停天数";
+            this.gridColumn44.FieldName = "DaysPause";
+            this.gridColumn44.Name = "gridColumn44";
+            this.gridColumn44.Visible = true;
+            this.gridColumn44.VisibleIndex = 6;
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Caption = "退补电费";
+            this.gridColumn45.FieldName = "Compensate";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.Visible = true;
+            this.gridColumn45.VisibleIndex = 7;
+            // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Caption = "预收电费";
+            this.gridColumn46.FieldName = "Advanced";
+            this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.Visible = true;
+            this.gridColumn46.VisibleIndex = 8;
+            // 
+            // gridControl6
+            // 
+            this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl6.Location = new System.Drawing.Point(3, 3);
+            this.gridControl6.MainView = this.gridView8;
+            this.gridControl6.MenuManager = this.ribbonControl;
+            this.gridControl6.Name = "gridControl6";
+            this.gridControl6.Size = new System.Drawing.Size(724, 41);
+            this.gridControl6.TabIndex = 0;
+            this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView8});
+            // 
+            // gridView8
+            // 
+            this.gridView8.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView8.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView8.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView8.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView8.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView8.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView8.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn47,
+            this.gridColumn48,
+            this.gridColumn49,
+            this.gridColumn50,
+            this.gridColumn51,
+            this.gridColumn52,
+            this.gridColumn53,
+            this.gridColumn54,
+            this.gridColumn55});
+            this.gridView8.GridControl = this.gridControl6;
+            this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsBehavior.Editable = false;
+            this.gridView8.OptionsBehavior.ReadOnly = true;
+            this.gridView8.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Caption = "有功铜损";
+            this.gridColumn47.FieldName = "PCu";
+            this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.Visible = true;
+            this.gridColumn47.VisibleIndex = 0;
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Caption = "有功铁损";
+            this.gridColumn48.FieldName = "PFe";
+            this.gridColumn48.Name = "gridColumn48";
+            this.gridColumn48.Visible = true;
+            this.gridColumn48.VisibleIndex = 1;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "有功合计";
+            this.gridColumn49.FieldName = "PTotal";
+            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.Visible = true;
+            this.gridColumn49.VisibleIndex = 2;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "无功铜损";
+            this.gridColumn50.FieldName = "QCu";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 3;
+            // 
+            // gridColumn51
+            // 
+            this.gridColumn51.Caption = "无功铁损";
+            this.gridColumn51.FieldName = "QFe";
+            this.gridColumn51.Name = "gridColumn51";
+            this.gridColumn51.Visible = true;
+            this.gridColumn51.VisibleIndex = 4;
+            // 
+            // gridColumn52
+            // 
+            this.gridColumn52.Caption = "无功合计";
+            this.gridColumn52.FieldName = "QTotal";
+            this.gridColumn52.Name = "gridColumn52";
+            this.gridColumn52.Visible = true;
+            this.gridColumn52.VisibleIndex = 5;
+            // 
+            // gridColumn53
+            // 
+            this.gridColumn53.Caption = "高峰电量";
+            this.gridColumn53.FieldName = "Spike";
+            this.gridColumn53.Name = "gridColumn53";
+            this.gridColumn53.Visible = true;
+            this.gridColumn53.VisibleIndex = 6;
+            // 
+            // gridColumn54
+            // 
+            this.gridColumn54.Caption = "低谷电量";
+            this.gridColumn54.FieldName = "Valley";
+            this.gridColumn54.Name = "gridColumn54";
+            this.gridColumn54.Visible = true;
+            this.gridColumn54.VisibleIndex = 7;
+            // 
+            // gridColumn55
+            // 
+            this.gridColumn55.Caption = "尖峰电量";
+            this.gridColumn55.FieldName = "Peak";
+            this.gridColumn55.Name = "gridColumn55";
+            this.gridColumn55.Visible = true;
+            this.gridColumn55.VisibleIndex = 8;
+            // 
+            // gridControl8
+            // 
+            this.gridControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl8.Location = new System.Drawing.Point(3, 421);
+            this.gridControl8.MainView = this.gridView9;
+            this.gridControl8.MenuManager = this.ribbonControl;
+            this.gridControl8.Name = "gridControl8";
+            this.gridControl8.Size = new System.Drawing.Size(730, 212);
+            this.gridControl8.TabIndex = 4;
+            this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView9});
+            // 
+            // gridView9
+            // 
+            this.gridView9.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView9.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView9.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView9.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView9.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView9.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView9.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn56,
+            this.gridColumn57,
+            this.gridColumn58,
+            this.gridColumn59,
+            this.gridColumn60,
+            this.gridColumn61,
+            this.gridColumn62});
+            this.gridView9.GridControl = this.gridControl8;
+            this.gridView9.Name = "gridView9";
+            this.gridView9.OptionsBehavior.Editable = false;
+            this.gridView9.OptionsBehavior.ReadOnly = true;
+            this.gridView9.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn56
+            // 
+            this.gridColumn56.Caption = "计费项目";
+            this.gridColumn56.FieldName = "Items";
+            this.gridColumn56.Name = "gridColumn56";
+            this.gridColumn56.Visible = true;
+            this.gridColumn56.VisibleIndex = 0;
+            // 
+            // gridColumn57
+            // 
+            this.gridColumn57.Caption = "计费数量";
+            this.gridColumn57.FieldName = "Quantity";
+            this.gridColumn57.Name = "gridColumn57";
+            this.gridColumn57.Visible = true;
+            this.gridColumn57.VisibleIndex = 1;
+            // 
+            // gridColumn58
+            // 
+            this.gridColumn58.Caption = "定量比";
+            this.gridColumn58.FieldName = "Rate";
+            this.gridColumn58.Name = "gridColumn58";
+            this.gridColumn58.Visible = true;
+            this.gridColumn58.VisibleIndex = 2;
+            // 
+            // gridColumn59
+            // 
+            this.gridColumn59.Caption = "单位";
+            this.gridColumn59.FieldName = "Unit";
+            this.gridColumn59.Name = "gridColumn59";
+            this.gridColumn59.Visible = true;
+            this.gridColumn59.VisibleIndex = 3;
+            // 
+            // gridColumn60
+            // 
+            this.gridColumn60.Caption = "单价";
+            this.gridColumn60.FieldName = "Price";
+            this.gridColumn60.Name = "gridColumn60";
+            this.gridColumn60.Visible = true;
+            this.gridColumn60.VisibleIndex = 4;
+            // 
+            // gridColumn61
+            // 
+            this.gridColumn61.Caption = "金额";
+            this.gridColumn61.FieldName = "Total";
+            this.gridColumn61.Name = "gridColumn61";
+            this.gridColumn61.Visible = true;
+            this.gridColumn61.VisibleIndex = 5;
+            // 
+            // gridColumn62
+            // 
+            this.gridColumn62.Caption = "备注";
+            this.gridColumn62.FieldName = "Remarks";
+            this.gridColumn62.Name = "gridColumn62";
+            this.gridColumn62.Visible = true;
+            this.gridColumn62.VisibleIndex = 6;
+            // 
             // xtraTabPage12
             // 
+            this.xtraTabPage12.Controls.Add(this.tableLayoutPanel18);
             this.xtraTabPage12.Name = "xtraTabPage12";
             this.xtraTabPage12.Size = new System.Drawing.Size(736, 636);
             this.xtraTabPage12.Text = "报表";
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 1;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Controls.Add(this.standaloneBarDockControl2, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.documentViewer2, 0, 1);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 2;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(736, 636);
+            this.tableLayoutPanel18.TabIndex = 2;
+            // 
+            // documentViewer2
+            // 
+            this.documentViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer2.DocumentSource = typeof(AracheTest.Reports.XtraReport2);
+            this.documentViewer2.IsMetric = true;
+            this.documentViewer2.Location = new System.Drawing.Point(3, 33);
+            this.documentViewer2.Name = "documentViewer2";
+            this.documentViewer2.Size = new System.Drawing.Size(730, 600);
+            this.documentViewer2.TabIndex = 1;
             // 
             // xtraTabControlBasicInfo
             // 
@@ -1975,26 +3535,17 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.labelControl1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.propertyGridRealtime, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(425, 382);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
@@ -2013,16 +3564,17 @@
             // 
             // propertyGridRealtime
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.propertyGridRealtime, 2);
             this.propertyGridRealtime.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.propertyGridRealtime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridRealtime.Location = new System.Drawing.Point(3, 43);
             this.propertyGridRealtime.Name = "propertyGridRealtime";
+            this.propertyGridRealtime.OptionsBehavior.Editable = false;
+            this.propertyGridRealtime.OptionsBehavior.PropertySort = DevExpress.XtraVerticalGrid.PropertySort.NoSort;
             this.propertyGridRealtime.OptionsView.ShowEmptyRowImage = true;
             this.propertyGridRealtime.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.categoryCurrentNode});
             this.propertyGridRealtime.ShowButtonMode = DevExpress.XtraVerticalGrid.ShowButtonModeEnum.ShowForFocusedRow;
-            this.propertyGridRealtime.Size = new System.Drawing.Size(419, 296);
+            this.propertyGridRealtime.Size = new System.Drawing.Size(419, 336);
             this.propertyGridRealtime.TabIndex = 8;
             // 
             // categoryCurrentNode
@@ -3022,6 +4574,10 @@
             this.Controls.Add(this.labelControlTime);
             this.Controls.Add(this.xtraTabControlBasicInfo);
             this.Controls.Add(this.ribbonControl);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl;
@@ -3068,6 +4624,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEditSearch.Properties)).EndInit();
             this.dockPanelInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerBarManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printPreviewRepositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl4)).EndInit();
             this.xtraTabControl4.ResumeLayout(false);
             this.xtraTabPage7.ResumeLayout(false);
@@ -3090,10 +4650,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.xtraTabPage10.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.xtraTabPage8.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl6)).EndInit();
             this.xtraTabControl6.ResumeLayout(false);
+            this.xtraTabPage11.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
+            this.xtraTabPage12.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlBasicInfo)).EndInit();
             this.xtraTabControlBasicInfo.ResumeLayout(false);
             this.xtraTabPageBasicInfo.ResumeLayout(false);
@@ -3359,9 +4937,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage10;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl6;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage11;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage12;
         private DevExpress.XtraBars.BarCheckItem barCheckItemCurrentDay;
         private DevExpress.XtraBars.BarCheckItem barCheckItemCurrentMonth;
         private DevExpress.XtraBars.BarCheckItem barCheckItemCurrentYear;
@@ -3423,6 +4998,133 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit3;
         private DevExpress.XtraBars.BarButtonItem ChargeDateSelectBtn;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl6;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private DevExpress.XtraGrid.GridControl gridControl5;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private DevExpress.XtraGrid.GridControl gridControl7;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
+        private DevExpress.XtraGrid.GridControl gridControl6;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn49;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn51;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn52;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn55;
+        private DevExpress.XtraGrid.GridControl gridControl8;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn57;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn58;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn59;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn60;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn61;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn62;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl2;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer2;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraPrinting.Preview.DocumentViewerBarManager documentViewerBarManager1;
+        private DevExpress.XtraPrinting.Preview.PreviewBar previewBar1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem5;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem7;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem8;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem9;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem10;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem11;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem12;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem13;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem14;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem15;
+        private DevExpress.XtraPrinting.Preview.ZoomBarEditItem zoomBarEditItem1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRepositoryItemComboBox printPreviewRepositoryItemComboBox1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem16;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem17;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem18;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem19;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem20;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem21;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem22;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem23;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem24;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraPrinting.Preview.ProgressBarEditItem progressBarEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem2;
+        private DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem zoomTrackBarEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem3;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem4;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem6;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem25;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem26;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewSubItem printPreviewSubItem1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewSubItem printPreviewSubItem2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewSubItem printPreviewSubItem4;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem27;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem28;
+        private DevExpress.XtraBars.BarToolbarsListItem barToolbarsListItem1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewSubItem printPreviewSubItem3;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem3;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem4;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem5;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem6;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem7;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem8;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem9;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem10;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem11;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem12;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem13;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem14;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem15;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem16;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem17;
 
     }
 }

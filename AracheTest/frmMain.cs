@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AracheTest.Data;
 using AracheTest.Reports;
+using AracheTest.UIControls;
 using DevExpress.Utils;
 using DevExpress.Xpo;
 using DevExpress.XtraBars;
@@ -29,23 +30,14 @@ namespace AracheTest
     public partial class frmMain : RibbonForm
     {
         private List<ElectricityOriginalData> _electricityDataList = new List<ElectricityOriginalData>();
-        private List<NodeInfo> _nodesList = new List<NodeInfo>();
-        private List<ChartControl> _chartCtrs = new List<ChartControl>();
+
+
         private Timer _timer_GetRealtime = new Timer();
         private Timer _timer_GetRealtimeData = new Timer();
-        private Dictionary<string, Object> chargeData = new Dictionary<string, Object>();
-        private ChargeInfo _chargeDataFirst;
-        private ChargeInfo _chargeDataSecond;
-        private int _currentNodeMID = 1;
 
-        //======================================================
-        //分别对应电费栏中的四个表格，从上到下
-        private DataTable _chargeTable0 = new DataTable();
-        private DataTable _chargeTable1 = new DataTable();
-        private DataTable _chargeTable2 = new DataTable();
-        private DataTable _chargeTable3 = new DataTable();
-        //======================================================
-
+        private ChargeControls _chargeControls;
+        private ElectricityCharts _electricityCharts;
+        private NodeTreeControl _nodeTreeControl;
         private PopupControlContainer popup = new PopupControlContainer();
 
         public frmMain()
@@ -55,8 +47,6 @@ namespace AracheTest
 
             InitTimer();
             InitUIControls();
-
-            TaskPool.SetScheduler(TaskScheduler.FromCurrentSynchronizationContext());
             RefreshAllData();
         }
 
@@ -71,9 +61,7 @@ namespace AracheTest
         private void _timer_GetRealtimeData_Tick(object sender, EventArgs e)
         {
             if (RealtimeCheckBtn.Down)
-            {
                 RefreshAllData();
-            }
         }
 
         private void InitRealTimeTimer()
@@ -110,11 +98,18 @@ namespace AracheTest
 
             InitChartControl();
             InitNodeTreeControl();
-            InitChargeCustomCtr();
-            InitChargeTableCtr();
+            InitChargeDateCustomCtr();
+            InitChargeGridandChartControls();
         }
 
-        private void InitChargeCustomCtr()
+        private void InitChargeGridandChartControls()
+        {
+            _chargeControls = new ChargeControls();
+            _chargeControls.SetChargeUIControls(chartControlChargeProportion, gridControl1, gridControl2, gridControl3,
+                gridControl4, documentViewer1);
+        }
+
+        private void InitChargeDateCustomCtr()
         {
             TableLayoutPanel panel = new TableLayoutPanel();
             panel.Dock = DockStyle.Fill;
@@ -193,243 +188,40 @@ namespace AracheTest
             ChargeDateSelectBtn.DropDownControl = popup;
         }
 
-
-        private void InitChargeTableCtr()
-        {
-            XtraReport2 report = new XtraReport2();
-            documentViewer1.DocumentSource = report;
-
-            _chargeTable0.Columns.Add("MID");
-            _chargeTable0.Columns.Add("MName");
-            _chargeTable0.Columns.Add("PresentShown");
-            _chargeTable0.Columns.Add("PreviousShown");
-            _chargeTable0.Columns.Add("Rate");
-            _chargeTable0.Columns.Add("WPP");
-
-            _chargeTable1.Columns.Add("PCu");
-            _chargeTable1.Columns.Add("PFe");
-            _chargeTable1.Columns.Add("PTotal");
-            _chargeTable1.Columns.Add("QCu");
-            _chargeTable1.Columns.Add("QFe");
-            _chargeTable1.Columns.Add("QTotal");
-            _chargeTable1.Columns.Add("Spike");
-            _chargeTable1.Columns.Add("Valley");
-            _chargeTable1.Columns.Add("Peak");
-
-            _chargeTable2.Columns.Add("Capacity");
-            _chargeTable2.Columns.Add("Need");
-            _chargeTable2.Columns.Add("Shown");
-            _chargeTable2.Columns.Add("NeedInReal");
-            _chargeTable2.Columns.Add("NeedExceed");
-            _chargeTable2.Columns.Add("CapacityPause");
-            _chargeTable2.Columns.Add("DaysPause");
-            _chargeTable2.Columns.Add("Compensate");
-            _chargeTable2.Columns.Add("Advanced");
-
-
-            _chargeTable3.Columns.Add("Items");
-            _chargeTable3.Columns.Add("Quantity");
-            _chargeTable3.Columns.Add("Rate");
-            _chargeTable3.Columns.Add("Unit");
-            _chargeTable3.Columns.Add("Price");
-            _chargeTable3.Columns.Add("Total");
-            _chargeTable3.Columns.Add("Remarks");
-        }
-
         private void InitChartControl()
         {
-            _chartCtrs.Add(PCChartControl);
-            _chartCtrs.Add(SChartControl);
-            _chartCtrs.Add(PUChartControl);
-            _chartCtrs.Add(PFChartControl);
-            _chartCtrs.Add(PChartControl);
-            _chartCtrs.Add(QChartControl);
-            foreach (var chartControl in _chartCtrs)
-            {
-                foreach (Series s in chartControl.Series)
-                {
-                    s.ArgumentDataMember = "Eventtime";
-                    s.ArgumentScaleType = ScaleType.DateTime;
-                }
-                var diagram = chartControl.Diagram as XYDiagram;
-                chartControl.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/M/d HH:mm:ss}";
-                var axisX = diagram.AxisX;
-                diagram.EnableAxisYZooming = false;
-                diagram.EnableAxisYScrolling = true;
-                diagram.EnableAxisXScrolling = true;
-                diagram.EnableAxisXZooming = true;
-                ResetAxisOptions(axisX);
-            }
-
-            //设定相电流曲线图
-            PCChartControl.Series[0].ValueDataMembers.AddRange("IA");
-            PCChartControl.Series[1].ValueDataMembers.AddRange("IB");
-            PCChartControl.Series[2].ValueDataMembers.AddRange("IC");
-
-            //设定电能曲线图
-            SChartControl.Series[0].ValueDataMembers.AddRange("SA");
-            SChartControl.Series[1].ValueDataMembers.AddRange("SB");
-            SChartControl.Series[2].ValueDataMembers.AddRange("SC");
-            SChartControl.Series[3].ValueDataMembers.AddRange("SS");
-
-            //设定相电压曲线图
-            PUChartControl.Series[0].ValueDataMembers.AddRange("UA");
-            PUChartControl.Series[1].ValueDataMembers.AddRange("UB");
-            PUChartControl.Series[2].ValueDataMembers.AddRange("UC");
-
-            //设定无功率曲线图
-            QChartControl.Series[0].ValueDataMembers.AddRange("QA");
-            QChartControl.Series[1].ValueDataMembers.AddRange("QB");
-            QChartControl.Series[2].ValueDataMembers.AddRange("QC");
-            QChartControl.Series[3].ValueDataMembers.AddRange("QS");
-
-            //设定有功功率曲线图
-            PChartControl.Series[0].ValueDataMembers.AddRange("PA");
-            PChartControl.Series[1].ValueDataMembers.AddRange("PB");
-            PChartControl.Series[2].ValueDataMembers.AddRange("PC");
-            PChartControl.Series[3].ValueDataMembers.AddRange("PS");
-
-            //设定功率因数曲线图
-            PFChartControl.Series[0].ValueDataMembers.AddRange("PFA");
-            PFChartControl.Series[1].ValueDataMembers.AddRange("PFB");
-            PFChartControl.Series[2].ValueDataMembers.AddRange("PFC");
-            PFChartControl.Series[3].ValueDataMembers.AddRange("PFS");
+            _electricityCharts = new ElectricityCharts();
+            _electricityCharts.PCChartControl = PCChartControl;
+            _electricityCharts.SChartControl = SChartControl;
+            _electricityCharts.PUChartControl = PUChartControl;
+            _electricityCharts.PFChartControl = PFChartControl;
+            _electricityCharts.PChartControl = PChartControl;
+            _electricityCharts.QChartControl = QChartControl;
+            _electricityCharts.InitControls();
         }
 
         private void InitNodeTreeControl()
         {
-            RepositoryItemTreeListLookUpEdit nodeTreeEdit = nodeTreeCtr.Edit as RepositoryItemTreeListLookUpEdit;
-            nodeTreeEdit.EditValueChanged += nodetree_EditValueChanged;
-            nodeTreeEdit.TreeList.CustomDrawNodeCell += TreeList_CustomDrawNodeCell;
-            nodeTreeEdit.TreeList.StateImageList = sharedImageCollection;
-            nodeTreeEdit.TreeList.GetStateImage += TreeList_GetStateImage;
-            nodeTreeEdit.TreeList.NodeCellStyle += TreeList_NodeCellStyle;
-            nodeTreeEdit.QueryCloseUp += nodeTreeEdit_QueryCloseUp;
-            nodeTreeEdit.TreeList.MoveFirst();
-
-
-            nodeTreeEdit.ValueMember = "NodeID";
-            nodeTreeEdit.DisplayMember = "Name";
-            var nodeTree = nodeTreeEdit.TreeList;
-            var columnName = nodeTree.Columns.Add();
-            columnName.Caption = "节点名称";
-            columnName.Name = "NodeName";
-            columnName.Visible = true;
-            columnName.FieldName = "Name";
-
-            var columnNodeID = nodeTree.Columns.Add();
-            columnNodeID.Caption = "NodeID";
-            columnNodeID.FieldName = "NodeID";
-            columnNodeID.Name = "NodeID";
-            columnNodeID.Visible = true;
-
-            var columnParentID = nodeTree.Columns.Add();
-            columnParentID.Caption = "ParentID";
-            columnParentID.Name = "ParentID";
-            columnParentID.FieldName = "ParentID";
-            columnParentID.Visible = false;
-
-            var columnPID = nodeTree.Columns.Add();
-            columnPID.Caption = "PID";
-            columnPID.Name = "PID";
-            columnPID.FieldName = "PID";
-            columnPID.Visible = false;
-
-            var columnMID = nodeTree.Columns.Add();
-            columnMID.Caption = "MID";
-            columnMID.Name = "MID";
-            columnMID.FieldName = "MID";
-            columnMID.Visible = false;
-
-            nodeTree.KeyFieldName = "NodeID";
-            nodeTree.ParentFieldName = "ParentID";
-
-
-            nodeTreeEdit.AutoExpandAllNodes = false;
-        }
-        void nodeTreeEdit_QueryCloseUp(object sender, CancelEventArgs e)
-        {
-            TreeListLookUpEdit nodeTreeEdit = sender as TreeListLookUpEdit;
-            var node = nodeTreeEdit.Properties.TreeList.FocusedNode;
-            bool isNode = Convert.ToBoolean(node.GetValue("IsNode"));
-            e.Cancel = isNode;
-        }
-
- 
-
-        void TreeList_GetStateImage(object sender, GetStateImageEventArgs e)
-        {
-            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
-
-            if (isNode)
-                e.NodeImageIndex = 2;
-            else
-                e.NodeImageIndex = 5;
-        }
-
-        private void TreeList_NodeCellStyle(object sender, GetCustomNodeCellStyleEventArgs e)
-        {
-            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
-            if (isNode == false)
-            {
-                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
-            }
-        }
-
-        private void TreeList_CustomDrawNodeCell(object sender, DevExpress.XtraTreeList.CustomDrawNodeCellEventArgs e)
-        {
-            Brush backBrush, foreBrush;
-            if (e.Node != (sender as TreeList).FocusedNode)
-            {
-                backBrush = new LinearGradientBrush(e.Bounds, Color.PapayaWhip, Color.PeachPuff,
-                    LinearGradientMode.ForwardDiagonal);
-                foreBrush = Brushes.Black;
-            }
-            else
-            {
-                backBrush = Brushes.PeachPuff;
-                foreBrush = new SolidBrush(Color.Black);
-            }
-            // Fill the background.
-            e.Graphics.FillRectangle(backBrush, e.Bounds);
-            // Paint the node value.
-            e.Graphics.DrawString(e.CellText, e.Appearance.Font, foreBrush, e.Bounds,
-                e.Appearance.GetStringFormat());
-            // Prohibit default painting.
-            e.Handled = true;
-        }
-
-        private void ResetAxisOptions(AxisX xAxis)
-        {
-            xAxis.DateTimeScaleOptions.ScaleMode = ScaleMode.Continuous;
-            xAxis.Label.TextPattern = "{A:MM/dd HH:mm}";
-            xAxis.DateTimeScaleOptions.GridSpacing = 1;
-            xAxis.Tickmarks.MinorVisible = false;
-            xAxis.Label.Angle = -5;
-            xAxis.DateTimeScaleOptions.AutoGrid = true;
+            _nodeTreeControl = new NodeTreeControl();
+            _nodeTreeControl.NodeTreeEdit = nodeTreeCtr.Edit as RepositoryItemTreeListLookUpEdit;
+            _nodeTreeControl.NodeTreeEdit.EditValueChanged += nodetree_EditValueChanged;
+            _nodeTreeControl.NodeTreeEdit.TreeList.StateImageList = sharedImageCollection;
+            _nodeTreeControl.Init();
         }
 
         private void RefreshAllData()
         {
             var task = new TaskElectricityFilter("更新数据",
-                new FilterCondition(DateTime.Now, DateTime.Now, _currentNodeMID), SetElectricityData, true);
-            TaskPool.AddTask(task);
+                new FilterCondition(DateTime.Now, DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetElectricityData,
+                true);
+            TaskPool.AddTask(task, TaskScheduler.FromCurrentSynchronizationContext());
             var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(), SetNodesData);
-            TaskPool.AddTask(taskNode);
-        }
-
-        private void UpdateNodesData()
-        {
-            var nodeTreeEdit = (RepositoryItemTreeListLookUpEdit) nodeTreeCtr.Edit;
-            nodeTreeEdit.DataSource = _nodesList;
-
-            nodeTreeEdit.TreeList.CollapseAll();
+            TaskPool.AddTask(taskNode, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void SetNodesData(Object list)
         {
-            _nodesList = list as List<NodeInfo>;
-            UpdateNodesData();
+            _nodeTreeControl.UpdateNodesData(list as List<NodeInfo>);
         }
 
         private void RealtimeCheckBtn_DownChanged(object sender, ItemClickEventArgs e)
@@ -464,8 +256,8 @@ namespace AracheTest
             ResetUISource();
             var task = new TaskElectricityFilter("检索数据",
                 new FilterCondition((DateTime) StartDatetimeCtr.EditValue, (DateTime) EndDatetimeCtr.EditValue,
-                    _currentNodeMID), SetElectricityData, false);
-            TaskPool.AddTask(task);
+                    _nodeTreeControl.CurrentNodeMid), SetElectricityData, false);
+            TaskPool.AddTask(task, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
 
@@ -486,140 +278,14 @@ namespace AracheTest
 
         private void ResetUISource()
         {
-            ResetChartDataSource();
+            _electricityCharts.ResetChartDataSource();
             ResetGridDataDetailDataSource();
             ResetRealTimeGridDataSource();
         }
 
         private void SetChargeData(Object dataSource)
         {
-            chargeData = dataSource as Dictionary<string, Object>;
-
-            _chargeTable0.Rows.Clear();
-            _chargeTable1.Rows.Clear();
-            _chargeTable2.Rows.Clear();
-            _chargeTable3.Rows.Clear();
-
-            if (chargeData["第一阶段"] != null)
-            {
-                ChargeInfo chargeInfo = chargeData["第一阶段"] as ChargeInfo;
-
-                DataRow row = _chargeTable0.NewRow();
-                row[0] = chargeInfo.MID;
-                row[1] = "有功（总）";
-                row[2] = chargeInfo.PowerTotal.ToString("#0.00");
-                //  row[3] = chargeInfo.WPPOld.ToString();
-                row[4] = "30";
-                row[5] = chargeInfo.EnergyTotal.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
-
-                row = _chargeTable0.NewRow();
-                row[0] = chargeInfo.MID;
-                row[1] = "有功（尖峰）";
-                row[2] = chargeInfo.PowerSpike.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
-                row[4] = "30";
-                row[5] = chargeInfo.EnergySpike.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
-
-                row = _chargeTable0.NewRow();
-                row[0] = chargeInfo.MID;
-                row[1] = "有功（峰）";
-                row[2] = chargeInfo.PowerPeak.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
-                row[4] = "30";
-                row[5] = chargeInfo.EnergyPeak.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
-
-                row = _chargeTable0.NewRow();
-                row[0] = chargeInfo.MID;
-                row[1] = "有功（谷）";
-                row[2] = chargeInfo.PowerValley.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
-                row[4] = "30";
-                row[5] = chargeInfo.EnergyValley.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
-                gridControl1.DataSource = _chargeTable0;
-
-
-                DataRow row1 = _chargeTable1.NewRow();
-                row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
-                row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.EnergyTotal.ToString("#0.00");
-                row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
-                row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
-                row1[5] = 0;
-                row1[6] = chargeInfo.EnergySpike.ToString("#0.00");
-                row1[7] = chargeInfo.EnergyValley.ToString("#0.00");
-                row1[8] = chargeInfo.EnergyPeak.ToString("#0.00");
-                _chargeTable1.Rows.Add(row1);
-                gridControl2.DataSource = _chargeTable1;
-
-                DataRow row2 = _chargeTable2.NewRow();
-                row2[0] = 0;
-                row2[1] = 0;
-                row2[2] = 0;
-                row2[3] = 0;
-                row2[4] = 0;
-                row2[5] = 0;
-                row2[6] = 0;
-                row2[7] = 0;
-                row2[8] = 0;
-                _chargeTable2.Rows.Add(row2);
-                gridControl3.DataSource = _chargeTable2;
-
-                DataRow row3 = _chargeTable3.NewRow();
-                Double total = 0;
-                row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.EnergySpike.ToString("#0.00");
-                row3[2] = 0;
-                row3[3] = "kW.h";
-                row3[4] = 1.39760;
-                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
-                total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
-                row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.EnergyPeak.ToString("#0.00");
-                row3[2] = 0;
-                row3[3] = "kW.h";
-                row3[4] = 1.09960;
-                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
-                total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
-                row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.EnergyValley.ToString("#0.00");
-                row3[2] = 0;
-                row3[3] = "kW.h";
-                row3[4] = 0.58760;
-                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
-                total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
-                row3[0] = "合计";
-                row3[1] = "";
-                row3[2] = "";
-                row3[3] = "";
-                row3[4] = "";
-                row3[5] = total.ToString("#0.00");
-                _chargeTable3.Rows.Add(row3);
-                gridControl4.DataSource = _chargeTable3;
-
-
-                XtraReport2 report = documentViewer1.DocumentSource as XtraReport2;
-                report.SetReportDataSource(_chargeTable0, _chargeTable1, _chargeTable2, _chargeTable3);
-                report.CreateDocument();
-
-
-                chartControlChargeProportion.Series[0].Points.Clear();
-                chartControlChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
-                {
-                    new SeriesPoint("尖峰", chargeInfo.EnergySpike),
-                    new SeriesPoint("峰", chargeInfo.EnergyPeak),
-                    new SeriesPoint("谷", chargeInfo.EnergyTotal),
-                });
-            }
+            _chargeControls.SetChargeData(dataSource);
         }
 
         private void SetElectricityData(Object dataSource)
@@ -627,7 +293,7 @@ namespace AracheTest
             _electricityDataList = dataSource as List<ElectricityOriginalData>;
             UpdateRealtimeDataGrid();
             UpdateGridControlDetail();
-            UpdateChart();
+            _electricityCharts.UpdateChart(_electricityDataList);
         }
 
 
@@ -663,33 +329,12 @@ namespace AracheTest
             gridControlDetail.DataSource = _electricityDataList;
         }
 
-        private void ResetChartDataSource()
-        {
-            foreach (var chart in _chartCtrs)
-            {
-                chart.DataSource = null;
-            }
-        }
-
-        private void UpdateChart()
-        {
-            ResetChartDataSource();
-            foreach (var chart in _chartCtrs)
-            {
-                chart.DataSource = _electricityDataList;
-            }
-        }
 
         private void RefreshBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             RefreshAllData();
         }
 
-        /// <summary>
-        /// 改变线路
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void nodetree_EditValueChanged(object sender, EventArgs e)
         {
             TreeListLookUpEdit nodetree = sender as TreeListLookUpEdit;
@@ -698,23 +343,18 @@ namespace AracheTest
             if (node.IsNode)
                 return;
 
-            _currentNodeMID = node.MID[0];
+            _nodeTreeControl.CurrentNodeMid = node.MID[0];
             if (RealtimeCheckBtn.Down)
-            {
                 RefreshAllData();
-            }
             else
-            {
                 GetFilteredData();
-            }
         }
 
         private void barCheckItemCurrentDay_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (ChargeDateSelectBtn.Down)
-            {
                 ChargeDateSelectBtn.Down = false;
-            }
+            xtraTabControlBasicInfo.SelectedTabPageIndex = 1;
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
@@ -725,24 +365,24 @@ namespace AracheTest
             var taskCharge = new TaskChargeFilter("获取当天计费信息",
                 new ChargeFilterCondition(
                     new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
-                    DateTime.Now, _currentNodeMID), SetChargeData);
-            TaskPool.AddTask(taskCharge);
+                    DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetChargeData);
+            TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void barCheckItemCurrentMonth_CheckedChanged(object sender, ItemClickEventArgs e)
         {
             var taskCharge = new TaskChargeFilter("获取本月计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
-                    DateTime.Now, _currentNodeMID), SetChargeData);
-            TaskPool.AddTask(taskCharge);
+                    DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetChargeData);
+            TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void barCheckItemCurrentYear_CheckedChanged(object sender, ItemClickEventArgs e)
         {
             var taskCharge = new TaskChargeFilter("获取本年计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
-                    _currentNodeMID), SetChargeData);
-            TaskPool.AddTask(taskCharge);
+                    _nodeTreeControl.CurrentNodeMid), SetChargeData);
+            TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void barCheckItemCurrentMonth_ItemClick(object sender, ItemClickEventArgs e)
@@ -751,6 +391,7 @@ namespace AracheTest
             {
                 ChargeDateSelectBtn.Down = false;
             }
+            xtraTabControlBasicInfo.SelectedTabPageIndex = 1;
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
@@ -763,7 +404,7 @@ namespace AracheTest
                 ChargeDateSelectBtn.Down = false;
             }
 
-
+            xtraTabControlBasicInfo.SelectedTabPageIndex = 1;
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.Black;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.Black;
@@ -775,6 +416,7 @@ namespace AracheTest
             {
                 ChargeDateSelectBtn.Down = true;
             }
+            xtraTabControlBasicInfo.SelectedTabPageIndex = 1;
             barCheckItemCurrentDay.ItemAppearance.Normal.ForeColor = Color.DarkGray;
             barCheckItemCurrentMonth.ItemAppearance.Normal.ForeColor = Color.DarkGray;
             barCheckItemCurrentYear.ItemAppearance.Normal.ForeColor = Color.DarkGray;
@@ -801,8 +443,8 @@ namespace AracheTest
             {
                 var taskCharge = new TaskChargeFilter("获取自定义时段计费信息",
                     new ChargeFilterCondition(startDate.DateTime, middleDate.DateTime, lastDate.DateTime,
-                        _currentNodeMID), SetChargeData);
-                TaskPool.AddTask(taskCharge);
+                        _nodeTreeControl.CurrentNodeMid), SetChargeData);
+                TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
             }
             else MessageBox.Show("计费时间设定错误");
         }
@@ -905,8 +547,9 @@ namespace AracheTest
 
         #endregion
 
-        private void documentViewer1_Load(object sender, EventArgs e)
+        private void barButtonItemVoltage_ItemClick(object sender, ItemClickEventArgs e)
         {
+            xtraTabControlBasicInfo.SelectedTabPageIndex = 0;
         }
     }
 }

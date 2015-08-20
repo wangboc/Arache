@@ -132,36 +132,32 @@ namespace AracheTest
             int nodeTotal = data.Count;
             for (int i = 0; i < nodeTotal; i++)
             {
-                List<Correspondnode> MIDs = DataBase.GetCorrespondMid(data[i].NodeID);
+                List<Correspondnode> miDs = DataBase.GetCorrespondMid(data[i].NodeID);
 
-                if (MIDs != null && MIDs.Count > 0)
+                if (miDs == null || miDs.Count <= 0) continue;
+                DataTable dt = new DataTable();
+                dt.Columns.Add("NodeID");
+                dt.Columns.Add("PID");
+                dt.Columns.Add("ParentID");
+                dt.Columns.Add("Name");
+                dt.Columns.Add("MID");
+
+                foreach (var correspondnode in miDs)
                 {
-                    DataTable dt = new DataTable();
-                    dt.Columns.Add("NodeID");
-                    dt.Columns.Add("PID");
-                    dt.Columns.Add("ParentID");
-                    dt.Columns.Add("Name");
-                    dt.Columns.Add("MID");
-
-                    foreach (Correspondnode correspondnode in MIDs)
-                    {
-                        DataRow row = dt.NewRow();
-                        long tick = DateTime.Now.Ticks;
-                        //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
-
-                        //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
-                        row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
-                                        correspondnode.MID.ToString();
-                        row["PID"] = 1;
-                        row["ParentID"] = correspondnode.NodeID;
-                        row["Name"] = "电表: " + correspondnode.MID;
-                        row["MID"] = correspondnode.MID;
-                        dt.Rows.Add(row);
-                        NodeInfo node = new NodeInfo(row);
-                        node.MID.Add(correspondnode.MID);
-                        node.IsNode = false;
-                        data.Add(node);
-                    }
+                    DataRow row = dt.NewRow();
+                    //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
+                    //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
+                    row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
+                                    correspondnode.MID.ToString();
+                    row["PID"] = 1;
+                    row["ParentID"] = correspondnode.NodeID;
+                    row["Name"] = "电表: " + correspondnode.MID;
+                    row["MID"] = correspondnode.MID;
+                    dt.Rows.Add(row);
+                    NodeInfo node = new NodeInfo(row);
+                    node.MID.Add(correspondnode.MID);
+                    node.IsNode = false;
+                    data.Add(node);
                 }
             }
             data.Reverse();
@@ -183,8 +179,8 @@ namespace AracheTest
             Dictionary<string, Object> returnData = new Dictionary<string, Object>();
             returnData.Add("电量参数", getElectricityParameter());
             returnData.Add("时段信息", getElectricityPeriodInfo());
-            returnData.Add("第一阶段", getFirstCharge());
-            returnData.Add("第二阶段", getSecondCharge());
+            returnData.Add("第一阶段", GetFirstCharge());
+            returnData.Add("第二阶段", GetSecondCharge());
 
             DBData = returnData;
         }
@@ -199,14 +195,14 @@ namespace AracheTest
             return DataBase.GetElectricityPeriods();
         }
 
-        private ChargeInfo getFirstCharge()
+        private ChargeInfo GetFirstCharge()
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.FirstMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
                 _condition.Mid);
         }
 
-        private ChargeInfo getSecondCharge()
+        private ChargeInfo GetSecondCharge()
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.SecondMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,

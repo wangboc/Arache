@@ -85,15 +85,14 @@ namespace AracheTest.Data
                 this.WQN = (Double)dr["WQN"];
             if (dr["WQP"] != DBNull.Value)
                 this.WQP = (Double)dr["WQP"];
-
-            if (dr["IStatus"] != DBNull.Value)
-                this.IStatus = (int)dr["IStatus"];
-            if (dr["OStatus"] != DBNull.Value)
-                this.OStatus = (int)dr["OStatus"];
             if (dr["EventTime"] != DBNull.Value)
                 this.EventTime = Convert.ToDateTime(dr["EventTime"]);
-            if (dr["ReceivedTime"] != DBNull.Value)
-                this.ReceivedTime = Convert.ToDateTime(dr["ReceivedTime"]);
+            if (dr["IStatus"] != DBNull.Value)
+                this.IStatus = Convert.ToInt32(dr["IStatus"].ToString());
+            if (dr["OStatus"] != DBNull.Value)
+                this.OStatus = Convert.ToInt32(dr["OStatus"].ToString());
+            
+           
         }
 
         public int ID { get; set; }
@@ -248,10 +247,5 @@ namespace AracheTest.Data
         /// 发生时间
         /// </summary>
         public DateTime EventTime { get; set; }
-        /// <summary>
-        /// 接收时间
-        /// </summary>
-        public DateTime ReceivedTime { get; set; }
-
-    }
+       }
 }

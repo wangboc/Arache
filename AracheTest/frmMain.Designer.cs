@@ -99,11 +99,17 @@
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle7 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.SimpleDiagram simpleDiagram2 = new DevExpress.XtraCharts.SimpleDiagram();
             DevExpress.XtraCharts.Series series24 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel2 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle8 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series25 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.ChartTitle chartTitle8 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
             this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection(this.components);
@@ -262,7 +268,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_1_1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -271,7 +277,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_1_3 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -282,7 +288,7 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_1_2 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -293,7 +299,7 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_1_4 = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -321,7 +327,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_2_1 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -330,7 +336,7 @@
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridControl7 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_2_3 = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -341,7 +347,7 @@
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_2_2 = new DevExpress.XtraGrid.GridControl();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -352,7 +358,7 @@
             this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn55 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl8 = new DevExpress.XtraGrid.GridControl();
+            this.gridControl_2_4 = new DevExpress.XtraGrid.GridControl();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -443,6 +449,7 @@
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.chartControlChargeProportion = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.Fe_CuPropotion = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
@@ -506,14 +513,14 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.xtraTabPage10.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
@@ -525,14 +532,14 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.tableLayoutPanel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
             this.xtraTabPage12.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
@@ -625,14 +632,21 @@
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Fe_CuPropotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).BeginInit();
             this.xtraTabControl3.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series27)).BeginInit();
             this.SuspendLayout();
             // 
             // barAndDockingController1
@@ -2146,6 +2160,7 @@
             this.xtraTabControl4.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage7,
             this.xtraTabPage8});
+            this.xtraTabControl4.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl4_SelectedPageChanged);
             // 
             // xtraTabPage7
             // 
@@ -2194,9 +2209,9 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel11, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.gridControl1, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.gridControl_1_1, 0, 2);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel12, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.gridControl4, 0, 4);
+            this.tableLayoutPanel9.Controls.Add(this.gridControl_1_4, 0, 4);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -2213,10 +2228,10 @@
             // 
             this.tableLayoutPanel10.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel10.ColumnCount = 4;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.43714F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.00194F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.43714F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.12378F));
             this.tableLayoutPanel10.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.label3, 1, 0);
@@ -2233,11 +2248,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 38);
+            this.label1.Size = new System.Drawing.Size(97, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "户号";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2246,11 +2261,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(369, 3);
+            this.label2.Location = new System.Drawing.Point(279, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 38);
+            this.label2.Size = new System.Drawing.Size(97, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "地址";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2259,11 +2274,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(116, 3);
+            this.label3.Location = new System.Drawing.Point(112, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 38);
+            this.label3.Size = new System.Drawing.Size(158, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "53535322";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2272,11 +2287,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(479, 3);
+            this.label4.Location = new System.Drawing.Point(385, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 38);
+            this.label4.Size = new System.Drawing.Size(339, 38);
             this.label4.TabIndex = 3;
             this.label4.Text = "浙江省宁波市慈溪市观海卫镇泽山居委会";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2285,12 +2300,12 @@
             // 
             this.tableLayoutPanel11.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel11.ColumnCount = 6;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.02329F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.43586F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.16189F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.03027F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.16189F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.1868F));
             this.tableLayoutPanel11.Controls.Add(this.label10, 5, 0);
             this.tableLayoutPanel11.Controls.Add(this.label9, 4, 0);
             this.tableLayoutPanel11.Controls.Add(this.label8, 3, 0);
@@ -2301,7 +2316,7 @@
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.72727F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(730, 44);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
@@ -2309,7 +2324,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(621, 3);
             this.label10.Name = "label10";
@@ -2322,11 +2337,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(548, 3);
+            this.label9.Location = new System.Drawing.Point(525, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 38);
+            this.label9.Size = new System.Drawing.Size(87, 38);
             this.label9.TabIndex = 4;
             this.label9.Text = "电话号码";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2335,11 +2350,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(439, 3);
+            this.label8.Location = new System.Drawing.Point(430, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 38);
+            this.label8.Size = new System.Drawing.Size(86, 38);
             this.label8.TabIndex = 3;
             this.label8.Text = "2000 143";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2348,11 +2363,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(115, 3);
+            this.label7.Location = new System.Drawing.Point(80, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 38);
+            this.label7.Size = new System.Drawing.Size(245, 38);
             this.label7.TabIndex = 2;
             this.label7.Text = "慈溪市观海卫镇新泽村经济合作社";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2361,11 +2376,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(366, 3);
+            this.label6.Location = new System.Drawing.Point(334, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 38);
+            this.label6.Size = new System.Drawing.Size(87, 38);
             this.label6.TabIndex = 1;
             this.label6.Text = "区页码";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2374,33 +2389,36 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(6, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 38);
+            this.label5.Size = new System.Drawing.Size(65, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "户名";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gridControl1
+            // gridControl_1_1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 103);
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.MenuManager = this.ribbonControl;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(730, 212);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_1_1.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.gridControl_1_1.Location = new System.Drawing.Point(3, 103);
+            this.gridControl_1_1.MainView = this.gridView2;
+            this.gridControl_1_1.MenuManager = this.ribbonControl;
+            this.gridControl_1_1.Name = "gridControl_1_1";
+            this.gridControl_1_1.Size = new System.Drawing.Size(730, 212);
+            this.gridControl_1_1.TabIndex = 2;
+            this.gridControl_1_1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("宋体", 10F);
+            this.gridView2.Appearance.Row.Options.UseFont = true;
             this.gridView2.Appearance.Row.Options.UseTextOptions = true;
             this.gridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -2411,7 +2429,7 @@
             this.gridColumn5,
             this.gridColumn6});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.GridControl = this.gridControl_1_1;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsBehavior.ReadOnly = true;
@@ -2476,8 +2494,8 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Controls.Add(this.gridControl3, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.gridControl2, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.gridControl_1_3, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.gridControl_1_2, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 321);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -2487,24 +2505,26 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(730, 94);
             this.tableLayoutPanel12.TabIndex = 3;
             // 
-            // gridControl3
+            // gridControl_1_3
             // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(3, 50);
-            this.gridControl3.MainView = this.gridView4;
-            this.gridControl3.MenuManager = this.ribbonControl;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(724, 41);
-            this.gridControl3.TabIndex = 1;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_1_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_1_3.Location = new System.Drawing.Point(3, 50);
+            this.gridControl_1_3.MainView = this.gridView4;
+            this.gridControl_1_3.MenuManager = this.ribbonControl;
+            this.gridControl_1_3.Name = "gridControl_1_3";
+            this.gridControl_1_3.Size = new System.Drawing.Size(724, 41);
+            this.gridControl_1_3.TabIndex = 1;
+            this.gridControl_1_3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
             // gridView4
             // 
-            this.gridView4.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView4.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.gridView4.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView4.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView4.Appearance.Row.Font = new System.Drawing.Font("宋体", 10F);
+            this.gridView4.Appearance.Row.Options.UseFont = true;
             this.gridView4.Appearance.Row.Options.UseTextOptions = true;
             this.gridView4.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -2517,7 +2537,7 @@
             this.gridColumn22,
             this.gridColumn23,
             this.gridColumn24});
-            this.gridView4.GridControl = this.gridControl3;
+            this.gridView4.GridControl = this.gridControl_1_3;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsBehavior.ReadOnly = true;
@@ -2595,24 +2615,26 @@
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 8;
             // 
-            // gridControl2
+            // gridControl_1_2
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
-            this.gridControl2.MainView = this.gridView3;
-            this.gridControl2.MenuManager = this.ribbonControl;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(724, 41);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_1_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_1_2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl_1_2.MainView = this.gridView3;
+            this.gridControl_1_2.MenuManager = this.ribbonControl;
+            this.gridControl_1_2.Name = "gridControl_1_2";
+            this.gridControl_1_2.Size = new System.Drawing.Size(724, 41);
+            this.gridControl_1_2.TabIndex = 0;
+            this.gridControl_1_2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // gridView3
             // 
-            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("宋体", 10F);
+            this.gridView3.Appearance.Row.Options.UseFont = true;
             this.gridView3.Appearance.Row.Options.UseTextOptions = true;
             this.gridView3.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -2625,7 +2647,7 @@
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn15});
-            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.GridControl = this.gridControl_1_2;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsBehavior.ReadOnly = true;
@@ -2703,24 +2725,26 @@
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 8;
             // 
-            // gridControl4
+            // gridControl_1_4
             // 
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(3, 421);
-            this.gridControl4.MainView = this.gridView5;
-            this.gridControl4.MenuManager = this.ribbonControl;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(730, 212);
-            this.gridControl4.TabIndex = 4;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_1_4.Location = new System.Drawing.Point(3, 421);
+            this.gridControl_1_4.MainView = this.gridView5;
+            this.gridControl_1_4.MenuManager = this.ribbonControl;
+            this.gridControl_1_4.Name = "gridControl_1_4";
+            this.gridControl_1_4.Size = new System.Drawing.Size(730, 212);
+            this.gridControl_1_4.TabIndex = 4;
+            this.gridControl_1_4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
             // 
             // gridView5
             // 
-            this.gridView5.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView5.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
             this.gridView5.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView5.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView5.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView5.Appearance.Row.Font = new System.Drawing.Font("宋体", 10F);
+            this.gridView5.Appearance.Row.Options.UseFont = true;
             this.gridView5.Appearance.Row.Options.UseTextOptions = true;
             this.gridView5.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -2731,7 +2755,7 @@
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31});
-            this.gridView5.GridControl = this.gridControl4;
+            this.gridView5.GridControl = this.gridControl_1_4;
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsBehavior.Editable = false;
             this.gridView5.OptionsBehavior.ReadOnly = true;
@@ -2862,9 +2886,9 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel16, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.gridControl5, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.gridControl_2_1, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel17, 0, 3);
-            this.tableLayoutPanel14.Controls.Add(this.gridControl8, 0, 4);
+            this.tableLayoutPanel14.Controls.Add(this.gridControl_2_4, 0, 4);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -3051,16 +3075,16 @@
             this.label20.Text = "户名";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gridControl5
+            // gridControl_2_1
             // 
-            this.gridControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl5.Location = new System.Drawing.Point(3, 103);
-            this.gridControl5.MainView = this.gridView6;
-            this.gridControl5.MenuManager = this.ribbonControl;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(730, 212);
-            this.gridControl5.TabIndex = 2;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_2_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_2_1.Location = new System.Drawing.Point(3, 103);
+            this.gridControl_2_1.MainView = this.gridView6;
+            this.gridControl_2_1.MenuManager = this.ribbonControl;
+            this.gridControl_2_1.Name = "gridControl_2_1";
+            this.gridControl_2_1.Size = new System.Drawing.Size(730, 212);
+            this.gridControl_2_1.TabIndex = 2;
+            this.gridControl_2_1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
             // 
             // gridView6
@@ -3079,7 +3103,7 @@
             this.gridColumn36,
             this.gridColumn37});
             this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView6.GridControl = this.gridControl5;
+            this.gridView6.GridControl = this.gridControl_2_1;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsBehavior.Editable = false;
             this.gridView6.OptionsBehavior.ReadOnly = true;
@@ -3144,8 +3168,8 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel17.Controls.Add(this.gridControl7, 0, 1);
-            this.tableLayoutPanel17.Controls.Add(this.gridControl6, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.gridControl_2_3, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.gridControl_2_2, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 321);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -3155,16 +3179,16 @@
             this.tableLayoutPanel17.Size = new System.Drawing.Size(730, 94);
             this.tableLayoutPanel17.TabIndex = 3;
             // 
-            // gridControl7
+            // gridControl_2_3
             // 
-            this.gridControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl7.Location = new System.Drawing.Point(3, 50);
-            this.gridControl7.MainView = this.gridView7;
-            this.gridControl7.MenuManager = this.ribbonControl;
-            this.gridControl7.Name = "gridControl7";
-            this.gridControl7.Size = new System.Drawing.Size(724, 41);
-            this.gridControl7.TabIndex = 1;
-            this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_2_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_2_3.Location = new System.Drawing.Point(3, 50);
+            this.gridControl_2_3.MainView = this.gridView7;
+            this.gridControl_2_3.MenuManager = this.ribbonControl;
+            this.gridControl_2_3.Name = "gridControl_2_3";
+            this.gridControl_2_3.Size = new System.Drawing.Size(724, 41);
+            this.gridControl_2_3.TabIndex = 1;
+            this.gridControl_2_3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
             // 
             // gridView7
@@ -3185,7 +3209,7 @@
             this.gridColumn44,
             this.gridColumn45,
             this.gridColumn46});
-            this.gridView7.GridControl = this.gridControl7;
+            this.gridView7.GridControl = this.gridControl_2_3;
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsBehavior.Editable = false;
             this.gridView7.OptionsBehavior.ReadOnly = true;
@@ -3263,16 +3287,16 @@
             this.gridColumn46.Visible = true;
             this.gridColumn46.VisibleIndex = 8;
             // 
-            // gridControl6
+            // gridControl_2_2
             // 
-            this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
-            this.gridControl6.MainView = this.gridView8;
-            this.gridControl6.MenuManager = this.ribbonControl;
-            this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(724, 41);
-            this.gridControl6.TabIndex = 0;
-            this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_2_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_2_2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl_2_2.MainView = this.gridView8;
+            this.gridControl_2_2.MenuManager = this.ribbonControl;
+            this.gridControl_2_2.Name = "gridControl_2_2";
+            this.gridControl_2_2.Size = new System.Drawing.Size(724, 41);
+            this.gridControl_2_2.TabIndex = 0;
+            this.gridControl_2_2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8});
             // 
             // gridView8
@@ -3293,7 +3317,7 @@
             this.gridColumn53,
             this.gridColumn54,
             this.gridColumn55});
-            this.gridView8.GridControl = this.gridControl6;
+            this.gridView8.GridControl = this.gridControl_2_2;
             this.gridView8.Name = "gridView8";
             this.gridView8.OptionsBehavior.Editable = false;
             this.gridView8.OptionsBehavior.ReadOnly = true;
@@ -3371,16 +3395,16 @@
             this.gridColumn55.Visible = true;
             this.gridColumn55.VisibleIndex = 8;
             // 
-            // gridControl8
+            // gridControl_2_4
             // 
-            this.gridControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl8.Location = new System.Drawing.Point(3, 421);
-            this.gridControl8.MainView = this.gridView9;
-            this.gridControl8.MenuManager = this.ribbonControl;
-            this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(730, 212);
-            this.gridControl8.TabIndex = 4;
-            this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl_2_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_2_4.Location = new System.Drawing.Point(3, 421);
+            this.gridControl_2_4.MainView = this.gridView9;
+            this.gridControl_2_4.MenuManager = this.ribbonControl;
+            this.gridControl_2_4.Name = "gridControl_2_4";
+            this.gridControl_2_4.Size = new System.Drawing.Size(730, 212);
+            this.gridControl_2_4.TabIndex = 4;
+            this.gridControl_2_4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView9});
             // 
             // gridView9
@@ -3399,7 +3423,7 @@
             this.gridColumn60,
             this.gridColumn61,
             this.gridColumn62});
-            this.gridView9.GridControl = this.gridControl8;
+            this.gridView9.GridControl = this.gridControl_2_4;
             this.gridView9.Name = "gridView9";
             this.gridView9.OptionsBehavior.Editable = false;
             this.gridView9.OptionsBehavior.ReadOnly = true;
@@ -4439,7 +4463,7 @@
             // 
             // chartControlChargeProportion
             // 
-            this.chartControlChargeProportion.AppearanceNameSerializable = "Pastel Kit";
+            this.chartControlChargeProportion.AppearanceNameSerializable = "In A Fog";
             this.chartControlChargeProportion.BackColor = System.Drawing.Color.Transparent;
             simpleDiagram1.EqualPieSize = false;
             this.chartControlChargeProportion.Diagram = simpleDiagram1;
@@ -4447,7 +4471,7 @@
             this.chartControlChargeProportion.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
             this.chartControlChargeProportion.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             this.chartControlChargeProportion.Legend.EquallySpacedItems = false;
-            this.chartControlChargeProportion.Legend.UseCheckBoxes = true;
+            this.chartControlChargeProportion.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControlChargeProportion.Location = new System.Drawing.Point(0, 0);
             this.chartControlChargeProportion.Name = "chartControlChargeProportion";
             series23.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
@@ -4473,8 +4497,39 @@
             // 
             // xtraTabPage4
             // 
+            this.xtraTabPage4.Controls.Add(this.Fe_CuPropotion);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Size = new System.Drawing.Size(486, 330);
+            this.xtraTabPage4.Text = "铜-铁损比例";
+            // 
+            // Fe_CuPropotion
+            // 
+            this.Fe_CuPropotion.AppearanceNameSerializable = "In A Fog";
+            simpleDiagram2.EqualPieSize = false;
+            this.Fe_CuPropotion.Diagram = simpleDiagram2;
+            this.Fe_CuPropotion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Fe_CuPropotion.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.Fe_CuPropotion.Location = new System.Drawing.Point(0, 0);
+            this.Fe_CuPropotion.Name = "Fe_CuPropotion";
+            pieSeriesLabel2.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
+            pieSeriesLabel2.TextPattern = "{A} {V}   {VP:0.00%} ";
+            series24.Label = pieSeriesLabel2;
+            series24.Name = "铜-铁损比例";
+            pieSeriesView3.RuntimeExploding = false;
+            pieSeriesView3.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            series24.View = pieSeriesView3;
+            this.Fe_CuPropotion.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series24};
+            pieSeriesView4.RuntimeExploding = false;
+            pieSeriesView4.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Counterclockwise;
+            this.Fe_CuPropotion.SeriesTemplate.View = pieSeriesView4;
+            this.Fe_CuPropotion.Size = new System.Drawing.Size(486, 330);
+            this.Fe_CuPropotion.TabIndex = 0;
+            chartTitle8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            chartTitle8.Text = "铜-铁损比例";
+            chartTitle8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Fe_CuPropotion.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle8});
             // 
             // xtraTabControl3
             // 
@@ -4509,23 +4564,23 @@
             this.chartControl2.Legend.UseCheckBoxes = true;
             this.chartControl2.Location = new System.Drawing.Point(0, 0);
             this.chartControl2.Name = "chartControl2";
-            series24.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series24.Name = "Series 1";
             series25.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series25.Name = "Series 2";
+            series25.Name = "Series 1";
             series26.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series26.Name = "Series 3";
+            series26.Name = "Series 2";
+            series27.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series27.Name = "Series 3";
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series24,
         series25,
-        series26};
+        series26,
+        series27};
             this.chartControl2.Size = new System.Drawing.Size(486, 330);
             this.chartControl2.TabIndex = 0;
-            chartTitle8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            chartTitle8.Text = "用电(kW.h)";
-            chartTitle8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            chartTitle9.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            chartTitle9.Text = "用电(kW.h)";
+            chartTitle9.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle8});
+            chartTitle9});
             // 
             // xtraTabPage6
             // 
@@ -4640,14 +4695,14 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_1_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.xtraTabPage10.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
@@ -4661,14 +4716,14 @@
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.tableLayoutPanel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_2_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
             this.xtraTabPage12.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
@@ -4763,13 +4818,20 @@
             ((System.ComponentModel.ISupportInitialize)(series23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlChargeProportion)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fe_CuPropotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).EndInit();
             this.xtraTabControl3.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -4954,7 +5016,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControl_1_1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -4963,7 +5025,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.GridControl gridControl_1_3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
@@ -4974,7 +5036,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridControl_1_2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
@@ -4985,7 +5047,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.GridControl gridControl_1_4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
@@ -5015,7 +5077,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private DevExpress.XtraGrid.GridControl gridControl5;
+        private DevExpress.XtraGrid.GridControl gridControl_2_1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
@@ -5024,7 +5086,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn37;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private DevExpress.XtraGrid.GridControl gridControl7;
+        private DevExpress.XtraGrid.GridControl gridControl_2_3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn38;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn39;
@@ -5035,7 +5097,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
-        private DevExpress.XtraGrid.GridControl gridControl6;
+        private DevExpress.XtraGrid.GridControl gridControl_2_2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
@@ -5046,7 +5108,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn55;
-        private DevExpress.XtraGrid.GridControl gridControl8;
+        private DevExpress.XtraGrid.GridControl gridControl_2_4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn57;
@@ -5125,6 +5187,7 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem15;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem16;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem17;
+        private DevExpress.XtraCharts.ChartControl Fe_CuPropotion;
 
     }
 }

@@ -21,31 +21,37 @@ namespace AracheTest.Reports
             xrTableCell25.Text = dt0.Rows[1]["MID"].ToString();
             xrTableCell67.Text = dt0.Rows[2]["MID"].ToString();
             xrTableCell60.Text = dt0.Rows[3]["MID"].ToString();
+            xrTableCell53.Text = dt0.Rows[4]["MID"].ToString();
 
             xrTableCell19.Text = dt0.Rows[0]["MName"].ToString();
             xrTableCell26.Text = dt0.Rows[1]["MName"].ToString();
             xrTableCell68.Text = dt0.Rows[2]["MName"].ToString();
             xrTableCell61.Text = dt0.Rows[3]["MName"].ToString();
+            xrTableCell54.Text = dt0.Rows[4]["MName"].ToString();
 
             xrTableCell20.Text = dt0.Rows[0]["PresentShown"].ToString();
             xrTableCell27.Text = dt0.Rows[1]["PresentShown"].ToString();
             xrTableCell69.Text = dt0.Rows[2]["PresentShown"].ToString();
             xrTableCell62.Text = dt0.Rows[3]["PresentShown"].ToString();
+            xrTableCell55.Text = dt0.Rows[4]["PresentShown"].ToString();
 
             xrTableCell22.Text = dt0.Rows[0]["PreviousShown"].ToString();
             xrTableCell29.Text = dt0.Rows[1]["PreviousShown"].ToString();
             xrTableCell71.Text = dt0.Rows[2]["PreviousShown"].ToString();
             xrTableCell64.Text = dt0.Rows[3]["PreviousShown"].ToString();
+            xrTableCell57.Text = dt0.Rows[4]["PreviousShown"].ToString();
 
             xrTableCell23.Text = dt0.Rows[0]["Rate"].ToString();
             xrTableCell30.Text = dt0.Rows[1]["Rate"].ToString();
             xrTableCell72.Text = dt0.Rows[2]["Rate"].ToString();
             xrTableCell65.Text = dt0.Rows[3]["Rate"].ToString();
+            xrTableCell58.Text = dt0.Rows[4]["Rate"].ToString();
 
             xrTableCell24.Text = dt0.Rows[0]["WPP"].ToString();
             xrTableCell31.Text = dt0.Rows[1]["WPP"].ToString();
             xrTableCell73.Text = dt0.Rows[2]["WPP"].ToString();
             xrTableCell66.Text = dt0.Rows[3]["WPP"].ToString();
+            xrTableCell59.Text = dt0.Rows[4]["WPP"].ToString();
 
             xrTableCell83.Text = dt1.Rows[0][0].ToString();
             xrTableCell84.Text = dt1.Rows[0][1].ToString();

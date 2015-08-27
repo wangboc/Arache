@@ -8,152 +8,187 @@ using AracheTest.Data;
 using AracheTest.Reports;
 using DevExpress.XtraCharts;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.Preview;
+using DevExpress.XtraReports.UI;
 
 namespace AracheTest.UIControls
 {
-    class ChargeControls
+    public class ChargeControlsBase
     {
-        public ChartControl chargeProportion { get; set; }
-        public GridControl gridCharge_1_1 { get; set; }
-        public GridControl gridCharge_1_2 { get; set; }
-        public GridControl gridCharge_1_3 { get; set; }
-        public GridControl gridCharge_1_4 { get; set; }
-        public DocumentViewer documentViewer_1 { get; set; }
+        //分别对应电费栏中的四个表格，从上到下
+        protected DataTable _chargeTable_1 = new DataTable();
+        protected DataTable _chargeTable_2 = new DataTable();
+        protected DataTable _chargeTable_3 = new DataTable();
+        protected DataTable _chargeTable_4 = new DataTable();
 
+        protected ChartControl ChargeProportion;
+        protected ChartControl Fe_CuPropotion;
 
-        private Dictionary<string, Object> chargeData;
-        //======================================================
-        //分别对应一期电费栏中的四个表格，从上到下
-        private DataTable _chargeTable0 = new DataTable();
-        private DataTable _chargeTable1 = new DataTable();
-        private DataTable _chargeTable2 = new DataTable();
-        private DataTable _chargeTable3 = new DataTable();
-        //======================================================
-        
-        
-        public ChargeControls()
+        public ChargeControlsBase()
         {
-            chargeData = new Dictionary<string, Object>();
             InitChargeTableCtr();
         }
-        
-        private void InitChargeTableCtr()
+
+        protected void InitChargeTableCtr()
         {
-           _chargeTable0.Columns.Add("MID");
-            _chargeTable0.Columns.Add("MName");
-            _chargeTable0.Columns.Add("PresentShown");
-            _chargeTable0.Columns.Add("PreviousShown");
-            _chargeTable0.Columns.Add("Rate");
-            _chargeTable0.Columns.Add("WPP");
+            _chargeTable_1.Columns.Add("MID");
+            _chargeTable_1.Columns.Add("MName");
+            _chargeTable_1.Columns.Add("PresentShown");
+            _chargeTable_1.Columns.Add("PreviousShown");
+            _chargeTable_1.Columns.Add("Rate");
+            _chargeTable_1.Columns.Add("WPP");
 
-            _chargeTable1.Columns.Add("PCu");
-            _chargeTable1.Columns.Add("PFe");
-            _chargeTable1.Columns.Add("PTotal");
-            _chargeTable1.Columns.Add("QCu");
-            _chargeTable1.Columns.Add("QFe");
-            _chargeTable1.Columns.Add("QTotal");
-            _chargeTable1.Columns.Add("Spike");
-            _chargeTable1.Columns.Add("Valley");
-            _chargeTable1.Columns.Add("Peak");
+            _chargeTable_2.Columns.Add("PCu");
+            _chargeTable_2.Columns.Add("PFe");
+            _chargeTable_2.Columns.Add("PTotal");
+            _chargeTable_2.Columns.Add("QCu");
+            _chargeTable_2.Columns.Add("QFe");
+            _chargeTable_2.Columns.Add("QTotal");
+            _chargeTable_2.Columns.Add("Spike");
+            _chargeTable_2.Columns.Add("Valley");
+            _chargeTable_2.Columns.Add("Peak");
 
-            _chargeTable2.Columns.Add("Capacity");
-            _chargeTable2.Columns.Add("Need");
-            _chargeTable2.Columns.Add("Shown");
-            _chargeTable2.Columns.Add("NeedInReal");
-            _chargeTable2.Columns.Add("NeedExceed");
-            _chargeTable2.Columns.Add("CapacityPause");
-            _chargeTable2.Columns.Add("DaysPause");
-            _chargeTable2.Columns.Add("Compensate");
-            _chargeTable2.Columns.Add("Advanced");
+            _chargeTable_3.Columns.Add("Capacity");
+            _chargeTable_3.Columns.Add("Need");
+            _chargeTable_3.Columns.Add("Shown");
+            _chargeTable_3.Columns.Add("NeedInReal");
+            _chargeTable_3.Columns.Add("NeedExceed");
+            _chargeTable_3.Columns.Add("CapacityPause");
+            _chargeTable_3.Columns.Add("DaysPause");
+            _chargeTable_3.Columns.Add("Compensate");
+            _chargeTable_3.Columns.Add("Advanced");
 
 
-            _chargeTable3.Columns.Add("Items");
-            _chargeTable3.Columns.Add("Quantity");
-            _chargeTable3.Columns.Add("Rate");
-            _chargeTable3.Columns.Add("Unit");
-            _chargeTable3.Columns.Add("Price");
-            _chargeTable3.Columns.Add("Total");
-            _chargeTable3.Columns.Add("Remarks");
-        }
-        
-        public void SetChargeUIControls(ChartControl chartControlChargeProportion, GridControl gridControl1,
-            GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentViewer1)
-        {
-            this.chargeProportion = chartControlChargeProportion;
-            this.gridCharge_1_1 = gridControl1;
-            this.gridCharge_1_2 = gridControl2;
-            this.gridCharge_1_3 = gridControl3;
-            this.gridCharge_1_4 = gridControl4;
-            this.documentViewer_1 = documentViewer1;
+            _chargeTable_4.Columns.Add("Items");
+            _chargeTable_4.Columns.Add("Quantity");
+            _chargeTable_4.Columns.Add("Rate");
+            _chargeTable_4.Columns.Add("Unit");
+            _chargeTable_4.Columns.Add("Price");
+            _chargeTable_4.Columns.Add("Total");
+            _chargeTable_4.Columns.Add("Remarks");
         }
 
-        public void SetChargeData(Object dataSource)
+        public virtual void SetChargeUiControls(ChartControl chartControlChargeProportion,
+            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
         {
-            chargeData = dataSource as Dictionary<string, Object>;
-          
-            
-            _chargeTable0.Rows.Clear();
-            _chargeTable1.Rows.Clear();
-            _chargeTable2.Rows.Clear();
-            _chargeTable3.Rows.Clear();
+        }
 
-            if (chargeData["第一阶段"] != null)
+        public virtual void SetChargeData(Object _chargeObjects)
+        {
+            _chargeTable_1.Rows.Clear();
+            _chargeTable_2.Rows.Clear();
+            _chargeTable_3.Rows.Clear();
+            _chargeTable_4.Rows.Clear();
+        }
+
+        public virtual void SetPropotionData(ChargeInfo chargeInfo)
+        {
+        }
+    }
+
+    public class ChargeControlFirst : ChargeControlsBase
+    {
+        private GridControl gridCharge_1;
+        private GridControl gridCharge_2;
+        private GridControl gridCharge_3;
+        private GridControl gridCharge_4;
+        private DocumentViewer documentViewer;
+
+        public override void SetChargeUiControls(ChartControl chartControlChargeProportion,
+            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
+        {
+            ChargeProportion = chartControlChargeProportion;
+            Fe_CuPropotion = Fe_CuPropotionCtl;
+            gridCharge_1 = gridControl1;
+            gridCharge_2 = gridControl2;
+            gridCharge_3 = gridControl3;
+            gridCharge_4 = gridControl4;
+            documentViewer = documentView;
+        }
+
+        public override void SetPropotionData(ChargeInfo chargeInfo)
+        {
+            ChargeProportion.Series[0].Points.Clear();
+            ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                ChargeInfo chargeInfo = chargeData["第一阶段"] as ChargeInfo;
+                new SeriesPoint("尖峰", chargeInfo.PowerSpike.ToString("#0.00")),
+                new SeriesPoint("峰", chargeInfo.PowerPeak.ToString("#0.00")),
+                new SeriesPoint("谷", chargeInfo.PowerValley.ToString("#0.00"))
+            });
 
-                DataRow row = _chargeTable0.NewRow();
+            Fe_CuPropotion.Series[0].Points.Clear();
+            Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
+            {
+                new SeriesPoint("有功铜损", chargeInfo.ActiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", chargeInfo.ActiveCoreLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", chargeInfo.ReactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", chargeInfo.ReactiveCoreLoss.ToString("#0.00"))
+            });
+        }
+
+        public override void SetChargeData(Object _chargeObjects)
+        {
+            ChargeInfo chargeInfo = (_chargeObjects as Dictionary<string, object>)["第一阶段"] as ChargeInfo;
+            base.SetChargeData(chargeInfo);
+            if (chargeInfo != null)
+            {
+                DataRow row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（总）";
-                row[2] = chargeInfo.PowerTotal.ToString("#0.00");
-                //  row[3] = chargeInfo.WPPOld.ToString();
+                row[2] = chargeInfo.WPPNew.ToString("#0.00");
+                row[3] = chargeInfo.WPPOld.ToString("#0.00");
                 row[4] = "30";
-                row[5] = chargeInfo.EnergyTotal.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
+                row[5] = chargeInfo.PowerTotal.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
 
-                row = _chargeTable0.NewRow();
+                row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（尖峰）";
-                row[2] = chargeInfo.PowerSpike.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.EnergySpike.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
+                row[5] = chargeInfo.PowerSpike.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
 
-                row = _chargeTable0.NewRow();
+                row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（峰）";
-                row[2] = chargeInfo.PowerPeak.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.EnergyPeak.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
+                row[5] = chargeInfo.PowerPeak.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
 
-                row = _chargeTable0.NewRow();
+                row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（谷）";
-                row[2] = chargeInfo.PowerValley.ToString("#0.00");
-                //  row[3] = chargeFirstPeak.WPPOld.ToString();
+                row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.EnergyValley.ToString("#0.00");
-                _chargeTable0.Rows.Add(row);
-                gridCharge_1_1.DataSource = _chargeTable0;
+                row[5] = chargeInfo.PowerValley.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
 
+                row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "无功（QI象限）";
+                row[2] = "";
+                row[4] = "30";
+                row[5] = chargeInfo.PowerValley.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
 
-                DataRow row1 = _chargeTable1.NewRow();
+                DataRow row1 = _chargeTable_2.NewRow();
                 row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
                 row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.EnergyTotal.ToString("#0.00");
+                row1[2] = chargeInfo.ActiveAll.ToString("#0.00");
                 row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
                 row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
-                row1[5] = 0;
-                row1[6] = chargeInfo.EnergySpike.ToString("#0.00");
-                row1[7] = chargeInfo.EnergyValley.ToString("#0.00");
-                row1[8] = chargeInfo.EnergyPeak.ToString("#0.00");
-                _chargeTable1.Rows.Add(row1);
-                gridCharge_1_2.DataSource = _chargeTable1;
+                row1[5] = chargeInfo.ReactiveAll.ToString("#0.00");
+                row1[6] = chargeInfo.PowerPeak.ToString("#0.00");
+                row1[7] = chargeInfo.PowerValley.ToString("#0.00");
+                row1[8] = chargeInfo.PowerSpike.ToString("#0.00");
+                _chargeTable_2.Rows.Add(row1);
 
-                DataRow row2 = _chargeTable2.NewRow();
+                DataRow row2 = _chargeTable_3.NewRow();
                 row2[0] = 0;
                 row2[1] = 0;
                 row2[2] = 0;
@@ -163,62 +198,251 @@ namespace AracheTest.UIControls
                 row2[6] = 0;
                 row2[7] = 0;
                 row2[8] = 0;
-                _chargeTable2.Rows.Add(row2);
-                gridCharge_1_3.DataSource = _chargeTable2;
+                _chargeTable_3.Rows.Add(row2);
 
-                DataRow row3 = _chargeTable3.NewRow();
+                DataRow row3 = _chargeTable_4.NewRow();
                 Double total = 0;
                 row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.EnergySpike.ToString("#0.00");
+                row3[1] = chargeInfo.PowerSpike.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
-                row3[4] = 1.39760;
-                row3[5] = (Convert.ToDouble(row3[4].ToString()) * Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0].PriceSpike;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
                 total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
                 row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.EnergyPeak.ToString("#0.00");
+                row3[1] = chargeInfo.PowerPeak.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
-                row3[4] = 1.09960;
-                row3[5] = (Convert.ToDouble(row3[4].ToString()) * Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0].PricePeak;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
                 total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
                 row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.EnergyValley.ToString("#0.00");
+                row3[1] = chargeInfo.PowerValley.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
-                row3[4] = 0.58760;
-                row3[5] = (Convert.ToDouble(row3[4].ToString()) * Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0]
+                        .PriceValley;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
                 total += Convert.ToDouble(row3[5]);
-                _chargeTable3.Rows.Add(row3);
-                row3 = _chargeTable3.NewRow();
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
                 row3[0] = "合计";
                 row3[1] = "";
                 row3[2] = "";
                 row3[3] = "";
                 row3[4] = "";
                 row3[5] = total.ToString("#0.00");
-                _chargeTable3.Rows.Add(row3);
-                gridCharge_1_4.DataSource = _chargeTable3;
+                _chargeTable_4.Rows.Add(row3);
 
-                XtraReport1 report = new  XtraReport1();
-                documentViewer_1.DocumentSource = report;
-                report.SetReportDataSource(_chargeTable0, _chargeTable1, _chargeTable2, _chargeTable3);
-                report.CreateDocument();
 
-                chargeProportion.Series[0].Points.Clear();
-                chargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
+                gridCharge_1.DataSource = _chargeTable_1;
+                gridCharge_2.DataSource = _chargeTable_2;
+                gridCharge_3.DataSource = _chargeTable_3;
+                gridCharge_4.DataSource = _chargeTable_4;
+
+
+                XtraReport1 report = new XtraReport1();
+                report.ExportOptions.PrintPreview.DefaultFileName = "国网浙江慈溪市供电公司非居民用户电费复核单据 （一次抄表）" +
+                                                                    DateTime.Now.ToString("D");
+                report.ExportOptions.SetOptionsVisibility(new ExportOptionKind[]
                 {
-                    new SeriesPoint("尖峰", chargeInfo.EnergySpike.ToString("#0.00")),
-                    new SeriesPoint("峰", chargeInfo.EnergyPeak.ToString("#0.00")),
-                    new SeriesPoint("谷", chargeInfo.EnergyTotal.ToString("#0.00")),
-                });
+                    ExportOptionKind.PdfACompatibility,
+                    ExportOptionKind.PdfCompressed,
+                    ExportOptionKind.PdfConvertImagesToJpeg,
+                    ExportOptionKind.PdfDocumentApplication,
+                    ExportOptionKind.PdfDocumentAuthor,
+                    ExportOptionKind.PdfDocumentKeywords,
+                    ExportOptionKind.PdfDocumentSubject,
+                    ExportOptionKind.PdfDocumentTitle,
+                    ExportOptionKind.PdfImageQuality,
+                    ExportOptionKind.PdfNeverEmbeddedFonts,
+                    ExportOptionKind.PdfPageRange,
+                    ExportOptionKind.PdfCompressed,
+                    ExportOptionKind.PdfPasswordSecurityOptions,
+                    ExportOptionKind.PdfShowPrintDialogOnOpen,
+                    ExportOptionKind.PdfSignatureOptions
+                }, false);
+
+                documentViewer.DocumentSource = report;
+                report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
+                report.CreateDocument();
             }
         }
+    }
 
-        
+    public class ChargeControlSecond : ChargeControlsBase
+    {
+        private GridControl gridCharge_1;
+        private GridControl gridCharge_2;
+        private GridControl gridCharge_3;
+        private GridControl gridCharge_4;
+        private DocumentViewer documentViewer;
+
+        public override void SetChargeUiControls(ChartControl chartControlChargeProportion,
+            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
+        {
+            ChargeProportion = chartControlChargeProportion;
+            Fe_CuPropotion = Fe_CuPropotionCtl;
+            gridCharge_1 = gridControl1;
+            gridCharge_2 = gridControl2;
+            gridCharge_3 = gridControl3;
+            gridCharge_4 = gridControl4;
+            documentViewer = documentView;
+        }
+
+        public override void SetPropotionData(ChargeInfo chargeInfo)
+        {
+            ChargeProportion.Series[0].Points.Clear();
+            ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
+            {
+                new SeriesPoint("尖峰", chargeInfo.PowerSpike2.ToString("#0.00")),
+                new SeriesPoint("峰", chargeInfo.PowerPeak2.ToString("#0.00")),
+                new SeriesPoint("谷", chargeInfo.PowerValley2.ToString("#0.00")),
+            });
+
+            Fe_CuPropotion.Series[0].Points.Clear();
+            Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
+            {
+                new SeriesPoint("有功铜损", chargeInfo.ActiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", chargeInfo.ReactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", chargeInfo.ActiveCoreLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", chargeInfo.ReactiveCoreLoss.ToString("#0.00"))
+            });
+        }
+
+        public override void SetChargeData(Object _chargeObjects)
+        {
+            ChargeInfo chargeInfo = (_chargeObjects as Dictionary<string, object>)["第二阶段"] as ChargeInfo;
+            base.SetChargeData(chargeInfo);
+            if (chargeInfo != null)
+            {
+                DataRow row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（总）";
+                row[2] = chargeInfo.WPPNew2.ToString("#0.00");
+                row[4] = "30";
+                row[5] = chargeInfo.PowerTotal2.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
+
+                row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（尖峰）";
+                row[2] = "";
+                row[4] = "30";
+                row[5] = chargeInfo.PowerSpike2.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
+
+                row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（峰）";
+                row[2] = "";
+                row[4] = "30";
+                row[5] = chargeInfo.PowerPeak2.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
+
+                row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "有功（谷）";
+                row[2] = "";
+                row[4] = "30";
+                row[5] = chargeInfo.PowerValley2.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
+
+                row = _chargeTable_1.NewRow();
+                row[0] = chargeInfo.MID;
+                row[1] = "无功（QI象限）";
+                row[2] = "";
+                row[4] = "30";
+                row[5] = chargeInfo.ReactiveEnergyQI.ToString("#0.00");
+                _chargeTable_1.Rows.Add(row);
+
+                DataRow row1 = _chargeTable_2.NewRow();
+                row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
+                row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
+                row1[2] = chargeInfo.ActiveAll.ToString("#0.00");
+                row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
+                row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
+                row1[5] = chargeInfo.ReactiveAll.ToString("#0.00");
+                row1[6] = chargeInfo.PowerPeak2.ToString("#0.00");
+                row1[7] = chargeInfo.PowerValley2.ToString("#0.00");
+                row1[8] = chargeInfo.PowerSpike2.ToString("#0.00");
+                _chargeTable_2.Rows.Add(row1);
+
+                DataRow row2 = _chargeTable_3.NewRow();
+                row2[0] = 0;
+                row2[1] = 0;
+                row2[2] = 0;
+                row2[3] = 0;
+                row2[4] = 0;
+                row2[5] = 0;
+                row2[6] = 0;
+                row2[7] = 0;
+                row2[8] = 0;
+                _chargeTable_3.Rows.Add(row2);
+                DataRow row3 = _chargeTable_4.NewRow();
+                Double total = 0;
+                row3[0] = "尖 一般工商";
+                row3[1] = chargeInfo.PowerSpike2.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0].PriceSpike;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
+                row3[0] = "峰 一般工商";
+                row3[1] = chargeInfo.PowerPeak2.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0].PricePeak;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
+                row3[0] = "谷 一般工商";
+                row3[1] = chargeInfo.PowerValley2.ToString("#0.00");
+                row3[2] = 0;
+                row3[3] = "kW.h";
+                row3[4] =
+                    ((_chargeObjects as Dictionary<string, object>)["电量参数"] as List<ElectricityParameter>)[0]
+                        .PriceValley;
+                row3[5] = (Convert.ToDouble(row3[4].ToString())*Convert.ToDouble(row3[1].ToString())).ToString("#0.00");
+                total += Convert.ToDouble(row3[5]);
+                _chargeTable_4.Rows.Add(row3);
+                row3 = _chargeTable_4.NewRow();
+                row3[0] = "合计";
+                row3[1] = "";
+                row3[2] = "";
+                row3[3] = "";
+                row3[4] = "";
+                row3[5] = total.ToString("#0.00");
+                _chargeTable_4.Rows.Add(row3);
+
+
+                gridCharge_1.DataSource = _chargeTable_1;
+                gridCharge_2.DataSource = _chargeTable_2;
+                gridCharge_3.DataSource = _chargeTable_3;
+                gridCharge_4.DataSource = _chargeTable_4;
+
+
+                XtraReport2 report = new XtraReport2();
+                report.ExportOptions.PrintPreview.DefaultFileName = "国网浙江慈溪市供电公司非居民用户电费复核单据 （二次抄表）" +
+                                                                    DateTime.Now.ToString("D");
+
+                documentViewer.DocumentSource = report;
+                report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
+                report.CreateDocument();
+            }
+        }
     }
 }

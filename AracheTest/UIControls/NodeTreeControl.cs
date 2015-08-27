@@ -35,13 +35,13 @@ namespace AracheTest.UIControls
             NodeTreeEdit.TreeList.GetStateImage += TreeList_GetStateImage;
             NodeTreeEdit.TreeList.NodeCellStyle += TreeList_NodeCellStyle;
             NodeTreeEdit.TreeList.CustomDrawNodeCell += TreeList_CustomDrawNodeCell;
+           
 
             NodeTreeEdit.TreeList.MoveFirst();
             NodeTreeEdit.ValueMember = "NodeID";
             NodeTreeEdit.DisplayMember = "Name";
             var nodeTree = NodeTreeEdit.TreeList;
-            var columnName = nodeTree.Columns.Add();
-            columnName.Caption = "节点名称";
+            var columnName = nodeTree.Columns.Add();columnName.Caption = "节点名称";
             columnName.Name = "NodeName";
             columnName.Visible = true;
             columnName.FieldName = "Name";
@@ -76,6 +76,7 @@ namespace AracheTest.UIControls
             NodeTreeEdit.AutoExpandAllNodes = false;
         }
 
+
         private void TreeList_CustomDrawNodeCell(object sender, CustomDrawNodeCellEventArgs e)
         {
             Brush backBrush, foreBrush;
@@ -98,7 +99,6 @@ namespace AracheTest.UIControls
             // Prohibit default painting.
             e.Handled = true;
         }
-
         private void TreeList_NodeCellStyle(object sender, GetCustomNodeCellStyleEventArgs e)
         {
             bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));

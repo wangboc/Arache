@@ -1,41 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Configuration;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AracheTest.Data;
-using AracheTest.Reports;
 using AracheTest.UIControls;
 using DevExpress.Utils;
-using DevExpress.Xpo;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPrinting;
-using DevExpress.XtraTreeList;
-using DevExpress.XtraTreeList.Native;
-using DevExpress.XtraTreeList.Nodes;
-
+using log4net.Repository;
 
 namespace AracheTest
 {
     public partial class frmMain : RibbonForm
     {
+        private int CurrentPID;
         private List<ElectricityOriginalData> _electricityDataList = new List<ElectricityOriginalData>();
-
+        private Dictionary<string, Object> _chargeObjects;
 
         private Timer _timer_GetRealtime = new Timer();
         private Timer _timer_GetRealtimeData = new Timer();
 
-        private ChargeControls _chargeControls;
+        private ChargeControlFirst _chargeControlsFirst;
+        private ChargeControlSecond _chargeControlsSecond;
         private ElectricityCharts _electricityCharts;
         private NodeTreeControl _nodeTreeControl;
         private PopupControlContainer popup = new PopupControlContainer();
@@ -44,9 +36,9 @@ namespace AracheTest
         {
             InitializeComponent();
             ReadUserInfo();
-
             InitTimer();
             InitUIControls();
+            CurrentPID = int.Parse(ConfigurationManager.AppSettings["PID"]);
             RefreshAllData();
         }
 
@@ -95,18 +87,30 @@ namespace AracheTest
             StartDatetimeCtr.Enabled = false;
             EndDatetimeCtr.Enabled = false;
             ((GridView) gridControlDetail.Views[0]).BestFitColumns();
-
+            
             InitChartControl();
             InitNodeTreeControl();
             InitChargeDateCustomCtr();
-            InitChargeGridandChartControls();
         }
 
-        private void InitChargeGridandChartControls()
+        private void SetChargeGridandChartControls()
         {
-            _chargeControls = new ChargeControls();
-            _chargeControls.SetChargeUIControls(chartControlChargeProportion, gridControl1, gridControl2, gridControl3,
-                gridControl4, documentViewer1);
+            _chargeControlsFirst = new ChargeControlFirst();
+            _chargeControlsSecond = new ChargeControlSecond();
+
+            _chargeControlsFirst.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, gridControl_1_1,
+                gridControl_1_2,
+                gridControl_1_3, gridControl_1_4, documentViewer1);
+            _chargeControlsFirst.SetChargeData(_chargeObjects);
+
+            _chargeControlsSecond.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, gridControl_2_1,
+                gridControl_2_2,
+                gridControl_2_3, gridControl_2_4, documentViewer2);
+            _chargeControlsSecond.SetChargeData(_chargeObjects);
+
+            _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
+            xtraTabControl2.SelectedTabPageIndex = 0;
+            xtraTabControl4.SelectedTabPageIndex = 0;
         }
 
         private void InitChargeDateCustomCtr()
@@ -212,16 +216,24 @@ namespace AracheTest
         private void RefreshAllData()
         {
             var task = new TaskElectricityFilter("更新数据",
-                new FilterCondition(DateTime.Now, DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetElectricityData,
+                new FilterCondition(DateTime.Now, DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID),
+                SetElectricityData,
                 true);
             TaskPool.AddTask(task, TaskScheduler.FromCurrentSynchronizationContext());
-            var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(), SetNodesData);
+            var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(CurrentPID), SetNodesData);
             TaskPool.AddTask(taskNode, TaskScheduler.FromCurrentSynchronizationContext());
+            var taskCharge = new TaskChargeFilter("获取当天计费信息", new ChargeFilterCondition(
+                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
+                DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
+            TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void SetNodesData(Object list)
         {
-            _nodeTreeControl.UpdateNodesData(list as List<NodeInfo>);
+            List<NodeInfo> nodeList = list as List<NodeInfo>;
+            _nodeTreeControl.UpdateNodesData(nodeList);
+            if (nodeTreeCtr.EditValue == null || nodeTreeCtr.EditValue == "")
+                nodeTreeCtr.EditValue = nodeList[nodeList.Count - 1].NodeID;
         }
 
         private void RealtimeCheckBtn_DownChanged(object sender, ItemClickEventArgs e)
@@ -256,7 +268,7 @@ namespace AracheTest
             ResetUISource();
             var task = new TaskElectricityFilter("检索数据",
                 new FilterCondition((DateTime) StartDatetimeCtr.EditValue, (DateTime) EndDatetimeCtr.EditValue,
-                    _nodeTreeControl.CurrentNodeMid), SetElectricityData, false);
+                    _nodeTreeControl.CurrentNodeMid, CurrentPID), SetElectricityData, false);
             TaskPool.AddTask(task, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -285,7 +297,8 @@ namespace AracheTest
 
         private void SetChargeData(Object dataSource)
         {
-            _chargeControls.SetChargeData(dataSource);
+            _chargeObjects = dataSource as Dictionary<string, object>;
+            SetChargeGridandChartControls();
         }
 
         private void SetElectricityData(Object dataSource)
@@ -365,7 +378,7 @@ namespace AracheTest
             var taskCharge = new TaskChargeFilter("获取当天计费信息",
                 new ChargeFilterCondition(
                     new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
-                    DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetChargeData);
+                    DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -373,7 +386,7 @@ namespace AracheTest
         {
             var taskCharge = new TaskChargeFilter("获取本月计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1, 0, 0, 0), DateTime.Now,
-                    DateTime.Now, _nodeTreeControl.CurrentNodeMid), SetChargeData);
+                    DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -381,7 +394,7 @@ namespace AracheTest
         {
             var taskCharge = new TaskChargeFilter("获取本年计费信息",
                 new ChargeFilterCondition(new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), DateTime.Now, DateTime.Now,
-                    _nodeTreeControl.CurrentNodeMid), SetChargeData);
+                    _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -443,7 +456,7 @@ namespace AracheTest
             {
                 var taskCharge = new TaskChargeFilter("获取自定义时段计费信息",
                     new ChargeFilterCondition(startDate.DateTime, middleDate.DateTime, lastDate.DateTime,
-                        _nodeTreeControl.CurrentNodeMid), SetChargeData);
+                        _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
                 TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
             }
             else MessageBox.Show("计费时间设定错误");
@@ -550,6 +563,20 @@ namespace AracheTest
         private void barButtonItemVoltage_ItemClick(object sender, ItemClickEventArgs e)
         {
             xtraTabControlBasicInfo.SelectedTabPageIndex = 0;
+        }
+
+        private void xtraTabControl4_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl4.SelectedTabPageIndex == 0)
+            {
+                _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
+                xtraTabControl2.SelectedTabPageIndex = 0;
+            }
+            else
+            {
+                _chargeControlsSecond.SetPropotionData(_chargeObjects["第二阶段"] as ChargeInfo);
+                xtraTabControl2.SelectedTabPageIndex = 1;
+            }
         }
     }
 }

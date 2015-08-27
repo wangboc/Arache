@@ -35,39 +35,40 @@ namespace AracheTest.Data
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetRealTimeData(int mid)
+        public static List<ElectricityOriginalData> GetRealTimeData(int mid, int pid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
-            DateTime yesterday = DateTime.Now.AddDays(-50);
+            DateTime yesterday = DateTime.Now.AddDays(-1);
             DataTable dt =
                 DBConnector.ExecuteSql(
                     string.Format(
-                        "select * from normalreceiveddata where Eventtime > '{0:u}' and MID = '{1}' order by Eventtime",
-                        yesterday, mid));
+                        "select * from normalreceiveddata where Eventtime > '{0:u}' and MID = '{1}' and PID = '{2}' order by Eventtime",
+                        yesterday, mid, pid));
             if (dt != null)
                 list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取24小时数据");
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetDatetimeFilteredData(DateTime start, DateTime end, int MID)
+        public static List<ElectricityOriginalData> GetDatetimeFilteredData(DateTime start, DateTime end, int mid,
+            int pid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
             DataTable dt =
                 DBConnector.ExecuteSql(
                     string.Format(
-                        "select * from normalreceiveddata where (Eventtime between '{0}' and '{1}') and MID = '{2}' order by Eventtime",
-                        start, end, MID));
+                        "select * from normalreceiveddata where (Eventtime between '{0}' and '{1}') and MID = '{2}' and PID = '{3}' order by Eventtime",
+                        start, end, mid, pid));
             if (dt != null)
                 list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取" + start + "至" + end + "数据");
             return list;
         }
 
-        public static List<NodeInfo> GetAllNodeInfo()
+        public static List<NodeInfo> GetAllNodeInfo(int pid)
         {
             List<NodeInfo> list = new List<NodeInfo>();
-            DataTable dt = DBConnector.ExecuteSql("select * from nodeinfo");
+            DataTable dt = DBConnector.ExecuteSql(string.Format("select * from nodeinfo where PID = '{0}'", pid));
             if (dt != null)
                 list.AddRange(from DataRow dr in dt.Rows select new NodeInfo(dr));
             LogHelper.WriteLog(typeof (frmMain), "获取所有节点信息");
@@ -85,11 +86,12 @@ namespace AracheTest.Data
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetElectricityDataByMid(int mid)
+        public static List<ElectricityOriginalData> GetElectricityDataByMid(int mid, int pid)
         {
             List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
             DataTable dt =
-                DBConnector.ExecuteSql(string.Format("select * from normalreceiveddata where MID = '{0}'", mid));
+                DBConnector.ExecuteSql(
+                    string.Format("select * from normalreceiveddata where MID = '{0}' and PID = '{1}'", mid, pid));
             if (dt != null)
                 list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
             LogHelper.WriteLog(typeof (frmMain), string.Format("获取MID为'{0}'的电表--电量信息", mid));

@@ -8,21 +8,26 @@ namespace AracheTest
 {
     public class ConditionBase
     {
+        public int PID { get; set; }
+
+        public ConditionBase(int PID)
+        {
+            this.PID = PID;
+        }
     }
 
     public class FilterCondition : ConditionBase
     {
         public DateTime StartTime { get; private set; }
         public DateTime EndTime { get; private set; }
-        public int Mid { get; private set; }
-        public int NodeId { get; set; }
+        public int MID { get; private set; }
 
-        public FilterCondition(DateTime startTime, DateTime endTime, int mid) 
-        {
+
+        public FilterCondition(DateTime startTime, DateTime endTime, int mid, int pid):base(pid){
             StartTime = startTime;
             EndTime = endTime;
-            NodeId = mid;
-            Mid = NodeId;
+            MID = mid;
+            PID = pid;
         }
     }
 
@@ -33,8 +38,8 @@ namespace AracheTest
         /// </summary>
         public DateTime SecondTime { get; private set; }
 
-        public ChargeFilterCondition(DateTime startTime, DateTime secondTime, DateTime endTime, int nodeId)
-            : base(startTime, endTime, nodeId)
+        public ChargeFilterCondition(DateTime startTime, DateTime secondTime, DateTime endTime, int mid, int pid)
+            : base(startTime, endTime, mid, pid)
         {
             SecondTime = secondTime;
         }
@@ -55,9 +60,9 @@ namespace AracheTest
 
         protected DateTime Time { get; set; }
 
-        protected Object DBData = null;
+        protected Object DBData { get; set; }
 
-        protected UpdateDataDelegate _updateDataData;
+        protected readonly UpdateDataDelegate UpdateDataData;
 
         public bool IsFinished { get; set; }
 
@@ -68,17 +73,17 @@ namespace AracheTest
 
         public void UpdateDataByDelegate()
         {
-            _updateDataData(DBData);
+            UpdateDataData(DBData);
             IsFinished = true;
         }
 
         public TaskBase(String name, ConditionBase condition, UpdateDataDelegate returnFuc)
         {
-            this.Name = name;
-            this._updateDataData = returnFuc;
-            this.Condition = condition;
-            this.IsFinished = false;
-            this.Time = DateTime.Now;
+            Name = name;
+            UpdateDataData = returnFuc;
+            Condition = condition;
+            IsFinished = false;
+            Time = DateTime.Now;
         }
     }
 
@@ -88,11 +93,11 @@ namespace AracheTest
         private FilterCondition _condition;
 
         public TaskElectricityFilter(String name, FilterCondition condition, UpdateDataDelegate returnFuc,
-            Boolean IsRealtime)
+            Boolean isRealtime)
             : base(name, condition, returnFuc)
         {
             this._condition = condition;
-            this._isRealtime = IsRealtime;
+            this._isRealtime = isRealtime;
         }
 
         public override void Run()
@@ -104,12 +109,13 @@ namespace AracheTest
 
         private void GetRealtimeData()
         {
-            DBData = DataBase.GetRealTimeData(_condition.Mid);
+            DBData = DataBase.GetRealTimeData(_condition.MID, _condition.PID);
         }
 
         public void GetFilteredData()
         {
-            DBData = DataBase.GetDatetimeFilteredData(_condition.StartTime, _condition.EndTime, _condition.Mid);
+            DBData = DataBase.GetDatetimeFilteredData(_condition.StartTime, _condition.EndTime, _condition.MID,
+                _condition.PID);
         }
     }
 
@@ -127,13 +133,12 @@ namespace AracheTest
 
         private void FetchNodesInfo()
         {
-            DBData = DataBase.GetAllNodeInfo();
-            List<NodeInfo> data = DBData as List<NodeInfo>;
+            DBData = DataBase.GetAllNodeInfo(Condition.PID);
+            List<NodeInfo> data = (List<NodeInfo>) DBData;
             int nodeTotal = data.Count;
             for (int i = 0; i < nodeTotal; i++)
             {
                 List<Correspondnode> miDs = DataBase.GetCorrespondMid(data[i].NodeID);
-
                 if (miDs == null || miDs.Count <= 0) continue;
                 DataTable dt = new DataTable();
                 dt.Columns.Add("NodeID");
@@ -181,7 +186,6 @@ namespace AracheTest
             returnData.Add("时段信息", getElectricityPeriodInfo());
             returnData.Add("第一阶段", GetFirstCharge());
             returnData.Add("第二阶段", GetSecondCharge());
-
             DBData = returnData;
         }
 
@@ -199,14 +203,14 @@ namespace AracheTest
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.FirstMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.Mid);
+                _condition.MID, _condition.PID);
         }
 
         private ChargeInfo GetSecondCharge()
         {
             CalculateChargeClass charge = new CalculateChargeClass();
             return charge.SecondMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.Mid);
+                _condition.MID, _condition.PID);
         }
     }
 }

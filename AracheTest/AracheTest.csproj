@@ -83,6 +83,7 @@
       <HintPath>..\..\..\Documents\Visual Studio 2012\Projects\DataWatch\DataWatch\DLLs\MySql.Data.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -183,7 +184,10 @@
     <EmbeddedResource Include="Reports\XtraReport2.resx">
       <DependentUpon>XtraReport2.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

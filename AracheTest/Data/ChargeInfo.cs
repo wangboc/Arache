@@ -18,19 +18,22 @@ namespace AracheTest.Data
         
      //输入数据---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //需要计算用的数据源，要求按时间顺序顺序排列（目前只能使用低压表数据进行计算，高压表没有电能数据，后续更换高级表，可以支持高压数据）
-        public List<ElectricityOriginalData> DataSourceFirstMeasure; //起始时间到第一次测量计算时间，不计算铜损与铁损
-        public List<ElectricityOriginalData> DataSourceSecondMeasure; //第一次测量时间到第二次测量时间，计算铜损与铁损，一次计费可以不用
+        public List<ElectricityOriginalData> DataSourceFirstMeasure
+             = new List<ElectricityOriginalData>(); //起始时间到第一次测量计算时间，不计算铜损与铁损
+        public List<ElectricityOriginalData> DataSourceSecondMeasure = new List<ElectricityOriginalData>(); //第一次测量时间到第二次测量时间，计算铜损与铁损，一次计费可以不用
         public int MID;
+        public int PID;
 
         public ElectricityParameter electricityparameter ; //计算用数据参数
         public List<ElectricityPeriod> electricitytimeprice; //计算用尖峰谷时段表
 
-        public ChargeInfo(DateTime startDatetime, DateTime firstDateTime, DateTime secondDatetime, int MID)
+        public ChargeInfo(DateTime startDatetime, DateTime firstDateTime, DateTime secondDatetime, int MID, int PID)
         {
             this.startDateTime = startDatetime;
             this.firstDateTime = firstDateTime;
             this.secondDatetime = secondDatetime;
             this.MID = MID;
+            this.PID = PID;
             GetElectricityPeriodInfo();
             GetElectricityparameter();
             GetDataSourceFirstMeasure();
@@ -39,15 +42,14 @@ namespace AracheTest.Data
 
         private void GetDataSourceFirstMeasure()
         {
-
-            List<ElectricityOriginalData> list = DataBase.GetDatetimeFilteredData(startDateTime, firstDateTime, MID);
+            List<ElectricityOriginalData> list = DataBase.GetDatetimeFilteredData(startDateTime, firstDateTime, MID,PID);
             if (list != null && list.Count > 0)
                 DataSourceFirstMeasure = list;
         }
 
         private void GetDataSourceSecondMeasure()
         {
-            List<ElectricityOriginalData> list = DataBase.GetDatetimeFilteredData(firstDateTime, secondDatetime, MID);
+            List<ElectricityOriginalData> list = DataBase.GetDatetimeFilteredData(firstDateTime, secondDatetime, MID, PID);
             if (list != null && list.Count > 0)
                 DataSourceSecondMeasure = list;
         }
@@ -262,7 +264,7 @@ namespace AracheTest.Data
         }
 
         public ChargeInfo FirstMeasureData(DateTime startDateTime, DateTime firstDateTime, DateTime secondDateTime,
-            int mid)
+            int mid, int pid)
         {
             #region 变量
 
@@ -301,7 +303,7 @@ namespace AracheTest.Data
             #region 计算
 
 
-            ChargeInfo StructData = new ChargeInfo(startDateTime, firstDateTime, secondDateTime, mid);
+            ChargeInfo StructData = new ChargeInfo(startDateTime, firstDateTime, secondDateTime, mid, pid);
             if (StructData.DataSourceFirstMeasure == null)
                 return null;
             int CountLine = StructData.DataSourceFirstMeasure.Count;
@@ -333,11 +335,20 @@ namespace AracheTest.Data
 
             double ReactiveCopperLoss = 0; //无功铜损
             double ReactiveCoreLoss = 0; //无功铁损
+            double newWQP = 0;
+            double oldWQP = 0;
+            if (CountLine != 0)
+            {
+
+                newWQP = StructData.DataSourceFirstMeasure[CountLine - 1].WQP; //无功数据（新）
+                oldWQP = StructData.DataSourceFirstMeasure[0].WQP; //无功数据（旧）
+
+            }
 
 
-            double newWQP = StructData.DataSourceFirstMeasure[CountLine - 1].WQP; //无功数据（新）
-            double oldWQP = StructData.DataSourceFirstMeasure[0].WQP; //无功数据（旧）
             double ReactiveEnergyTotal = newWQP - oldWQP; //总电量
+
+
 
             double ReactiveAll = ReactiveCopperLoss + ReactiveCoreLoss; //无功合计
 
@@ -378,9 +389,18 @@ namespace AracheTest.Data
             StructData.PriceSpike = StructData.electricityparameter.PriceSpike; //尖峰电价
             StructData.PricePeak = StructData.electricityparameter.PricePeak; //高峰电价
             StructData.PriceValley = StructData.electricityparameter.PriceValley; //低谷电价
+            if (CountLine != 0)
+            {
 
-            StructData.WPPNew = StructData.DataSourceFirstMeasure[CountLine - 1].WPP; //一次测量示数 （有功总）
-            StructData.EventTimeNew = StructData.DataSourceFirstMeasure[CountLine - 1].EventTime; //一次测量时间  datetime
+                StructData.WPPNew = StructData.DataSourceFirstMeasure[CountLine - 1].WPP; //一次测量示数 （有功总）
+                StructData.EventTimeNew = StructData.DataSourceFirstMeasure[CountLine - 1].EventTime; //一次测量时间  datetime
+
+            }
+            else
+            {
+                StructData.WPPNew = 0; //一次测量示数 （有功总）
+                StructData.EventTimeNew = startDateTime; //一次测量时间  datetime
+            }
             //二次测量值-------------------------------------------------------------------------------------------------------------------------------------------------------------
             StructData.WPPNew2 = StructData.WPPNew; //二次测量示数 （有功总） 不可用，与一次测量相同
             StructData.EventTimeNew2 = StructData.EventTimeNew; //二次测量时间  datetime  不可用，与一次测量相同
@@ -390,16 +410,23 @@ namespace AracheTest.Data
             StructData.PowerPeak2 = StructData.PowerPeak; //高峰电量（kw.h）
             StructData.PowerValley2 = StructData.PowerValley; //低谷电量（kw.h）
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            if (CountLine != 0)
+            {
+                StructData.WPPOld = StructData.DataSourceFirstMeasure[0].WPP; //初始测量示数 （有功总）
 
-            StructData.WPPOld = StructData.DataSourceFirstMeasure[0].WPP; //初始测量示数 （有功总）
-            
-            StructData.EventTimeOld = StructData.DataSourceFirstMeasure[0].EventTime; //初始测量时间  datetime
+                StructData.EventTimeOld = StructData.DataSourceFirstMeasure[0].EventTime; //初始测量时间  datetime
+            }
+            else
+            {
+                StructData.WPPOld = 0; //初始测量示数 （有功总）
 
+                StructData.EventTimeOld = startDateTime; //初始测量时间  datetime
+            }
             StructData.ReactiveEnergyQI = ReactiveEnergyTotal; //无功（QI象限）
 
             StructData.ActiveCopperLoss = ActiveCopperLoss; //有功铜损
             StructData.ActiveCoreLoss = ActiveCoreLoss; //有功铁损
-            StructData.ActiveAll = AllEnergyTotal + ActiveCopperLoss + ActiveCoreLoss; //有功合计
+            StructData.ActiveAll = StructData.PowerTotal + ActiveCopperLoss + ActiveCoreLoss; //有功合计
 
             StructData.ReactiveCopperLoss = ReactiveCopperLoss; //无功铜损
             StructData.ReactiveCoreLoss = ReactiveCoreLoss; //无功铁损
@@ -493,10 +520,14 @@ namespace AracheTest.Data
 
             double ReactiveCopperLoss = 0; //无功铜损
             double ReactiveCoreLoss = 0; //无功铁损
+            double newWQP = 0;
+            double oldWQP = 0;
+            if (CountLine != 0)
+            {
+                newWQP = StructData.DataSourceFirstMeasure[CountLine - 1].WQP; //无功数据（新）
+                oldWQP = StructData.DataSourceFirstMeasure[0].WQP; //无功数据（旧）
+            }
 
-
-            double newWQP = StructData.DataSourceFirstMeasure[CountLine - 1].WQP; //无功数据（新）
-            double oldWQP = StructData.DataSourceFirstMeasure[0].WQP; //无功数据（旧）
             double ReactiveEnergyTotal = newWQP - oldWQP; //总电量
 
             double ReactiveAll = ReactiveCopperLoss + ReactiveCoreLoss; //无功合计
@@ -538,9 +569,16 @@ namespace AracheTest.Data
             StructData.PriceSpike = StructData.electricityparameter.PriceSpike; //尖峰电价
             StructData.PricePeak = StructData.electricityparameter.PricePeak; //高峰电价
             StructData.PriceValley = StructData.electricityparameter.PriceValley; //低谷电价
-
-            StructData.WPPNew = StructData.DataSourceFirstMeasure[CountLine - 1].WPP; //一次测量示数 （有功总）
-            StructData.EventTimeNew = StructData.DataSourceFirstMeasure[CountLine - 1].EventTime; //一次测量时间  datetime
+            if (CountLine != 0)
+            {
+                StructData.WPPNew = StructData.DataSourceFirstMeasure[CountLine - 1].WPP; //一次测量示数 （有功总）
+                StructData.EventTimeNew = StructData.DataSourceFirstMeasure[CountLine - 1].EventTime; //一次测量时间  datetime
+            }
+           // else
+           // {
+            //    StructData.WPPNew = 0;
+            //    StructData.EventTimeNew = DateTime.Now;
+           // }
             //二次测量值-------------------------------------------------------------------------------------------------------------------------------------------------------------
             StructData.WPPNew2 = StructData.WPPNew; //二次测量示数 （有功总） 不可用，与一次测量相同
             StructData.EventTimeNew2 = StructData.EventTimeNew; //二次测量时间  datetime  不可用，与一次测量相同
@@ -550,15 +588,17 @@ namespace AracheTest.Data
             StructData.PowerPeak2 = StructData.PowerPeak; //高峰电量（kw.h）
             StructData.PowerValley2 = StructData.PowerValley; //低谷电量（kw.h）
             //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-            StructData.WPPOld = StructData.DataSourceFirstMeasure[0].WPP; //初始测量示数 （有功总）
-            StructData.EventTimeOld = StructData.DataSourceFirstMeasure[0].EventTime; //初始测量时间  datetime
+            if (CountLine != 0)
+            {
+                StructData.WPPOld = StructData.DataSourceFirstMeasure[0].WPP; //初始测量示数 （有功总）
+                StructData.EventTimeOld = StructData.DataSourceFirstMeasure[0].EventTime; //初始测量时间  datetime
+            }
 
             StructData.ReactiveEnergyQI = ReactiveEnergyTotal; //无功（QI象限）
 
             StructData.ActiveCopperLoss = ActiveCopperLoss; //有功铜损
             StructData.ActiveCoreLoss = ActiveCoreLoss; //有功铁损
-            StructData.ActiveAll = AllEnergyTotal + ActiveCopperLoss + ActiveCoreLoss; //有功合计
+            StructData.ActiveAll = StructData.PowerTotal + ActiveCopperLoss + ActiveCoreLoss; //有功合计
 
             StructData.ReactiveCopperLoss = ReactiveCopperLoss; //无功铜损
             StructData.ReactiveCoreLoss = ReactiveCoreLoss; //无功铁损
@@ -574,7 +614,6 @@ namespace AracheTest.Data
             if (StructData.EnergyTotal == StructData.EnergyPeak + StructData.EnergySpike + StructData.EnergyValley)
                 energy = true;
 
-
             #endregion
 
 
@@ -582,16 +621,16 @@ namespace AracheTest.Data
         }
 
         public ChargeInfo SecondMeasureData(DateTime startDateTime, DateTime firstDateTime, DateTime secondDateTime,
-            int mid)
+            int mid, int pid)
         {
-            ChargeInfo StructData = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid);
+            ChargeInfo StructData = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid, pid);
             if (StructData == null)
                 return null;
-            ChargeInfo TempStruct1 = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid);
+            ChargeInfo TempStruct1 = FirstMeasureData(startDateTime, startDateTime, startDateTime, mid, pid);
             TempStruct1.DataSourceFirstMeasure = TempStruct1.DataSourceFirstMeasure;
-       
 
-            ChargeInfo TempStruct2 = FirstMeasureData(startDateTime, firstDateTime, secondDateTime, mid);
+
+            ChargeInfo TempStruct2 = FirstMeasureData(startDateTime, startDateTime, secondDateTime, mid, pid);
             TempStruct2.DataSourceFirstMeasure = TempStruct2.DataSourceSecondMeasure;
             FirstMeasureData(TempStruct2);
     

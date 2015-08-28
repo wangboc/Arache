@@ -9,9 +9,23 @@ namespace AracheTest.Reports
 {
     public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
     {
+        private ReportContent Content;
+
+        public ReportContent GetReportContent()
+        {
+            return Content;
+        }
+        public void SetReportContent(ReportContent _content)
+        {
+            Content = _content;
+            xrLabel1.Text = Content.Title;
+            this.CreateDocument();
+        }
         public XtraReport1()
         {
             InitializeComponent();
+            Content = new ReportContent();
+            Content.Title = "国网浙江慈溪市供电公司非居民用户电费复核单据 （一次抄表）";
         }
 
         public void SetReportDataSource(DataTable dt0, DataTable dt1, DataTable dt2, DataTable dt3)
@@ -94,7 +108,9 @@ namespace AracheTest.Reports
             xrTableCell135.Text = dt3.Rows[2][4].ToString();
             xrTableCell136.Text = dt3.Rows[2][5].ToString();
             xrTableCell137.Text = dt3.Rows[2][6].ToString();
-            xrTableCell150.Text = dt3.Rows[0]["Total"].ToString();}
+            xrTableCell150.Text = dt3.Rows[0]["Total"].ToString();
 
+            this.CreateDocument();
+        }
     }
 }

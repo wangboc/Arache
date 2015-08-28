@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AracheTest.Data;
+using AracheTest.Reports;
 using AracheTest.UIControls;
 using DevExpress.Utils;
 using DevExpress.XtraBars;
@@ -13,6 +14,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting.Preview;
 using log4net.Repository;
 
 namespace AracheTest
@@ -571,12 +573,46 @@ namespace AracheTest
             {
                 _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
                 xtraTabControl2.SelectedTabPageIndex = 0;
+                this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
+                documentViewerBarManager1.DocumentViewer = documentViewer1;
             }
             else
             {
                 _chargeControlsSecond.SetPropotionData(_chargeObjects["第二阶段"] as ChargeInfo);
                 xtraTabControl2.SelectedTabPageIndex = 1;
+                this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl2;
+                documentViewerBarManager1.DocumentViewer = documentViewer2;
             }
+        }
+ 
+
+        private void SetupReportBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ReportSetupForm form  = new ReportSetupForm();
+            DocumentViewer currentViewer = documentViewerBarManager1.DocumentViewer;
+            int reportType = 0;
+            if (currentViewer == documentViewer1)
+            {
+                form.SetReportContent((currentViewer.DocumentSource as XtraReport1).GetReportContent());
+            }
+            else
+            {
+                reportType = 1;
+                form.SetReportContent((currentViewer.DocumentSource as XtraReport2).GetReportContent());
+
+            }
+
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                if (reportType == 0)
+                    (currentViewer.DocumentSource as XtraReport1).SetReportContent(form.GetReportContent());
+               
+
+                else
+                    (currentViewer.DocumentSource as XtraReport2).SetReportContent(form.GetReportContent());
+            }
+
         }
     }
 }

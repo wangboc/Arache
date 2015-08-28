@@ -154,8 +154,7 @@ namespace AracheTest.UIControls
 
                 row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
-                row[1] = "有功（峰）";
-                row[2] = "";
+                row[1] = "有功（峰）";row[2] = "";
                 row[4] = "30";
                 row[5] = chargeInfo.PowerPeak.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -251,28 +250,27 @@ namespace AracheTest.UIControls
                 XtraReport1 report = new XtraReport1();
                 report.ExportOptions.PrintPreview.DefaultFileName = "国网浙江慈溪市供电公司非居民用户电费复核单据 （一次抄表）" +
                                                                     DateTime.Now.ToString("D");
-                report.ExportOptions.SetOptionsVisibility(new ExportOptionKind[]
-                {
-                    ExportOptionKind.PdfACompatibility,
-                    ExportOptionKind.PdfCompressed,
-                    ExportOptionKind.PdfConvertImagesToJpeg,
-                    ExportOptionKind.PdfDocumentApplication,
-                    ExportOptionKind.PdfDocumentAuthor,
-                    ExportOptionKind.PdfDocumentKeywords,
-                    ExportOptionKind.PdfDocumentSubject,
-                    ExportOptionKind.PdfDocumentTitle,
-                    ExportOptionKind.PdfImageQuality,
-                    ExportOptionKind.PdfNeverEmbeddedFonts,
-                    ExportOptionKind.PdfPageRange,
-                    ExportOptionKind.PdfCompressed,
-                    ExportOptionKind.PdfPasswordSecurityOptions,
-                    ExportOptionKind.PdfShowPrintDialogOnOpen,
-                    ExportOptionKind.PdfSignatureOptions
-                }, false);
+//                report.ExportOptions.SetOptionsVisibility(new ExportOptionKind[]
+//                {
+//                    ExportOptionKind.PdfACompatibility,
+//                    ExportOptionKind.PdfCompressed,
+//                    ExportOptionKind.PdfConvertImagesToJpeg,
+//                    ExportOptionKind.PdfDocumentApplication,
+//                    ExportOptionKind.PdfDocumentAuthor,
+//                    ExportOptionKind.PdfDocumentKeywords,
+//                    ExportOptionKind.PdfDocumentSubject,
+//                    ExportOptionKind.PdfDocumentTitle,
+//                    ExportOptionKind.PdfImageQuality,
+//                    ExportOptionKind.PdfNeverEmbeddedFonts,
+//                    ExportOptionKind.PdfPageRange,
+//                    ExportOptionKind.PdfCompressed,
+//                    ExportOptionKind.PdfPasswordSecurityOptions,
+//                    ExportOptionKind.PdfShowPrintDialogOnOpen,
+//                    ExportOptionKind.PdfSignatureOptions
+//                }, false);
 
                 documentViewer.DocumentSource = report;
                 report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
-                report.CreateDocument();
             }
         }
     }
@@ -441,7 +439,6 @@ namespace AracheTest.UIControls
 
                 documentViewer.DocumentSource = report;
                 report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
-                report.CreateDocument();
             }
         }
     }

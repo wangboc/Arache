@@ -30,6 +30,44 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem16 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
@@ -183,7 +221,6 @@
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
-            this.printPreviewBarItem5 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem9 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -204,6 +241,7 @@
             this.printPreviewBarItem22 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem23 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem24 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.SetupReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -223,6 +261,7 @@
             this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem5 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem6 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem25 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem26 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -1441,8 +1480,9 @@
             this.printPreviewBarCheckItem14,
             this.printPreviewBarCheckItem15,
             this.printPreviewBarCheckItem16,
-            this.printPreviewBarCheckItem17});
-            this.documentViewerBarManager1.MaxItemId = 57;
+            this.printPreviewBarCheckItem17,
+            this.SetupReportBtn});
+            this.documentViewerBarManager1.MaxItemId = 59;
             this.documentViewerBarManager1.PreviewBar = this.previewBar1;
             this.documentViewerBarManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
@@ -1457,8 +1497,7 @@
             this.previewBar1.DockRow = 0;
             this.previewBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.previewBar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem5, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem7),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.None, false, this.printPreviewBarItem7, false),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem8, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem9),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem10),
@@ -1473,24 +1512,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem18),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem19),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem20),
-            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem21, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.None, false, this.printPreviewBarItem21, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem22),
             new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem23),
-            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem24, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.printPreviewBarItem24, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.SetupReportBtn, true)});
             this.previewBar1.OptionsBar.AllowQuickCustomization = false;
             this.previewBar1.OptionsBar.DrawDragBorder = false;
             this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
             this.previewBar1.Text = "Toolbar";
-            // 
-            // printPreviewBarItem5
-            // 
-            this.printPreviewBarItem5.Caption = "Customize";
-            this.printPreviewBarItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Customize;
-            this.printPreviewBarItem5.Enabled = false;
-            this.printPreviewBarItem5.Hint = "Customize";
-            this.printPreviewBarItem5.Id = 10;
-            this.printPreviewBarItem5.ImageIndex = 14;
-            this.printPreviewBarItem5.Name = "printPreviewBarItem5";
             // 
             // printPreviewBarItem7
             // 
@@ -1504,23 +1534,32 @@
             // 
             // printPreviewBarItem8
             // 
-            this.printPreviewBarItem8.Caption = "&Print...";
+            this.printPreviewBarItem8.Caption = "打印选项";
             this.printPreviewBarItem8.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
             this.printPreviewBarItem8.Enabled = false;
-            this.printPreviewBarItem8.Hint = "Print";
+            this.printPreviewBarItem8.Hint = "打印选项";
             this.printPreviewBarItem8.Id = 13;
             this.printPreviewBarItem8.ImageIndex = 0;
             this.printPreviewBarItem8.Name = "printPreviewBarItem8";
+            toolTipTitleItem1.Text = "打印";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "选项...";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.printPreviewBarItem8.SuperTip = superToolTip1;
             // 
             // printPreviewBarItem9
             // 
-            this.printPreviewBarItem9.Caption = "P&rint";
+            this.printPreviewBarItem9.Caption = "快速打印";
             this.printPreviewBarItem9.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PrintDirect;
             this.printPreviewBarItem9.Enabled = false;
-            this.printPreviewBarItem9.Hint = "Quick Print";
+            this.printPreviewBarItem9.Hint = "快速打印";
             this.printPreviewBarItem9.Id = 14;
             this.printPreviewBarItem9.ImageIndex = 1;
             this.printPreviewBarItem9.Name = "printPreviewBarItem9";
+            toolTipTitleItem2.Text = "快速打印";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.printPreviewBarItem9.SuperTip = superToolTip2;
             // 
             // printPreviewBarItem10
             // 
@@ -1546,55 +1585,73 @@
             // 
             this.printPreviewBarItem12.ActAsDropDown = true;
             this.printPreviewBarItem12.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem12.Caption = "Scale";
+            this.printPreviewBarItem12.Caption = "边距设定";
             this.printPreviewBarItem12.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Scale;
             this.printPreviewBarItem12.Enabled = false;
-            this.printPreviewBarItem12.Hint = "Scale";
+            this.printPreviewBarItem12.Hint = "边距设定";
             this.printPreviewBarItem12.Id = 17;
             this.printPreviewBarItem12.ImageIndex = 25;
             this.printPreviewBarItem12.Name = "printPreviewBarItem12";
+            toolTipTitleItem3.Text = "边距";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "设定\r\n";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem2);
+            this.printPreviewBarItem12.SuperTip = superToolTip3;
             // 
             // printPreviewBarItem13
             // 
             this.printPreviewBarItem13.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem13.Caption = "Hand Tool";
+            this.printPreviewBarItem13.Caption = "拖动";
             this.printPreviewBarItem13.Command = DevExpress.XtraPrinting.PrintingSystemCommand.HandTool;
             this.printPreviewBarItem13.Enabled = false;
-            this.printPreviewBarItem13.Hint = "Hand Tool";
+            this.printPreviewBarItem13.Hint = "拖动";
             this.printPreviewBarItem13.Id = 18;
             this.printPreviewBarItem13.ImageIndex = 16;
             this.printPreviewBarItem13.Name = "printPreviewBarItem13";
+            toolTipTitleItem4.Text = "拖动";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            this.printPreviewBarItem13.SuperTip = superToolTip4;
             // 
             // printPreviewBarItem14
             // 
             this.printPreviewBarItem14.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem14.Caption = "Magnifier";
+            this.printPreviewBarItem14.Caption = "放大镜";
             this.printPreviewBarItem14.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Magnifier;
             this.printPreviewBarItem14.Enabled = false;
-            this.printPreviewBarItem14.Hint = "Magnifier";
+            this.printPreviewBarItem14.Hint = "放大镜";
             this.printPreviewBarItem14.Id = 19;
             this.printPreviewBarItem14.ImageIndex = 3;
             this.printPreviewBarItem14.Name = "printPreviewBarItem14";
+            toolTipTitleItem5.Text = "放大镜";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.printPreviewBarItem14.SuperTip = superToolTip5;
             // 
             // printPreviewBarItem15
             // 
-            this.printPreviewBarItem15.Caption = "Zoom Out";
+            this.printPreviewBarItem15.Caption = "缩小";
             this.printPreviewBarItem15.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomOut;
             this.printPreviewBarItem15.Enabled = false;
-            this.printPreviewBarItem15.Hint = "Zoom Out";
+            this.printPreviewBarItem15.Hint = "缩小";
             this.printPreviewBarItem15.Id = 20;
             this.printPreviewBarItem15.ImageIndex = 5;
             this.printPreviewBarItem15.Name = "printPreviewBarItem15";
+            toolTipTitleItem6.Text = "缩小";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.printPreviewBarItem15.SuperTip = superToolTip6;
             // 
             // zoomBarEditItem1
             // 
-            this.zoomBarEditItem1.Caption = "Zoom";
+            this.zoomBarEditItem1.Caption = "显示比例";
             this.zoomBarEditItem1.Edit = this.printPreviewRepositoryItemComboBox1;
             this.zoomBarEditItem1.EditValue = "100%";
             this.zoomBarEditItem1.Enabled = false;
-            this.zoomBarEditItem1.Hint = "Zoom";
+            this.zoomBarEditItem1.Hint = "显示比例";
             this.zoomBarEditItem1.Id = 21;
             this.zoomBarEditItem1.Name = "zoomBarEditItem1";
+            toolTipTitleItem7.Text = "显示比例";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.zoomBarEditItem1.SuperTip = superToolTip7;
             this.zoomBarEditItem1.Width = 70;
             // 
             // printPreviewRepositoryItemComboBox1
@@ -1607,53 +1664,68 @@
             // 
             // printPreviewBarItem16
             // 
-            this.printPreviewBarItem16.Caption = "Zoom In";
+            this.printPreviewBarItem16.Caption = "放大";
             this.printPreviewBarItem16.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomIn;
             this.printPreviewBarItem16.Enabled = false;
-            this.printPreviewBarItem16.Hint = "Zoom In";
+            this.printPreviewBarItem16.Hint = "放大";
             this.printPreviewBarItem16.Id = 22;
             this.printPreviewBarItem16.ImageIndex = 4;
             this.printPreviewBarItem16.Name = "printPreviewBarItem16";
+            toolTipTitleItem8.Text = "放大";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.printPreviewBarItem16.SuperTip = superToolTip8;
             // 
             // printPreviewBarItem17
             // 
-            this.printPreviewBarItem17.Caption = "First Page";
+            this.printPreviewBarItem17.Caption = "开始页";
             this.printPreviewBarItem17.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowFirstPage;
             this.printPreviewBarItem17.Enabled = false;
-            this.printPreviewBarItem17.Hint = "First Page";
+            this.printPreviewBarItem17.Hint = "开始页";
             this.printPreviewBarItem17.Id = 23;
             this.printPreviewBarItem17.ImageIndex = 7;
             this.printPreviewBarItem17.Name = "printPreviewBarItem17";
+            toolTipTitleItem9.Text = "开始页";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            this.printPreviewBarItem17.SuperTip = superToolTip9;
             // 
             // printPreviewBarItem18
             // 
-            this.printPreviewBarItem18.Caption = "Previous Page";
+            this.printPreviewBarItem18.Caption = "前一页";
             this.printPreviewBarItem18.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowPrevPage;
             this.printPreviewBarItem18.Enabled = false;
-            this.printPreviewBarItem18.Hint = "Previous Page";
+            this.printPreviewBarItem18.Hint = "前一页";
             this.printPreviewBarItem18.Id = 24;
             this.printPreviewBarItem18.ImageIndex = 8;
             this.printPreviewBarItem18.Name = "printPreviewBarItem18";
+            toolTipTitleItem10.Text = "前一页";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            this.printPreviewBarItem18.SuperTip = superToolTip10;
             // 
             // printPreviewBarItem19
             // 
-            this.printPreviewBarItem19.Caption = "Next Page";
+            this.printPreviewBarItem19.Caption = "后一页";
             this.printPreviewBarItem19.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowNextPage;
             this.printPreviewBarItem19.Enabled = false;
-            this.printPreviewBarItem19.Hint = "Next Page";
+            this.printPreviewBarItem19.Hint = "后一页";
             this.printPreviewBarItem19.Id = 25;
             this.printPreviewBarItem19.ImageIndex = 9;
             this.printPreviewBarItem19.Name = "printPreviewBarItem19";
+            toolTipTitleItem11.Text = "后一页";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            this.printPreviewBarItem19.SuperTip = superToolTip11;
             // 
             // printPreviewBarItem20
             // 
-            this.printPreviewBarItem20.Caption = "Last Page";
+            this.printPreviewBarItem20.Caption = "最后一页";
             this.printPreviewBarItem20.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowLastPage;
             this.printPreviewBarItem20.Enabled = false;
-            this.printPreviewBarItem20.Hint = "Last Page";
+            this.printPreviewBarItem20.Hint = "最后一页";
             this.printPreviewBarItem20.Id = 26;
             this.printPreviewBarItem20.ImageIndex = 10;
             this.printPreviewBarItem20.Name = "printPreviewBarItem20";
+            toolTipTitleItem12.Text = "最后一页";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            this.printPreviewBarItem20.SuperTip = superToolTip12;
             // 
             // printPreviewBarItem21
             // 
@@ -1672,20 +1744,32 @@
             this.printPreviewBarItem22.Caption = "&Color...";
             this.printPreviewBarItem22.Command = DevExpress.XtraPrinting.PrintingSystemCommand.FillBackground;
             this.printPreviewBarItem22.Enabled = false;
-            this.printPreviewBarItem22.Hint = "Background";
+            this.printPreviewBarItem22.Hint = "背景颜色";
             this.printPreviewBarItem22.Id = 28;
             this.printPreviewBarItem22.ImageIndex = 12;
             this.printPreviewBarItem22.Name = "printPreviewBarItem22";
+            toolTipTitleItem13.Text = "背景";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "设定";
+            superToolTip13.Items.Add(toolTipTitleItem13);
+            superToolTip13.Items.Add(toolTipItem3);
+            this.printPreviewBarItem22.SuperTip = superToolTip13;
             // 
             // printPreviewBarItem23
             // 
             this.printPreviewBarItem23.Caption = "&Watermark...";
             this.printPreviewBarItem23.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Watermark;
             this.printPreviewBarItem23.Enabled = false;
-            this.printPreviewBarItem23.Hint = "Watermark";
+            this.printPreviewBarItem23.Hint = "水印";
             this.printPreviewBarItem23.Id = 29;
             this.printPreviewBarItem23.ImageIndex = 21;
             this.printPreviewBarItem23.Name = "printPreviewBarItem23";
+            toolTipTitleItem14.Text = "水印";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "设定";
+            superToolTip14.Items.Add(toolTipTitleItem14);
+            superToolTip14.Items.Add(toolTipItem4);
+            this.printPreviewBarItem23.SuperTip = superToolTip14;
             // 
             // printPreviewBarItem24
             // 
@@ -1693,10 +1777,31 @@
             this.printPreviewBarItem24.Caption = "Export Document...";
             this.printPreviewBarItem24.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportFile;
             this.printPreviewBarItem24.Enabled = false;
-            this.printPreviewBarItem24.Hint = "Export Document...";
+            this.printPreviewBarItem24.Hint = "导出...";
             this.printPreviewBarItem24.Id = 30;
             this.printPreviewBarItem24.ImageIndex = 18;
             this.printPreviewBarItem24.Name = "printPreviewBarItem24";
+            toolTipTitleItem15.Text = "导出选项";
+            toolTipItem5.LeftIndent = 6;
+            toolTipItem5.Text = "至文件...";
+            superToolTip15.Items.Add(toolTipTitleItem15);
+            superToolTip15.Items.Add(toolTipItem5);
+            this.printPreviewBarItem24.SuperTip = superToolTip15;
+            // 
+            // SetupReportBtn
+            // 
+            this.SetupReportBtn.AllowRightClickInMenu = false;
+            this.SetupReportBtn.Caption = "设定";
+            this.SetupReportBtn.Id = 58;
+            this.SetupReportBtn.ImageIndex = 14;
+            this.SetupReportBtn.Name = "SetupReportBtn";
+            toolTipTitleItem16.Text = "内容";
+            toolTipItem6.LeftIndent = 6;
+            toolTipItem6.Text = "设定";
+            superToolTip16.Items.Add(toolTipTitleItem16);
+            superToolTip16.Items.Add(toolTipItem6);
+            this.SetupReportBtn.SuperTip = superToolTip16;
+            this.SetupReportBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SetupReportBtn_ItemClick);
             // 
             // standaloneBarDockControl1
             // 
@@ -1751,6 +1856,7 @@
             this.documentViewer1.IsMetric = true;
             this.documentViewer1.Location = new System.Drawing.Point(3, 33);
             this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.ShowPageMargins = false;
             this.documentViewer1.Size = new System.Drawing.Size(730, 636);
             this.documentViewer1.TabIndex = 0;
             // 
@@ -1870,6 +1976,16 @@
             this.printPreviewBarItem4.ImageIndex = 20;
             this.printPreviewBarItem4.Name = "printPreviewBarItem4";
             // 
+            // printPreviewBarItem5
+            // 
+            this.printPreviewBarItem5.Caption = "Customize";
+            this.printPreviewBarItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Customize;
+            this.printPreviewBarItem5.Enabled = false;
+            this.printPreviewBarItem5.Hint = "Customize";
+            this.printPreviewBarItem5.Id = 10;
+            this.printPreviewBarItem5.ImageIndex = 14;
+            this.printPreviewBarItem5.Name = "printPreviewBarItem5";
+            // 
             // printPreviewBarItem6
             // 
             this.printPreviewBarItem6.Caption = "Open";
@@ -1974,174 +2090,174 @@
             // printPreviewBarCheckItem1
             // 
             this.printPreviewBarCheckItem1.BindableChecked = true;
-            this.printPreviewBarCheckItem1.Caption = "PDF File";
+            this.printPreviewBarCheckItem1.Caption = "PDF 文件";
             this.printPreviewBarCheckItem1.Checked = true;
             this.printPreviewBarCheckItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportPdf;
             this.printPreviewBarCheckItem1.Enabled = false;
             this.printPreviewBarCheckItem1.GroupIndex = 2;
-            this.printPreviewBarCheckItem1.Hint = "PDF File";
+            this.printPreviewBarCheckItem1.Hint = "PDF 文件";
             this.printPreviewBarCheckItem1.Id = 40;
             this.printPreviewBarCheckItem1.Name = "printPreviewBarCheckItem1";
             // 
             // printPreviewBarCheckItem2
             // 
-            this.printPreviewBarCheckItem2.Caption = "HTML File";
+            this.printPreviewBarCheckItem2.Caption = "HTML 文件";
             this.printPreviewBarCheckItem2.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportHtm;
             this.printPreviewBarCheckItem2.Enabled = false;
             this.printPreviewBarCheckItem2.GroupIndex = 2;
-            this.printPreviewBarCheckItem2.Hint = "HTML File";
+            this.printPreviewBarCheckItem2.Hint = "HTML 文件";
             this.printPreviewBarCheckItem2.Id = 41;
             this.printPreviewBarCheckItem2.Name = "printPreviewBarCheckItem2";
             // 
             // printPreviewBarCheckItem3
             // 
-            this.printPreviewBarCheckItem3.Caption = "MHT File";
+            this.printPreviewBarCheckItem3.Caption = "MHT 文件";
             this.printPreviewBarCheckItem3.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportMht;
             this.printPreviewBarCheckItem3.Enabled = false;
             this.printPreviewBarCheckItem3.GroupIndex = 2;
-            this.printPreviewBarCheckItem3.Hint = "MHT File";
+            this.printPreviewBarCheckItem3.Hint = "MHT 文件";
             this.printPreviewBarCheckItem3.Id = 42;
             this.printPreviewBarCheckItem3.Name = "printPreviewBarCheckItem3";
             // 
             // printPreviewBarCheckItem4
             // 
-            this.printPreviewBarCheckItem4.Caption = "RTF File";
+            this.printPreviewBarCheckItem4.Caption = "RTF 文件";
             this.printPreviewBarCheckItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportRtf;
             this.printPreviewBarCheckItem4.Enabled = false;
             this.printPreviewBarCheckItem4.GroupIndex = 2;
-            this.printPreviewBarCheckItem4.Hint = "RTF File";
+            this.printPreviewBarCheckItem4.Hint = "RTF 文件";
             this.printPreviewBarCheckItem4.Id = 43;
             this.printPreviewBarCheckItem4.Name = "printPreviewBarCheckItem4";
             // 
             // printPreviewBarCheckItem5
             // 
-            this.printPreviewBarCheckItem5.Caption = "XLS File";
+            this.printPreviewBarCheckItem5.Caption = "XLS 文件";
             this.printPreviewBarCheckItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXls;
             this.printPreviewBarCheckItem5.Enabled = false;
             this.printPreviewBarCheckItem5.GroupIndex = 2;
-            this.printPreviewBarCheckItem5.Hint = "XLS File";
+            this.printPreviewBarCheckItem5.Hint = "XLS 文件";
             this.printPreviewBarCheckItem5.Id = 44;
             this.printPreviewBarCheckItem5.Name = "printPreviewBarCheckItem5";
             // 
             // printPreviewBarCheckItem6
             // 
-            this.printPreviewBarCheckItem6.Caption = "XLSX File";
+            this.printPreviewBarCheckItem6.Caption = "XLSX 文件";
             this.printPreviewBarCheckItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXlsx;
             this.printPreviewBarCheckItem6.Enabled = false;
             this.printPreviewBarCheckItem6.GroupIndex = 2;
-            this.printPreviewBarCheckItem6.Hint = "XLSX File";
+            this.printPreviewBarCheckItem6.Hint = "XLSX 文件";
             this.printPreviewBarCheckItem6.Id = 45;
             this.printPreviewBarCheckItem6.Name = "printPreviewBarCheckItem6";
             // 
             // printPreviewBarCheckItem7
             // 
-            this.printPreviewBarCheckItem7.Caption = "CSV File";
+            this.printPreviewBarCheckItem7.Caption = "CSV 文件";
             this.printPreviewBarCheckItem7.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportCsv;
             this.printPreviewBarCheckItem7.Enabled = false;
             this.printPreviewBarCheckItem7.GroupIndex = 2;
-            this.printPreviewBarCheckItem7.Hint = "CSV File";
+            this.printPreviewBarCheckItem7.Hint = "CSV 文件";
             this.printPreviewBarCheckItem7.Id = 46;
             this.printPreviewBarCheckItem7.Name = "printPreviewBarCheckItem7";
             // 
             // printPreviewBarCheckItem8
             // 
-            this.printPreviewBarCheckItem8.Caption = "Text File";
+            this.printPreviewBarCheckItem8.Caption = "Text 文件";
             this.printPreviewBarCheckItem8.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportTxt;
             this.printPreviewBarCheckItem8.Enabled = false;
             this.printPreviewBarCheckItem8.GroupIndex = 2;
-            this.printPreviewBarCheckItem8.Hint = "Text File";
+            this.printPreviewBarCheckItem8.Hint = "Text 文件";
             this.printPreviewBarCheckItem8.Id = 47;
             this.printPreviewBarCheckItem8.Name = "printPreviewBarCheckItem8";
             // 
             // printPreviewBarCheckItem9
             // 
-            this.printPreviewBarCheckItem9.Caption = "Image File";
+            this.printPreviewBarCheckItem9.Caption = "Image 文件";
             this.printPreviewBarCheckItem9.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportGraphic;
             this.printPreviewBarCheckItem9.Enabled = false;
             this.printPreviewBarCheckItem9.GroupIndex = 2;
-            this.printPreviewBarCheckItem9.Hint = "Image File";
+            this.printPreviewBarCheckItem9.Hint = "Image 文件";
             this.printPreviewBarCheckItem9.Id = 48;
             this.printPreviewBarCheckItem9.Name = "printPreviewBarCheckItem9";
             // 
             // printPreviewBarCheckItem10
             // 
             this.printPreviewBarCheckItem10.BindableChecked = true;
-            this.printPreviewBarCheckItem10.Caption = "PDF File";
+            this.printPreviewBarCheckItem10.Caption = "PDF 文件";
             this.printPreviewBarCheckItem10.Checked = true;
             this.printPreviewBarCheckItem10.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendPdf;
             this.printPreviewBarCheckItem10.Enabled = false;
             this.printPreviewBarCheckItem10.GroupIndex = 1;
-            this.printPreviewBarCheckItem10.Hint = "PDF File";
+            this.printPreviewBarCheckItem10.Hint = "PDF 文件";
             this.printPreviewBarCheckItem10.Id = 49;
             this.printPreviewBarCheckItem10.Name = "printPreviewBarCheckItem10";
             // 
             // printPreviewBarCheckItem11
             // 
-            this.printPreviewBarCheckItem11.Caption = "MHT File";
+            this.printPreviewBarCheckItem11.Caption = "MHT 文件";
             this.printPreviewBarCheckItem11.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendMht;
             this.printPreviewBarCheckItem11.Enabled = false;
             this.printPreviewBarCheckItem11.GroupIndex = 1;
-            this.printPreviewBarCheckItem11.Hint = "MHT File";
+            this.printPreviewBarCheckItem11.Hint = "MHT 文件";
             this.printPreviewBarCheckItem11.Id = 50;
             this.printPreviewBarCheckItem11.Name = "printPreviewBarCheckItem11";
             // 
             // printPreviewBarCheckItem12
             // 
-            this.printPreviewBarCheckItem12.Caption = "RTF File";
+            this.printPreviewBarCheckItem12.Caption = "RTF 文件";
             this.printPreviewBarCheckItem12.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendRtf;
             this.printPreviewBarCheckItem12.Enabled = false;
             this.printPreviewBarCheckItem12.GroupIndex = 1;
-            this.printPreviewBarCheckItem12.Hint = "RTF File";
+            this.printPreviewBarCheckItem12.Hint = "RTF 文件";
             this.printPreviewBarCheckItem12.Id = 51;
             this.printPreviewBarCheckItem12.Name = "printPreviewBarCheckItem12";
             // 
             // printPreviewBarCheckItem13
             // 
-            this.printPreviewBarCheckItem13.Caption = "XLS File";
+            this.printPreviewBarCheckItem13.Caption = "XLS 文件";
             this.printPreviewBarCheckItem13.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXls;
             this.printPreviewBarCheckItem13.Enabled = false;
             this.printPreviewBarCheckItem13.GroupIndex = 1;
-            this.printPreviewBarCheckItem13.Hint = "XLS File";
+            this.printPreviewBarCheckItem13.Hint = "XLS 文件";
             this.printPreviewBarCheckItem13.Id = 52;
             this.printPreviewBarCheckItem13.Name = "printPreviewBarCheckItem13";
             // 
             // printPreviewBarCheckItem14
             // 
-            this.printPreviewBarCheckItem14.Caption = "XLSX File";
+            this.printPreviewBarCheckItem14.Caption = "XLSX 文件";
             this.printPreviewBarCheckItem14.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXlsx;
             this.printPreviewBarCheckItem14.Enabled = false;
             this.printPreviewBarCheckItem14.GroupIndex = 1;
-            this.printPreviewBarCheckItem14.Hint = "XLSX File";
+            this.printPreviewBarCheckItem14.Hint = "XLSX 文件";
             this.printPreviewBarCheckItem14.Id = 53;
             this.printPreviewBarCheckItem14.Name = "printPreviewBarCheckItem14";
             // 
             // printPreviewBarCheckItem15
             // 
-            this.printPreviewBarCheckItem15.Caption = "CSV File";
+            this.printPreviewBarCheckItem15.Caption = "CSV 文件";
             this.printPreviewBarCheckItem15.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendCsv;
             this.printPreviewBarCheckItem15.Enabled = false;
             this.printPreviewBarCheckItem15.GroupIndex = 1;
-            this.printPreviewBarCheckItem15.Hint = "CSV File";
+            this.printPreviewBarCheckItem15.Hint = "CSV 文件";
             this.printPreviewBarCheckItem15.Id = 54;
             this.printPreviewBarCheckItem15.Name = "printPreviewBarCheckItem15";
             // 
             // printPreviewBarCheckItem16
             // 
-            this.printPreviewBarCheckItem16.Caption = "Text File";
+            this.printPreviewBarCheckItem16.Caption = "Text 文件";
             this.printPreviewBarCheckItem16.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendTxt;
             this.printPreviewBarCheckItem16.Enabled = false;
             this.printPreviewBarCheckItem16.GroupIndex = 1;
-            this.printPreviewBarCheckItem16.Hint = "Text File";
+            this.printPreviewBarCheckItem16.Hint = "Text 文件";
             this.printPreviewBarCheckItem16.Id = 55;
             this.printPreviewBarCheckItem16.Name = "printPreviewBarCheckItem16";
             // 
             // printPreviewBarCheckItem17
             // 
-            this.printPreviewBarCheckItem17.Caption = "Image File";
+            this.printPreviewBarCheckItem17.Caption = "Image 文件";
             this.printPreviewBarCheckItem17.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendGraphic;
             this.printPreviewBarCheckItem17.Enabled = false;
             this.printPreviewBarCheckItem17.GroupIndex = 1;
-            this.printPreviewBarCheckItem17.Hint = "Image File";
+            this.printPreviewBarCheckItem17.Hint = "Image 文件";
             this.printPreviewBarCheckItem17.Id = 56;
             this.printPreviewBarCheckItem17.Name = "printPreviewBarCheckItem17";
             // 
@@ -3504,6 +3620,8 @@
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel18.Size = new System.Drawing.Size(736, 636);
             this.tableLayoutPanel18.TabIndex = 2;
             // 
@@ -3514,6 +3632,7 @@
             this.documentViewer2.IsMetric = true;
             this.documentViewer2.Location = new System.Drawing.Point(3, 33);
             this.documentViewer2.Name = "documentViewer2";
+            this.documentViewer2.ShowPageMargins = false;
             this.documentViewer2.Size = new System.Drawing.Size(730, 600);
             this.documentViewer2.TabIndex = 1;
             // 
@@ -5120,7 +5239,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl2;
-        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer2;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -5187,7 +5305,15 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem15;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem16;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem17;
+
+
+
+
         private DevExpress.XtraCharts.ChartControl Fe_CuPropotion;
+        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl4;
+        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl3;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer2;
+        private DevExpress.XtraBars.BarButtonItem SetupReportBtn;
 
     }
 }

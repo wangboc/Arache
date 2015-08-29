@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace AracheTest.Data
 {
-    public class NodeInfo
+    public class AmmeterInfo
     {
-        public NodeInfo(DataRow dr)
+        public AmmeterInfo(DataRow dr)
         {
-            this.NodeID = Convert.ToInt32(dr["NodeID"]);
-
             if (dr["PID"] != DBNull.Value)
                 this.PID = Convert.ToInt32(dr["PID"]);
-            else PID = 1;
-
 
             if (dr["ParentID"] != DBNull.Value)
                 this.ParentID = Convert.ToInt32(dr["ParentID"]);
@@ -24,14 +20,14 @@ namespace AracheTest.Data
             if (dr["Name"] != DBNull.Value)
                 this.Name = dr["Name"].ToString();
 
-            MID = new List<int>();
+            if (dr["MID"] != DBNull.Value)
+                this.MID = Convert.ToInt32(dr["MID"]);
 
-            IsNode = true;
+            if (dr["CabinetID"] != DBNull.Value)
+                this.CabinetID = Convert.ToInt32(dr["CabinetID"]);
         }
 
-        public bool IsNode { get; set; }
-
-        public int NodeID { get; set; }
+        public int MID { get; set; }
 
         public int PID { get; set; }
 
@@ -39,6 +35,6 @@ namespace AracheTest.Data
 
         public String Name { get; set; }
 
-        public List<int> MID { get; set; }
+        public int CabinetID { get; set; }
     }
 }

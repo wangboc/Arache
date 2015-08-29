@@ -89,7 +89,7 @@ namespace AracheTest
             StartDatetimeCtr.Enabled = false;
             EndDatetimeCtr.Enabled = false;
             ((GridView) gridControlDetail.Views[0]).BestFitColumns();
-            
+
             InitChartControl();
             InitNodeTreeControl();
             InitChargeDateCustomCtr();
@@ -232,10 +232,12 @@ namespace AracheTest
 
         private void SetNodesData(Object list)
         {
-            List<NodeInfo> nodeList = list as List<NodeInfo>;
+            List<AmmeterInfo> nodeList = list as List<AmmeterInfo>;
             _nodeTreeControl.UpdateNodesData(nodeList);
+           
             if (nodeTreeCtr.EditValue == null || nodeTreeCtr.EditValue == "")
-                nodeTreeCtr.EditValue = nodeList[nodeList.Count - 1].NodeID;
+                nodeTreeCtr.EditValue = nodeList[nodeList.Count - 1].MID;
+            
         }
 
         private void RealtimeCheckBtn_DownChanged(object sender, ItemClickEventArgs e)
@@ -353,12 +355,11 @@ namespace AracheTest
         private void nodetree_EditValueChanged(object sender, EventArgs e)
         {
             TreeListLookUpEdit nodetree = sender as TreeListLookUpEdit;
-            NodeInfo node = nodetree.GetSelectedDataRow() as NodeInfo;
+            AmmeterInfo ammeter = nodetree.GetSelectedDataRow() as AmmeterInfo;
 
-            if (node.IsNode)
-                return;
+           
 
-            _nodeTreeControl.CurrentNodeMid = node.MID[0];
+            _nodeTreeControl.CurrentNodeMid = ammeter.MID;
             if (RealtimeCheckBtn.Down)
                 RefreshAllData();
             else
@@ -584,11 +585,11 @@ namespace AracheTest
                 documentViewerBarManager1.DocumentViewer = documentViewer2;
             }
         }
- 
+
 
         private void SetupReportBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ReportSetupForm form  = new ReportSetupForm();
+            ReportSetupForm form = new ReportSetupForm();
             DocumentViewer currentViewer = documentViewerBarManager1.DocumentViewer;
             int reportType = 0;
             if (currentViewer == documentViewer1)
@@ -599,7 +600,6 @@ namespace AracheTest
             {
                 reportType = 1;
                 form.SetReportContent((currentViewer.DocumentSource as XtraReport2).GetReportContent());
-
             }
 
 
@@ -607,12 +607,11 @@ namespace AracheTest
             {
                 if (reportType == 0)
                     (currentViewer.DocumentSource as XtraReport1).SetReportContent(form.GetReportContent());
-               
+
 
                 else
                     (currentViewer.DocumentSource as XtraReport2).SetReportContent(form.GetReportContent());
             }
-
         }
     }
 }

@@ -49,7 +49,7 @@ namespace AracheTest.Data
             LogHelper.WriteLog(typeof (frmMain), "获取24小时数据");
             return list;
         }
-
+        
         public static List<ElectricityOriginalData> GetDatetimeFilteredData(DateTime start, DateTime end, int mid,
             int pid)
         {
@@ -65,26 +65,17 @@ namespace AracheTest.Data
             return list;
         }
 
-        public static List<NodeInfo> GetAllNodeInfo(int pid)
+        public static List<AmmeterInfo> GetAmmeterInfo(int pid)
         {
-            List<NodeInfo> list = new List<NodeInfo>();
-            DataTable dt = DBConnector.ExecuteSql(string.Format("select * from nodeinfo where PID = '{0}'", pid));
+            List<AmmeterInfo> list = new List<AmmeterInfo>();
+            DataTable dt = DBConnector.ExecuteSql(string.Format("select * from ammeterinfo where PID = '{0}'", pid));
             if (dt != null)
-                list.AddRange(from DataRow dr in dt.Rows select new NodeInfo(dr));
-            LogHelper.WriteLog(typeof (frmMain), "获取所有节点信息");
+                list.AddRange(from DataRow dr in dt.Rows select new AmmeterInfo(dr));
+            LogHelper.WriteLog(typeof (frmMain), "获取所有电表信息");
             return list;
         }
 
-        public static List<Correspondnode> GetCorrespondMid(int nodeId)
-        {
-            List<Correspondnode> list = new List<Correspondnode>();
-            DataTable dt =
-                DBConnector.ExecuteSql(string.Format("select * from correspondnode where nodeid= '{0}'", nodeId));
-            if (dt != null)
-                list.AddRange(from DataRow dr in dt.Rows select new Correspondnode(dr));
-            LogHelper.WriteLog(typeof (frmMain), string.Format("获取NodeID为'{0}'节点--电表信息", nodeId));
-            return list;
-        }
+      
 
         public static List<ElectricityOriginalData> GetElectricityDataByMid(int mid, int pid)
         {
@@ -98,18 +89,6 @@ namespace AracheTest.Data
             return list;
         }
 
-        public static List<ElectricityOriginalData> GetElectricityDataByNodeId(int nodeID)
-        {
-            List<ElectricityOriginalData> list = new List<ElectricityOriginalData>();
-            DataTable dt =
-                DBConnector.ExecuteSql(
-                    string.Format(
-                        "select * from normalreceiveddata where MID in (select MID from nodeinfo where nodeid='{0}')",
-                        nodeID));
-            if (dt != null)
-                list.AddRange(from DataRow dr in dt.Rows select new ElectricityOriginalData(dr));
-            LogHelper.WriteLog(typeof (frmMain), string.Format("获取NodeID为'{0}'的节点相关电量信息", nodeID));
-            return list;
-        }
+      
     }
 }

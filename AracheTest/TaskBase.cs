@@ -34,14 +34,14 @@ namespace AracheTest
     public class ChargeFilterCondition : FilterCondition
     {
         /// <summary>
-        /// 只用于计算计费信息，第一阶段需要 StartTime 和 SecondTime, 第二阶段需要 SecondTime 和 EndTime
+        ///  只用于计算计费信息，第一阶段需要 StartTime 和 MiddleTime, 第二阶段需要 MiddleTime 和 EndTime
         /// </summary>
-        public DateTime SecondTime { get; private set; }
+        public DateTime MiddleTime { get; private set; }
 
-        public ChargeFilterCondition(DateTime startTime, DateTime secondTime, DateTime endTime, int mid, int pid)
+        public ChargeFilterCondition(DateTime startTime, DateTime middleTime, DateTime endTime, int mid, int pid)
             : base(startTime, endTime, mid, pid)
         {
-            SecondTime = secondTime;
+            MiddleTime = middleTime;
         }
     }
 
@@ -133,39 +133,39 @@ namespace AracheTest
 
         private void FetchNodesInfo()
         {
-            DBData = DataBase.GetAllNodeInfo(Condition.PID);
-            List<NodeInfo> data = (List<NodeInfo>) DBData;
-            int nodeTotal = data.Count;
-            for (int i = 0; i < nodeTotal; i++)
-            {
-                List<Correspondnode> miDs = DataBase.GetCorrespondMid(data[i].NodeID);
-                if (miDs == null || miDs.Count <= 0) continue;
-                DataTable dt = new DataTable();
-                dt.Columns.Add("NodeID");
-                dt.Columns.Add("PID");
-                dt.Columns.Add("ParentID");
-                dt.Columns.Add("Name");
-                dt.Columns.Add("MID");
-
-                foreach (var correspondnode in miDs)
-                {
-                    DataRow row = dt.NewRow();
-                    //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
-                    //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
-                    row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
-                                    correspondnode.MID.ToString();
-                    row["PID"] = 1;
-                    row["ParentID"] = correspondnode.NodeID;
-                    row["Name"] = "电表: " + correspondnode.MID;
-                    row["MID"] = correspondnode.MID;
-                    dt.Rows.Add(row);
-                    NodeInfo node = new NodeInfo(row);
-                    node.MID.Add(correspondnode.MID);
-                    node.IsNode = false;
-                    data.Add(node);
-                }
-            }
-            data.Reverse();
+            DBData = DataBase.GetAmmeterInfo(Condition.PID);
+//            List<AmmeterInfo> data = (List<AmmeterInfo>) DBData;
+//            int nodeTotal = data.Count;
+//            for (int i = 0; i < nodeTotal; i++)
+//            {
+//                List<Correspondnode> miDs = DataBase.GetCorrespondMid(data[i].NodeID);
+//                if (miDs == null || miDs.Count <= 0) continue;
+//                DataTable dt = new DataTable();
+//                dt.Columns.Add("NodeID");
+//                dt.Columns.Add("PID");
+//                dt.Columns.Add("ParentID");
+//                dt.Columns.Add("Name");
+//                dt.Columns.Add("MID");
+//
+//                foreach (var correspondnode in miDs)
+//                {
+//                    DataRow row = dt.NewRow();
+//                    //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
+//                    //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
+//                    row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
+//                                    correspondnode.MID.ToString();
+//                    row["PID"] = 1;
+//                    row["ParentID"] = correspondnode.NodeID;
+//                    row["Name"] = "电表: " + correspondnode.MID;
+//                    row["MID"] = correspondnode.MID;
+//                    dt.Rows.Add(row);
+//                    AmmeterInfo ammeter = new AmmeterInfo(row);
+//                    ammeter.MID.Add(correspondnode.MID);
+//                    ammeter.IsNode = false;
+//                    data.Add(ammeter);
+//                }
+//            }
+            
         }
     }
 
@@ -198,19 +198,18 @@ namespace AracheTest
         {
             return DataBase.GetElectricityPeriods();
         }
-
         private ChargeInfo GetFirstCharge()
         {
-            CalculateChargeClass charge = new CalculateChargeClass();
-            return charge.FirstMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.MID, _condition.PID);
+            ChargeInfo charge = new ChargeInfo();
+            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime,_condition.MiddleTime, false);
+            return charge;
         }
 
         private ChargeInfo GetSecondCharge()
         {
-            CalculateChargeClass charge = new CalculateChargeClass();
-            return charge.SecondMeasureData(_condition.StartTime, _condition.SecondTime, _condition.EndTime,
-                _condition.MID, _condition.PID);
+            ChargeInfo charge = new ChargeInfo();
+            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.EndTime, true);
+            return charge;
         }
     }
 }

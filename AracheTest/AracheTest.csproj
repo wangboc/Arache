@@ -105,13 +105,13 @@
     <Compile Include="AracheRobbinControl.Designer.cs">
       <DependentUpon>AracheRobbinControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Class1.cs" />
     <Compile Include="Data\Correspondnode.cs" />
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Data\ElectricityOriginalData.cs" />
-    <Compile Include="Data\ChargeInfo.cs" />
     <Compile Include="Data\ElectricityParameter.cs" />
     <Compile Include="Data\ElectricityPeriod.cs" />
-    <Compile Include="Data\NodeInfo.cs" />
+    <Compile Include="Data\AmmeterInfo.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>

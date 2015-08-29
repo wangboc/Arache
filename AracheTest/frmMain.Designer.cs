@@ -977,7 +977,6 @@
             // 
             // nodeTreeCtr
             // 
-            this.nodeTreeCtr.AutoHideEdit = false;
             this.nodeTreeCtr.Caption = "线路：";
             this.nodeTreeCtr.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
             this.nodeTreeCtr.Edit = this.repositoryItemTreeListLookUpEdit2;
@@ -1001,8 +1000,6 @@
             // 
             this.repositoryItemTreeListLookUpEdit2TreeList.Location = new System.Drawing.Point(0, 0);
             this.repositoryItemTreeListLookUpEdit2TreeList.Name = "repositoryItemTreeListLookUpEdit2TreeList";
-            this.repositoryItemTreeListLookUpEdit2TreeList.OptionsBehavior.CloseEditorOnLostFocus = false;
-            this.repositoryItemTreeListLookUpEdit2TreeList.OptionsBehavior.EnableFiltering = true;
             this.repositoryItemTreeListLookUpEdit2TreeList.OptionsView.AnimationType = DevExpress.XtraTreeList.TreeListAnimationType.AnimateFocusedNode;
             this.repositoryItemTreeListLookUpEdit2TreeList.Size = new System.Drawing.Size(400, 200);
             this.repositoryItemTreeListLookUpEdit2TreeList.TabIndex = 0;

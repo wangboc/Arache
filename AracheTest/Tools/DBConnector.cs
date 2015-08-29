@@ -15,7 +15,7 @@ namespace AracheTest.Tools
     internal class DBConnector
     {
         private const string constr =
-            "server=121.41.109.137;User Id=root;password=;Database=test;Connection Timeout=60;charset=gb2312";
+            "server=121.41.109.137;User Id=root;password=XYTech.co;Database=test;Connection Timeout=60;charset=gb2312";
 
         public static DataTable ExecuteSql(string sqlcommand)
         {
@@ -28,7 +28,7 @@ namespace AracheTest.Tools
                     MySqlDataAdapter adapter = new MySqlDataAdapter(mycmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    connection.Clone();
+                    connection.Close();
                     return dt;
                 }
                 catch (Exception e)

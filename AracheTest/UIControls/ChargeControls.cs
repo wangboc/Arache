@@ -114,18 +114,18 @@ namespace AracheTest.UIControls
             ChargeProportion.Series[0].Points.Clear();
             ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("尖峰", chargeInfo.PowerSpike.ToString("#0.00")),
-                new SeriesPoint("峰", chargeInfo.PowerPeak.ToString("#0.00")),
-                new SeriesPoint("谷", chargeInfo.PowerValley.ToString("#0.00"))
+                new SeriesPoint("尖峰", chargeInfo.spikePower.ToString("#0.00")),
+                new SeriesPoint("峰", chargeInfo.peakPower.ToString("#0.00")),
+                new SeriesPoint("谷", chargeInfo.valleyPower.ToString("#0.00"))
             });
 
             Fe_CuPropotion.Series[0].Points.Clear();
             Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("有功铜损", chargeInfo.ActiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("无功铜损", chargeInfo.ActiveCoreLoss.ToString("#0.00")),
-                new SeriesPoint("有功铁损", chargeInfo.ReactiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("无功铁损", chargeInfo.ReactiveCoreLoss.ToString("#0.00"))
+                new SeriesPoint("有功铜损", chargeInfo.activeCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", chargeInfo.reactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", chargeInfo.activeCoreLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", chargeInfo.reactiveCoreLoss.ToString("#0.00"))
             });
         }
 
@@ -138,10 +138,10 @@ namespace AracheTest.UIControls
                 DataRow row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（总）";
-                row[2] = chargeInfo.WPPNew.ToString("#0.00");
-                row[3] = chargeInfo.WPPOld.ToString("#0.00");
+                row[2] = chargeInfo.endEnergy.ToString("#0.00");
+                row[3] = chargeInfo.startEnergy.ToString("#0.00");
                 row[4] = "30";
-                row[5] = chargeInfo.PowerTotal.ToString("#0.00");
+                row[5] = chargeInfo.totalPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -149,14 +149,14 @@ namespace AracheTest.UIControls
                 row[1] = "有功（尖峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerSpike.ToString("#0.00");
+                row[5] = chargeInfo.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（峰）";row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerPeak.ToString("#0.00");
+                row[5] = chargeInfo.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -164,7 +164,7 @@ namespace AracheTest.UIControls
                 row[1] = "有功（谷）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerValley.ToString("#0.00");
+                row[5] = chargeInfo.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -172,19 +172,19 @@ namespace AracheTest.UIControls
                 row[1] = "无功（QI象限）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerValley.ToString("#0.00");
+                row[5] = chargeInfo.ReactiveQI.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 DataRow row1 = _chargeTable_2.NewRow();
-                row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
-                row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.ActiveAll.ToString("#0.00");
-                row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
-                row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
-                row1[5] = chargeInfo.ReactiveAll.ToString("#0.00");
-                row1[6] = chargeInfo.PowerPeak.ToString("#0.00");
-                row1[7] = chargeInfo.PowerValley.ToString("#0.00");
-                row1[8] = chargeInfo.PowerSpike.ToString("#0.00");
+                row1[0] = chargeInfo.activeCopperLoss.ToString("#0.00");
+                row1[1] = chargeInfo.activeCoreLoss.ToString("#0.00");
+                row1[2] = chargeInfo.activeAll.ToString("#0.00");
+                row1[3] = chargeInfo.reactiveCopperLoss.ToString("#0.00");
+                row1[4] = chargeInfo.reactiveCoreLoss.ToString("#0.00");
+                row1[5] = chargeInfo.reactiveAll.ToString("#0.00");
+                row1[6] = chargeInfo.peakPower.ToString("#0.00");
+                row1[7] = chargeInfo.valleyPower.ToString("#0.00");
+                row1[8] = chargeInfo.spikePower.ToString("#0.00");
                 _chargeTable_2.Rows.Add(row1);
 
                 DataRow row2 = _chargeTable_3.NewRow();
@@ -202,7 +202,7 @@ namespace AracheTest.UIControls
                 DataRow row3 = _chargeTable_4.NewRow();
                 Double total = 0;
                 row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.PowerSpike.ToString("#0.00");
+                row3[1] = chargeInfo.spikePower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -212,7 +212,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.PowerPeak.ToString("#0.00");
+                row3[1] = chargeInfo.peakPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -222,7 +222,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.PowerValley.ToString("#0.00");
+                row3[1] = chargeInfo.valleyPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -301,18 +301,18 @@ namespace AracheTest.UIControls
             ChargeProportion.Series[0].Points.Clear();
             ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("尖峰", chargeInfo.PowerSpike2.ToString("#0.00")),
-                new SeriesPoint("峰", chargeInfo.PowerPeak2.ToString("#0.00")),
-                new SeriesPoint("谷", chargeInfo.PowerValley2.ToString("#0.00")),
+                new SeriesPoint("尖峰", chargeInfo.spikePower.ToString("#0.00")),
+                new SeriesPoint("峰", chargeInfo.peakPower.ToString("#0.00")),
+                new SeriesPoint("谷", chargeInfo.valleyPower.ToString("#0.00")),
             });
 
             Fe_CuPropotion.Series[0].Points.Clear();
             Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("有功铜损", chargeInfo.ActiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("无功铜损", chargeInfo.ReactiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("有功铁损", chargeInfo.ActiveCoreLoss.ToString("#0.00")),
-                new SeriesPoint("无功铁损", chargeInfo.ReactiveCoreLoss.ToString("#0.00"))
+                new SeriesPoint("有功铜损", chargeInfo.activeCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", chargeInfo.reactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", chargeInfo.activeCoreLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", chargeInfo.reactiveCoreLoss.ToString("#0.00"))
             });
         }
 
@@ -325,9 +325,9 @@ namespace AracheTest.UIControls
                 DataRow row = _chargeTable_1.NewRow();
                 row[0] = chargeInfo.MID;
                 row[1] = "有功（总）";
-                row[2] = chargeInfo.WPPNew2.ToString("#0.00");
+                row[2] = chargeInfo.endEnergy.ToString("#0.00");
                 row[4] = "30";
-                row[5] = chargeInfo.PowerTotal2.ToString("#0.00");
+                row[5] = chargeInfo.totalPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -335,7 +335,7 @@ namespace AracheTest.UIControls
                 row[1] = "有功（尖峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerSpike2.ToString("#0.00");
+                row[5] = chargeInfo.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -343,7 +343,7 @@ namespace AracheTest.UIControls
                 row[1] = "有功（峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerPeak2.ToString("#0.00");
+                row[5] = chargeInfo.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -351,7 +351,7 @@ namespace AracheTest.UIControls
                 row[1] = "有功（谷）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.PowerValley2.ToString("#0.00");
+                row[5] = chargeInfo.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
@@ -359,19 +359,19 @@ namespace AracheTest.UIControls
                 row[1] = "无功（QI象限）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.ReactiveEnergyQI.ToString("#0.00");
+                row[5] = chargeInfo.ReactiveQI.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 DataRow row1 = _chargeTable_2.NewRow();
-                row1[0] = chargeInfo.ActiveCopperLoss.ToString("#0.00");
-                row1[1] = chargeInfo.ActiveCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.ActiveAll.ToString("#0.00");
-                row1[3] = chargeInfo.ReactiveCopperLoss.ToString("#0.00");
-                row1[4] = chargeInfo.ReactiveCoreLoss.ToString("#0.00");
-                row1[5] = chargeInfo.ReactiveAll.ToString("#0.00");
-                row1[6] = chargeInfo.PowerPeak2.ToString("#0.00");
-                row1[7] = chargeInfo.PowerValley2.ToString("#0.00");
-                row1[8] = chargeInfo.PowerSpike2.ToString("#0.00");
+                row1[0] = chargeInfo.activeCopperLoss.ToString("#0.00");
+                row1[1] = chargeInfo.activeCoreLoss.ToString("#0.00");
+                row1[2] = chargeInfo.activeAll.ToString("#0.00");
+                row1[3] = chargeInfo.reactiveCopperLoss.ToString("#0.00");
+                row1[4] = chargeInfo.reactiveCoreLoss.ToString("#0.00");
+                row1[5] = chargeInfo.reactiveAll.ToString("#0.00");
+                row1[6] = chargeInfo.peakPower.ToString("#0.00");
+                row1[7] = chargeInfo.valleyPower.ToString("#0.00");
+                row1[8] = chargeInfo.spikePower.ToString("#0.00");
                 _chargeTable_2.Rows.Add(row1);
 
                 DataRow row2 = _chargeTable_3.NewRow();
@@ -388,7 +388,7 @@ namespace AracheTest.UIControls
                 DataRow row3 = _chargeTable_4.NewRow();
                 Double total = 0;
                 row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.PowerSpike2.ToString("#0.00");
+                row3[1] = chargeInfo.spikePower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -398,7 +398,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.PowerPeak2.ToString("#0.00");
+                row3[1] = chargeInfo.peakPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -408,7 +408,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.PowerValley2.ToString("#0.00");
+                row3[1] = chargeInfo.valleyPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =

@@ -23,7 +23,7 @@ namespace AracheTest.UIControls
             CurrentNodeMid = 1;
         }
 
-        public void UpdateNodesData(List<NodeInfo> nodesList)
+        public void UpdateNodesData(List<AmmeterInfo> nodesList)
         {
             NodeTreeEdit.DataSource = nodesList;
             NodeTreeEdit.TreeList.CollapseAll();
@@ -31,26 +31,23 @@ namespace AracheTest.UIControls
 
         public void Init()
         {
-            NodeTreeEdit.QueryCloseUp += nodeTreeEdit_QueryCloseUp;
             NodeTreeEdit.TreeList.GetStateImage += TreeList_GetStateImage;
             NodeTreeEdit.TreeList.NodeCellStyle += TreeList_NodeCellStyle;
             NodeTreeEdit.TreeList.CustomDrawNodeCell += TreeList_CustomDrawNodeCell;
-           
 
-            NodeTreeEdit.TreeList.MoveFirst();
-            NodeTreeEdit.ValueMember = "NodeID";
-            NodeTreeEdit.DisplayMember = "Name";
             var nodeTree = NodeTreeEdit.TreeList;
-            var columnName = nodeTree.Columns.Add();columnName.Caption = "节点名称";
-            columnName.Name = "NodeName";
+           
+            NodeTreeEdit.TreeList.MoveFirst();
+          
+            NodeTreeEdit.ValueMember = "MID";
+            NodeTreeEdit.DisplayMember = "Name";
+ 
+
+            var columnName = nodeTree.Columns.Add();
+            columnName.Caption = "节点名称";
+            columnName.Name = "Name";
             columnName.Visible = true;
             columnName.FieldName = "Name";
-
-            var columnNodeID = nodeTree.Columns.Add();
-            columnNodeID.Caption = "NodeID";
-            columnNodeID.FieldName = "NodeID";
-            columnNodeID.Name = "NodeID";
-            columnNodeID.Visible = true;
 
             var columnParentID = nodeTree.Columns.Add();
             columnParentID.Caption = "ParentID";
@@ -70,12 +67,13 @@ namespace AracheTest.UIControls
             columnMID.FieldName = "MID";
             columnMID.Visible = false;
 
-            nodeTree.KeyFieldName = "NodeID";
+            nodeTree.OptionsBehavior.PopulateServiceColumns = true;
+            nodeTree.KeyFieldName = "MID";
             nodeTree.ParentFieldName = "ParentID";
+        
 
             NodeTreeEdit.AutoExpandAllNodes = false;
         }
-
 
         private void TreeList_CustomDrawNodeCell(object sender, CustomDrawNodeCellEventArgs e)
         {
@@ -99,26 +97,29 @@ namespace AracheTest.UIControls
             // Prohibit default painting.
             e.Handled = true;
         }
+
         private void TreeList_NodeCellStyle(object sender, GetCustomNodeCellStyleEventArgs e)
         {
-            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
-            if (isNode == false)
-                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
+//            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
+//            if (isNode == false)
+//                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
         }
 
         private void TreeList_GetStateImage(object sender, GetStateImageEventArgs e)
         {
-            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
+//            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));
 
-            e.NodeImageIndex = isNode ? 2 : 5;
+            e.NodeImageIndex = 2;
         }
 
-        private void nodeTreeEdit_QueryCloseUp(object sender, CancelEventArgs e)
-        {
-            TreeListLookUpEdit treeEdit = sender as TreeListLookUpEdit;
-            var node = treeEdit.Properties.TreeList.FocusedNode;
-            bool isNode = Convert.ToBoolean(node.GetValue("IsNode"));
-            e.Cancel = isNode;
-        }
+//        private void nodeTreeEdit_QueryCloseUp(object sender, CancelEventArgs e)
+//        {
+//            TreeListLookUpEdit treeEdit = sender as TreeListLookUpEdit;
+//            var node = treeEdit.Properties.TreeList.FocusedNode;
+//            if (node == null) e.Cancel = false;
+//            bool isNode = Convert.ToBoolean(node.GetValue("IsNode"));
+//            e.Cancel = isNode;
+//        }
     }
 }
+

@@ -26,6 +26,7 @@ namespace AracheTest.UIControls
         public void UpdateNodesData(List<AmmeterInfo> nodesList)
         {
             NodeTreeEdit.DataSource = nodesList;
+            CurrentNodeMid = nodesList[0].MID;
             NodeTreeEdit.TreeList.CollapseAll();
         }
 

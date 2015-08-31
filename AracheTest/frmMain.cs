@@ -225,8 +225,8 @@ namespace AracheTest
             var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(CurrentPID), SetNodesData);
             TaskPool.AddTask(taskNode, TaskScheduler.FromCurrentSynchronizationContext());
             var taskCharge = new TaskChargeFilter("获取当天计费信息", new ChargeFilterCondition(
-                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
-                DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
+              new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
+              DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -236,7 +236,7 @@ namespace AracheTest
             _nodeTreeControl.UpdateNodesData(nodeList);
            
             if (nodeTreeCtr.EditValue == null || nodeTreeCtr.EditValue == "")
-                nodeTreeCtr.EditValue = nodeList[nodeList.Count - 1].MID;
+                nodeTreeCtr.EditValue = nodeList[0].MID;
             
         }
 

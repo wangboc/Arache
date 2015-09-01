@@ -225,8 +225,8 @@ namespace AracheTest
             var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(CurrentPID), SetNodesData);
             TaskPool.AddTask(taskNode, TaskScheduler.FromCurrentSynchronizationContext());
             var taskCharge = new TaskChargeFilter("获取当天计费信息", new ChargeFilterCondition(
-                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
-                DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
+              new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
+              DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -236,7 +236,7 @@ namespace AracheTest
             _nodeTreeControl.UpdateNodesData(nodeList);
            
             if (nodeTreeCtr.EditValue == null || nodeTreeCtr.EditValue == "")
-                nodeTreeCtr.EditValue = nodeList[nodeList.Count - 1].MID;
+                nodeTreeCtr.EditValue = nodeList[0].MID;
             
         }
 
@@ -563,6 +563,11 @@ namespace AracheTest
 
         #endregion
 
+        /// <summary>
+        /// 第一阶段计费并不包含铜铁损，所以在点击"第一阶段"标签时，为用户跳转至基本电费比例
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barButtonItemVoltage_ItemClick(object sender, ItemClickEventArgs e)
         {
             xtraTabControlBasicInfo.SelectedTabPageIndex = 0;
@@ -586,7 +591,13 @@ namespace AracheTest
             }
         }
 
-
+        /// <summary>
+        /// 设定报表标题方法
+        /// 在开启设定对话框时，首先读取当前标题
+        /// 在点击确认按钮后，将修改后的标题设定给报表，并刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SetupReportBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             ReportSetupForm form = new ReportSetupForm();

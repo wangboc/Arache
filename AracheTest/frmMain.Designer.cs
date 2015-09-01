@@ -988,7 +988,6 @@
             // 
             // repositoryItemTreeListLookUpEdit2
             // 
-            this.repositoryItemTreeListLookUpEdit2.AutoExpandAllNodes = false;
             this.repositoryItemTreeListLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemTreeListLookUpEdit2.HideSelection = false;
@@ -3704,7 +3703,7 @@
             // 
             // propertyGridRealtime
             // 
-            this.propertyGridRealtime.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.propertyGridRealtime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.propertyGridRealtime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridRealtime.Location = new System.Drawing.Point(3, 43);
             this.propertyGridRealtime.Name = "propertyGridRealtime";
@@ -4409,7 +4408,7 @@
             this.PChartControl.Legend.EquallySpacedItems = false;
             this.PChartControl.Legend.UseCheckBoxes = true;
             this.PChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.PChartControl.Location = new System.Drawing.Point(3, 3);
+            this.PChartControl.Location = new System.Drawing.Point(861, 3);
             this.PChartControl.Name = "PChartControl";
             series11.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series11.Name = "A相";
@@ -4429,7 +4428,7 @@
         series13,
         series14};
             this.PChartControl.SeriesTemplate.View = splineSeriesView18;
-            this.PChartControl.Size = new System.Drawing.Size(423, 209);
+            this.PChartControl.Size = new System.Drawing.Size(424, 209);
             this.PChartControl.TabIndex = 23;
             chartTitle4.Font = new System.Drawing.Font("Tahoma", 14F);
             chartTitle4.Text = "有功功率";
@@ -4505,7 +4504,7 @@
             this.SChartControl.Legend.EquallySpacedItems = false;
             this.SChartControl.Legend.UseCheckBoxes = true;
             this.SChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.SChartControl.Location = new System.Drawing.Point(861, 3);
+            this.SChartControl.Location = new System.Drawing.Point(3, 3);
             this.SChartControl.Name = "SChartControl";
             series19.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series19.Name = "A相";
@@ -4525,7 +4524,7 @@
         series21,
         series22};
             this.SChartControl.SeriesTemplate.View = splineSeriesView28;
-            this.SChartControl.Size = new System.Drawing.Size(424, 209);
+            this.SChartControl.Size = new System.Drawing.Size(423, 209);
             this.SChartControl.TabIndex = 21;
             chartTitle6.Font = new System.Drawing.Font("Tahoma", 14F);
             chartTitle6.Text = "视在功率";

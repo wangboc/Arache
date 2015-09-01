@@ -6,6 +6,9 @@ using AracheTest.Data;
 
 namespace AracheTest
 {
+    /// <summary>
+    /// 基础条件类，将PID作为检索的必要条件
+    /// </summary>
     public class ConditionBase
     {
         public int PID { get; set; }
@@ -16,6 +19,9 @@ namespace AracheTest
         }
     }
 
+    /// <summary>
+    /// 电量检索类，封装开始时间、结束时间和MID，可用于封装电量的检索条件
+    /// </summary>
     public class FilterCondition : ConditionBase
     {
         public DateTime StartTime { get; private set; }
@@ -31,11 +37,12 @@ namespace AracheTest
         }
     }
 
+    /// <summary>
+    /// 计费检索类，封装中间二次计费时间，可用于封装计费的检索条件
+    /// 第一阶段需要 StartTime 和 MiddleTime, 第二阶段需要 StartTime 和 EndTime
+    /// </summary>
     public class ChargeFilterCondition : FilterCondition
     {
-        /// <summary>
-        ///  只用于计算计费信息，第一阶段需要 StartTime 和 MiddleTime, 第二阶段需要 MiddleTime 和 EndTime
-        /// </summary>
         public DateTime MiddleTime { get; private set; }
 
         public ChargeFilterCondition(DateTime startTime, DateTime middleTime, DateTime endTime, int mid, int pid)
@@ -45,6 +52,9 @@ namespace AracheTest
         }
     }
 
+    /// <summary>
+    /// 任务接口，必须实现Run方法，以供TaskPool类调用
+    /// </summary>
     public interface ITask
     {
         void Run();

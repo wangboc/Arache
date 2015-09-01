@@ -563,6 +563,11 @@ namespace AracheTest
 
         #endregion
 
+        /// <summary>
+        /// 第一阶段计费并不包含铜铁损，所以在点击"第一阶段"标签时，为用户跳转至基本电费比例
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barButtonItemVoltage_ItemClick(object sender, ItemClickEventArgs e)
         {
             xtraTabControlBasicInfo.SelectedTabPageIndex = 0;
@@ -586,7 +591,13 @@ namespace AracheTest
             }
         }
 
-
+        /// <summary>
+        /// 设定报表标题方法
+        /// 在开启设定对话框时，首先读取当前标题
+        /// 在点击确认按钮后，将修改后的标题设定给报表，并刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SetupReportBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             ReportSetupForm form = new ReportSetupForm();

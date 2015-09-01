@@ -18,6 +18,9 @@ namespace AracheTest.UIControls
         public RepositoryItemTreeListLookUpEdit NodeTreeEdit { get; set; }
         public int CurrentNodeMid { get; set; }
 
+        /// <summary>
+        /// 初始化函数，默认当前MID=1，即每次启动后，指向当前工程的根节点
+        /// </summary>
         public NodeTreeControl()
         {
             CurrentNodeMid = 1;
@@ -27,7 +30,7 @@ namespace AracheTest.UIControls
         {
             NodeTreeEdit.DataSource = nodesList;
             CurrentNodeMid = nodesList[0].MID;
-            NodeTreeEdit.TreeList.CollapseAll();
+            NodeTreeEdit.TreeList.ExpandToLevel(1);
         }
 
         public void Init()
@@ -71,11 +74,13 @@ namespace AracheTest.UIControls
             nodeTree.OptionsBehavior.PopulateServiceColumns = true;
             nodeTree.KeyFieldName = "MID";
             nodeTree.ParentFieldName = "ParentID";
-        
-
-            NodeTreeEdit.AutoExpandAllNodes = false;
         }
 
+        /// <summary>
+        /// 设定树中节点背景颜色
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TreeList_CustomDrawNodeCell(object sender, CustomDrawNodeCellEventArgs e)
         {
             Brush backBrush, foreBrush;
@@ -106,6 +111,11 @@ namespace AracheTest.UIControls
 //                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
         }
 
+        /// <summary>
+        /// 设定树中各个节点图标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TreeList_GetStateImage(object sender, GetStateImageEventArgs e)
         {
 //            bool isNode = Convert.ToBoolean(e.Node.GetValue("IsNode"));

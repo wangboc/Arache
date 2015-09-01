@@ -10,6 +10,11 @@ using AracheTest.Tools;
 
 namespace AracheTest.Data
 {
+    /// <summary>
+    /// 王韬越 2015.08.30 Version - 2
+    /// 修改内容：
+    /// 修复电价计算错误bug
+    /// </summary>
     public class ChargeInfo
     {
         public ElectricityParameter Electricityparameter; //计算用数据参数
@@ -555,7 +560,7 @@ namespace AracheTest.Data
             EndTime = endTime;
             CouplerLoss = couplerLoss;
             DataSource = MeasureData(PID, MID, StartTime, EndTime);
-
+            if (DataSource == null || DataSource.Rows.Count == 0) return;
             electricityparameterTable = DBConnector.ExecuteSql(string.Format("select * from electricityparameter"));
             Electricityparameter = new ElectricityParameter(electricityparameterTable.Rows[0]);
 

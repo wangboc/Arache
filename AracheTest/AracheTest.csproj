@@ -214,6 +214,7 @@
     <Content Include="DLLs\log4net.dll" />
     <Content Include="DLLs\MySql.Data.dll" />
     <Content Include="DLLs\MySql.Data.Entity.dll" />
+    <Content Include="TodoList.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

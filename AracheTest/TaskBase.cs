@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using AracheTest.Data;
+using AracheTest.Tools;
 
 
 namespace AracheTest
@@ -29,7 +30,8 @@ namespace AracheTest
         public int MID { get; private set; }
 
 
-        public FilterCondition(DateTime startTime, DateTime endTime, int mid, int pid):base(pid){
+        public FilterCondition(DateTime startTime, DateTime endTime, int mid, int pid) : base(pid)
+        {
             StartTime = startTime;
             EndTime = endTime;
             MID = mid;
@@ -62,7 +64,7 @@ namespace AracheTest
 
     public class TaskBase : ITask
     {
-        public delegate void UpdateDataDelegate(Object dataSource);
+        public delegate void UpdateDataDelegate(Object dataSource, int result);
 
         protected ConditionBase Condition { get; set; }
 
@@ -74,7 +76,7 @@ namespace AracheTest
 
         protected readonly UpdateDataDelegate UpdateDataData;
 
-        public bool IsFinished { get; set; }
+        public int result { get; set; }
 
 
         public virtual void Run()
@@ -83,16 +85,21 @@ namespace AracheTest
 
         public void UpdateDataByDelegate()
         {
-            UpdateDataData(DBData);
-            IsFinished = true;
+            UpdateDataData(DBData, result);
         }
 
+        /// <summary>
+        /// 初始化基础任务类
+        /// </summary>
+        /// <param name="name">任务名称</param>
+        /// <param name="condition">任务条件，一般用于检索任务</param>
+        /// <param name="returnFuc">任务结束后的返回函数</param>
         public TaskBase(String name, ConditionBase condition, UpdateDataDelegate returnFuc)
         {
             Name = name;
             UpdateDataData = returnFuc;
             Condition = condition;
-            IsFinished = false;
+            result = 0;
             Time = DateTime.Now;
         }
     }
@@ -120,12 +127,24 @@ namespace AracheTest
         private void GetRealtimeData()
         {
             DBData = DataBase.GetRealTimeData(_condition.MID, _condition.PID);
+            if (DBData == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof(TaskElectricityFilter), "无法读取实时电量数据");
+            }
+            result = (DBData as List<ElectricityOriginalData>).Count;
         }
 
         public void GetFilteredData()
         {
             DBData = DataBase.GetDatetimeFilteredData(_condition.StartTime, _condition.EndTime, _condition.MID,
                 _condition.PID);
+            if (DBData == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof(TaskElectricityFilter), "无法检索相关电量数据");
+            }
+            result = (DBData as List<ElectricityOriginalData>).Count;
         }
     }
 
@@ -144,38 +163,12 @@ namespace AracheTest
         private void FetchNodesInfo()
         {
             DBData = DataBase.GetAmmeterInfo(Condition.PID);
-//            List<AmmeterInfo> data = (List<AmmeterInfo>) DBData;
-//            int nodeTotal = data.Count;
-//            for (int i = 0; i < nodeTotal; i++)
-//            {
-//                List<Correspondnode> miDs = DataBase.GetCorrespondMid(data[i].NodeID);
-//                if (miDs == null || miDs.Count <= 0) continue;
-//                DataTable dt = new DataTable();
-//                dt.Columns.Add("NodeID");
-//                dt.Columns.Add("PID");
-//                dt.Columns.Add("ParentID");
-//                dt.Columns.Add("Name");
-//                dt.Columns.Add("MID");
-//
-//                foreach (var correspondnode in miDs)
-//                {
-//                    DataRow row = dt.NewRow();
-//                    //Random r = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
-//                    //产生唯一NodeID值，在电表节点中，该NodeID没用，只是用来生成树状结构。
-//                    row["NodeID"] = 10000.ToString() + correspondnode.NodeID.ToString() +
-//                                    correspondnode.MID.ToString();
-//                    row["PID"] = 1;
-//                    row["ParentID"] = correspondnode.NodeID;
-//                    row["Name"] = "电表: " + correspondnode.MID;
-//                    row["MID"] = correspondnode.MID;
-//                    dt.Rows.Add(row);
-//                    AmmeterInfo ammeter = new AmmeterInfo(row);
-//                    ammeter.MID.Add(correspondnode.MID);
-//                    ammeter.IsNode = false;
-//                    data.Add(ammeter);
-//                }
-//            }
-            
+            if (DBData == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof(TaskFetchNodes), "无法读取电表信息");
+            }
+            result = (DBData as List<AmmeterInfo>).Count;
         }
     }
 
@@ -201,17 +194,32 @@ namespace AracheTest
 
         private List<ElectricityParameter> getElectricityParameter()
         {
-            return DataBase.GetElectricityparameter();
+            Object resultTemp = DataBase.GetElectricityparameter();
+            if (resultTemp == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof(TaskChargeFilter), "无法读取电量参数信息");
+            }
+            result = (resultTemp as List<ElectricityParameter>).Count;
+            return (List<ElectricityParameter>) resultTemp;
         }
 
         private List<ElectricityPeriod> getElectricityPeriodInfo()
         {
-            return DataBase.GetElectricityPeriods();
+            Object resultTemp = DataBase.GetElectricityPeriods();
+            if (resultTemp == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof(TaskChargeFilter), "无法读取电费时段信息");
+            }
+            result = (resultTemp as List<ElectricityPeriod>).Count;
+            return (List<ElectricityPeriod>) resultTemp;
         }
+
         private ChargeInfo GetFirstCharge()
         {
             ChargeInfo charge = new ChargeInfo();
-            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime,_condition.MiddleTime, false);
+            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.MiddleTime, false);
             return charge;
         }
 

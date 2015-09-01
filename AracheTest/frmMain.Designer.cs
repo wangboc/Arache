@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -148,9 +147,9 @@
             DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
-            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
+            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection();
             this.barButtonItemAbout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemEnergy = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemVoltage = new DevExpress.XtraBars.BarButtonItem();
@@ -182,7 +181,7 @@
             this.barCheckItemCurrentMonth = new DevExpress.XtraBars.BarCheckItem();
             this.barCheckItemCurrentYear = new DevExpress.XtraBars.BarCheckItem();
             this.ChargeDateSelectBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.imageCollectionRibbonLargeButton = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionRibbonLargeButton = new DevExpress.Utils.ImageCollection();
             this.ribbonPageDisplay = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupDisplay = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSetup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -207,19 +206,19 @@
             this.repositoryItemMarqueeProgressBar2 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
-            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanelUser = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.treeListUser = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumnUser = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumnTag = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.sharedImageCollection = new DevExpress.Utils.SharedImageCollection(this.components);
+            this.sharedImageCollection = new DevExpress.Utils.SharedImageCollection();
             this.buttonEditSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.dockPanelInfo = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
+            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager();
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
             this.printPreviewBarItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -494,7 +493,7 @@
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageStatic = new DevExpress.XtraTab.XtraTabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.labelControlTime = new DevExpress.XtraEditors.LabelControl();
             this.labelControlDate = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -4408,7 +4407,7 @@
             this.PChartControl.Legend.EquallySpacedItems = false;
             this.PChartControl.Legend.UseCheckBoxes = true;
             this.PChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.PChartControl.Location = new System.Drawing.Point(861, 3);
+            this.PChartControl.Location = new System.Drawing.Point(3, 3);
             this.PChartControl.Name = "PChartControl";
             series11.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series11.Name = "A相";
@@ -4428,7 +4427,7 @@
         series13,
         series14};
             this.PChartControl.SeriesTemplate.View = splineSeriesView18;
-            this.PChartControl.Size = new System.Drawing.Size(424, 209);
+            this.PChartControl.Size = new System.Drawing.Size(423, 209);
             this.PChartControl.TabIndex = 23;
             chartTitle4.Font = new System.Drawing.Font("Tahoma", 14F);
             chartTitle4.Text = "有功功率";
@@ -4504,7 +4503,7 @@
             this.SChartControl.Legend.EquallySpacedItems = false;
             this.SChartControl.Legend.UseCheckBoxes = true;
             this.SChartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.SChartControl.Location = new System.Drawing.Point(3, 3);
+            this.SChartControl.Location = new System.Drawing.Point(861, 3);
             this.SChartControl.Name = "SChartControl";
             series19.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series19.Name = "A相";
@@ -4524,7 +4523,7 @@
         series21,
         series22};
             this.SChartControl.SeriesTemplate.View = splineSeriesView28;
-            this.SChartControl.Size = new System.Drawing.Size(423, 209);
+            this.SChartControl.Size = new System.Drawing.Size(424, 209);
             this.SChartControl.TabIndex = 21;
             chartTitle6.Font = new System.Drawing.Font("Tahoma", 14F);
             chartTitle6.Text = "视在功率";

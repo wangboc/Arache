@@ -23,7 +23,7 @@ namespace AracheTest
     {
         private int CurrentPID;
         private List<ElectricityOriginalData> _electricityDataList = new List<ElectricityOriginalData>();
-        private Dictionary<string, Object> _chargeObjects;
+        private Dictionary<string, Object> _chargeObjects = new Dictionary<string, object>();
 
         private Timer _timer_GetRealtime = new Timer();
         private Timer _timer_GetRealtimeData = new Timer();
@@ -222,24 +222,36 @@ namespace AracheTest
                 SetElectricityData,
                 true);
             TaskPool.AddTask(task, TaskScheduler.FromCurrentSynchronizationContext());
+
             var taskNode = new TaskFetchNodes("更新节点", new ConditionBase(CurrentPID), SetNodesData);
             TaskPool.AddTask(taskNode, TaskScheduler.FromCurrentSynchronizationContext());
+
             var taskCharge = new TaskChargeFilter("获取当天计费信息", new ChargeFilterCondition(
-              new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
-              DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
+                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
+                DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        private void SetNodesData(Object list)
+        /// <summary>
+        /// 更新电表树控件
+        /// </summary>
+        /// <param name="list">数据源</param>
+        /// <param name="result">数据库访问结果，-1代表数据库连接错误</param>
+        private void SetNodesData(Object list, int result)
         {
+            if (result == -1) return;
             List<AmmeterInfo> nodeList = list as List<AmmeterInfo>;
             _nodeTreeControl.UpdateNodesData(nodeList);
-           
+
             if (nodeTreeCtr.EditValue == null || nodeTreeCtr.EditValue == "")
                 nodeTreeCtr.EditValue = nodeList[0].MID;
-            
         }
 
+        /// <summary>
+        /// 用于控制 "实时" 或 "筛选" 电量信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RealtimeCheckBtn_DownChanged(object sender, ItemClickEventArgs e)
         {
             if (RealtimeCheckBtn.Down)
@@ -267,6 +279,9 @@ namespace AracheTest
             }
         }
 
+        /// <summary>
+        /// 筛选电量信息，发起一个新的任务，后台刷新数据
+        /// </summary>
         private void GetFilteredData()
         {
             ResetUISource();
@@ -299,14 +314,16 @@ namespace AracheTest
             ResetRealTimeGridDataSource();
         }
 
-        private void SetChargeData(Object dataSource)
+        private void SetChargeData(Object dataSource, int result)
         {
+            if (result == -1) return;
             _chargeObjects = dataSource as Dictionary<string, object>;
             SetChargeGridandChartControls();
         }
 
-        private void SetElectricityData(Object dataSource)
+        private void SetElectricityData(Object dataSource, int result)
         {
+            if (result == -1) return;
             _electricityDataList = dataSource as List<ElectricityOriginalData>;
             UpdateRealtimeDataGrid();
             UpdateGridControlDetail();
@@ -357,7 +374,6 @@ namespace AracheTest
             TreeListLookUpEdit nodetree = sender as TreeListLookUpEdit;
             AmmeterInfo ammeter = nodetree.GetSelectedDataRow() as AmmeterInfo;
 
-           
 
             _nodeTreeControl.CurrentNodeMid = ammeter.MID;
             if (RealtimeCheckBtn.Down)
@@ -577,17 +593,19 @@ namespace AracheTest
         {
             if (xtraTabControl4.SelectedTabPageIndex == 0)
             {
-                _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
                 xtraTabControl2.SelectedTabPageIndex = 0;
                 this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
                 documentViewerBarManager1.DocumentViewer = documentViewer1;
+                if (!_chargeObjects.ContainsKey("第一阶段")) return;
+                _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
             }
             else
             {
-                _chargeControlsSecond.SetPropotionData(_chargeObjects["第二阶段"] as ChargeInfo);
                 xtraTabControl2.SelectedTabPageIndex = 1;
                 this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl2;
                 documentViewerBarManager1.DocumentViewer = documentViewer2;
+                if (!_chargeObjects.ContainsKey("第二阶段")) return;
+                _chargeControlsSecond.SetPropotionData(_chargeObjects["第二阶段"] as ChargeInfo);
             }
         }
 

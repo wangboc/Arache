@@ -24,6 +24,7 @@ namespace AracheTest.UIControls
 
         protected ChartControl ChargeProportion;
         protected ChartControl Fe_CuPropotion;
+        protected ChartControl ChargeChart;
 
         public ChargeControlsBase()
         {
@@ -70,7 +71,7 @@ namespace AracheTest.UIControls
         }
 
         public virtual void SetChargeUiControls(ChartControl chartControlChargeProportion,
-            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            ChartControl feCuPropotionCtl, ChartControl chargePropotionChart, GridControl gridControl1,
             GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
         {
         }
@@ -81,10 +82,29 @@ namespace AracheTest.UIControls
             _chargeTable_2.Rows.Clear();
             _chargeTable_3.Rows.Clear();
             _chargeTable_4.Rows.Clear();
+            InitChargePropotionControl();
         }
 
         public virtual void SetPropotionData(ChargeInfo chargeInfo)
         {
+        }
+
+        protected void InitChargePropotionControl()
+        {
+            var diagram = ChargeChart.Diagram as XYDiagram;
+            
+            ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
+            var axisX = diagram.AxisX;
+            diagram.EnableAxisYZooming = false;
+            diagram.EnableAxisYScrolling = true;
+            diagram.EnableAxisXScrolling = true;
+            diagram.EnableAxisXZooming = true;
+            axisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Continuous;
+           // axisX.Label.TextPattern = "{A:MM/dd HH:mm}";
+            axisX.DateTimeScaleOptions.GridSpacing = 1;
+            axisX.Tickmarks.MinorVisible = false;
+            axisX.Label.Angle = -5;
+            axisX.DateTimeScaleOptions.AutoGrid = true;
         }
     }
 
@@ -97,11 +117,12 @@ namespace AracheTest.UIControls
         private DocumentViewer documentViewer;
 
         public override void SetChargeUiControls(ChartControl chartControlChargeProportion,
-            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            ChartControl feCuPropotionCtl, ChartControl chargePropotionChart, GridControl gridControl1,
             GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
         {
             ChargeProportion = chartControlChargeProportion;
-            Fe_CuPropotion = Fe_CuPropotionCtl;
+            Fe_CuPropotion = feCuPropotionCtl;
+            ChargeChart = chargePropotionChart;
             gridCharge_1 = gridControl1;
             gridCharge_2 = gridControl2;
             gridCharge_3 = gridControl3;
@@ -250,24 +271,7 @@ namespace AracheTest.UIControls
                 XtraReport1 report = new XtraReport1();
                 report.ExportOptions.PrintPreview.DefaultFileName = "国网浙江慈溪市供电公司非居民用户电费复核单据 （一次抄表）" +
                                                                     DateTime.Now.ToString("D");
-//                report.ExportOptions.SetOptionsVisibility(new ExportOptionKind[]
-//                {
-//                    ExportOptionKind.PdfACompatibility,
-//                    ExportOptionKind.PdfCompressed,
-//                    ExportOptionKind.PdfConvertImagesToJpeg,
-//                    ExportOptionKind.PdfDocumentApplication,
-//                    ExportOptionKind.PdfDocumentAuthor,
-//                    ExportOptionKind.PdfDocumentKeywords,
-//                    ExportOptionKind.PdfDocumentSubject,
-//                    ExportOptionKind.PdfDocumentTitle,
-//                    ExportOptionKind.PdfImageQuality,
-//                    ExportOptionKind.PdfNeverEmbeddedFonts,
-//                    ExportOptionKind.PdfPageRange,
-//                    ExportOptionKind.PdfCompressed,
-//                    ExportOptionKind.PdfPasswordSecurityOptions,
-//                    ExportOptionKind.PdfShowPrintDialogOnOpen,
-//                    ExportOptionKind.PdfSignatureOptions
-//                }, false);
+ 
 
                 documentViewer.DocumentSource = report;
                 report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
@@ -284,11 +288,12 @@ namespace AracheTest.UIControls
         private DocumentViewer documentViewer;
 
         public override void SetChargeUiControls(ChartControl chartControlChargeProportion,
-            ChartControl Fe_CuPropotionCtl, GridControl gridControl1,
+            ChartControl Fe_CuPropotionCtl, ChartControl chargePropotionChart, GridControl gridControl1,
             GridControl gridControl2, GridControl gridControl3, GridControl gridControl4, DocumentViewer documentView)
         {
             ChargeProportion = chartControlChargeProportion;
             Fe_CuPropotion = Fe_CuPropotionCtl;
+            ChargeChart = chargePropotionChart;
             gridCharge_1 = gridControl1;
             gridCharge_2 = gridControl2;
             gridCharge_3 = gridControl3;

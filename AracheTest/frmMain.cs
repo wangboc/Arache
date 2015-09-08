@@ -100,12 +100,12 @@ namespace AracheTest
             _chargeControlsFirst = new ChargeControlFirst();
             _chargeControlsSecond = new ChargeControlSecond();
 
-            _chargeControlsFirst.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, gridControl_1_1,
+            _chargeControlsFirst.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, ChargePropotionChart, gridControl_1_1,
                 gridControl_1_2,
                 gridControl_1_3, gridControl_1_4, documentViewer1);
             _chargeControlsFirst.SetChargeData(_chargeObjects);
 
-            _chargeControlsSecond.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, gridControl_2_1,
+            _chargeControlsSecond.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion,ChargePropotionChart, gridControl_2_1,
                 gridControl_2_2,
                 gridControl_2_3, gridControl_2_4, documentViewer2);
             _chargeControlsSecond.SetChargeData(_chargeObjects);

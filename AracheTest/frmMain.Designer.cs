@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -146,10 +147,12 @@
             DevExpress.XtraCharts.Series series25 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series28 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series29 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
-            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController();
+            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection();
+            this.imageCollectionRibbonButtonSmall = new DevExpress.Utils.ImageCollection(this.components);
             this.barButtonItemAbout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemEnergy = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemVoltage = new DevExpress.XtraBars.BarButtonItem();
@@ -181,7 +184,7 @@
             this.barCheckItemCurrentMonth = new DevExpress.XtraBars.BarCheckItem();
             this.barCheckItemCurrentYear = new DevExpress.XtraBars.BarCheckItem();
             this.ChargeDateSelectBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.imageCollectionRibbonLargeButton = new DevExpress.Utils.ImageCollection();
+            this.imageCollectionRibbonLargeButton = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageDisplay = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupDisplay = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSetup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -206,19 +209,19 @@
             this.repositoryItemMarqueeProgressBar2 = new DevExpress.XtraEditors.Repository.RepositoryItemMarqueeProgressBar();
             this.repositoryItemPopupContainerEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemPopupContainerEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
-            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanelUser = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.treeListUser = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumnUser = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumnTag = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.sharedImageCollection = new DevExpress.Utils.SharedImageCollection();
+            this.sharedImageCollection = new DevExpress.Utils.SharedImageCollection(this.components);
             this.buttonEditSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.dockPanelInfo = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager();
+            this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
             this.printPreviewBarItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -490,10 +493,10 @@
             this.Fe_CuPropotion = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
+            this.ChargePropotionChart = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageStatic = new DevExpress.XtraTab.XtraTabPage();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelControlTime = new DevExpress.XtraEditors.LabelControl();
             this.labelControlDate = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
@@ -680,11 +683,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).BeginInit();
             this.xtraTabControl3.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChargePropotionChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series29)).BeginInit();
             this.SuspendLayout();
             // 
             // barAndDockingController1
@@ -3702,7 +3707,7 @@
             // 
             // propertyGridRealtime
             // 
-            this.propertyGridRealtime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.propertyGridRealtime.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.propertyGridRealtime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridRealtime.Location = new System.Drawing.Point(3, 43);
             this.propertyGridRealtime.Name = "propertyGridRealtime";
@@ -4660,40 +4665,49 @@
             // 
             // xtraTabPage5
             // 
-            this.xtraTabPage5.Controls.Add(this.chartControl2);
+            this.xtraTabPage5.Controls.Add(this.ChargePropotionChart);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.Size = new System.Drawing.Size(486, 330);
             this.xtraTabPage5.Text = "用电比例";
             // 
-            // chartControl2
+            // ChargePropotionChart
             // 
-            this.chartControl2.AppearanceNameSerializable = "Nature Colors";
+            this.ChargePropotionChart.AppearanceNameSerializable = "Nature Colors";
             xyDiagram7.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram7.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram7;
-            this.chartControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl2.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
-            this.chartControl2.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
-            this.chartControl2.Legend.EquallySpacedItems = false;
-            this.chartControl2.Legend.UseCheckBoxes = true;
-            this.chartControl2.Location = new System.Drawing.Point(0, 0);
-            this.chartControl2.Name = "chartControl2";
+            xyDiagram7.EnableAxisXScrolling = true;
+            xyDiagram7.EnableAxisXZooming = true;
+            xyDiagram7.EnableAxisYScrolling = true;
+            this.ChargePropotionChart.Diagram = xyDiagram7;
+            this.ChargePropotionChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChargePropotionChart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
+            this.ChargePropotionChart.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
+            this.ChargePropotionChart.Legend.EquallySpacedItems = false;
+            this.ChargePropotionChart.Legend.UseCheckBoxes = true;
+            this.ChargePropotionChart.Location = new System.Drawing.Point(0, 0);
+            this.ChargePropotionChart.Name = "ChargePropotionChart";
             series25.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series25.Name = "Series 1";
+            series25.Name = "总电费";
             series26.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series26.Name = "Series 2";
+            series26.Name = "有功（尖）";
             series27.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series27.Name = "Series 3";
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+            series27.Name = "有功（峰）";
+            series28.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series28.Name = "有功（谷）";
+            series29.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series29.Name = "无功（QI象限）";
+            this.ChargePropotionChart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series25,
         series26,
-        series27};
-            this.chartControl2.Size = new System.Drawing.Size(486, 330);
-            this.chartControl2.TabIndex = 0;
+        series27,
+        series28,
+        series29};
+            this.ChargePropotionChart.Size = new System.Drawing.Size(486, 330);
+            this.ChargePropotionChart.TabIndex = 0;
             chartTitle9.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            chartTitle9.Text = "用电(kW.h)";
+            chartTitle9.Text = "用电";
             chartTitle9.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            this.ChargePropotionChart.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle9});
             // 
             // xtraTabPage6
@@ -4946,7 +4960,9 @@
             ((System.ComponentModel.ISupportInitialize)(series25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChargePropotionChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5103,7 +5119,7 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
-        private DevExpress.XtraCharts.ChartControl chartControl2;
+        private DevExpress.XtraCharts.ChartControl ChargePropotionChart;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl4;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage7;

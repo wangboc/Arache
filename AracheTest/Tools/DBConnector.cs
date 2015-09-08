@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AracheTest.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Configuration;
-using System.Net.Sockets;
-using System.Windows.Forms;
 
 namespace AracheTest.Tools
 {

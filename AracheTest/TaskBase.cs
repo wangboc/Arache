@@ -130,7 +130,7 @@ namespace AracheTest
             if (DBData == null)
             {
                 result = -1;
-                LogHelper.WriteLog(typeof(TaskElectricityFilter), "无法读取实时电量数据");
+                LogHelper.WriteLog(typeof (TaskElectricityFilter), "无法读取实时电量数据");
             }
             result = (DBData as List<ElectricityOriginalData>).Count;
         }
@@ -142,7 +142,7 @@ namespace AracheTest
             if (DBData == null)
             {
                 result = -1;
-                LogHelper.WriteLog(typeof(TaskElectricityFilter), "无法检索相关电量数据");
+                LogHelper.WriteLog(typeof (TaskElectricityFilter), "无法检索相关电量数据");
             }
             result = (DBData as List<ElectricityOriginalData>).Count;
         }
@@ -166,7 +166,7 @@ namespace AracheTest
             if (DBData == null)
             {
                 result = -1;
-                LogHelper.WriteLog(typeof(TaskFetchNodes), "无法读取电表信息");
+                LogHelper.WriteLog(typeof (TaskFetchNodes), "无法读取电表信息");
             }
             result = (DBData as List<AmmeterInfo>).Count;
         }
@@ -175,6 +175,11 @@ namespace AracheTest
     public class TaskChargeFilter : TaskBase
     {
         private ChargeFilterCondition _condition;
+
+        /// <summary>
+        /// 横坐标精度
+        /// </summary>
+        private string AxisXUnit = "Day";
 
         public TaskChargeFilter(String name, ChargeFilterCondition condition, UpdateDataDelegate returnFuc)
             : base(name, condition, returnFuc)
@@ -185,49 +190,105 @@ namespace AracheTest
         public override void Run()
         {
             Dictionary<string, Object> returnData = new Dictionary<string, Object>();
-            returnData.Add("电量参数", getElectricityParameter());
-            returnData.Add("时段信息", getElectricityPeriodInfo());
+            returnData.Add("电量参数", GetElectricityParameter());
+            returnData.Add("时段信息", GetElectricityPeriodInfo());
             returnData.Add("第一阶段", GetFirstCharge());
             returnData.Add("第二阶段", GetSecondCharge());
+            returnData.Add("每日电量（一阶段）", GetElectricityTotal_Period(false));
+            returnData.Add("每日电量（二阶段）", GetElectricityTotal_Period(true));
+            returnData.Add("横坐标单位", AxisXUnit);
             DBData = returnData;
         }
 
-        private List<ElectricityParameter> getElectricityParameter()
+        /// <summary>
+        /// 用于获取每天或每月计算电量
+        /// </summary>
+        /// <returns></returns>
+        private List<ChargeInfo> GetElectricityTotal_Period(bool isSecond)
+        {
+            DateTime startTime = _condition.StartTime;
+            DateTime endTime = _condition.EndTime;
+
+            //如果选择的是 某天，显示前后数据，以“天”为单位
+            if (startTime.Date == endTime.Date)
+            {
+                //如果选择的日期是当天，则检索前7天数据
+                if (startTime.Date == DateTime.Now.Date)
+                {
+                    startTime = startTime.AddDays(-7);
+                    AxisXUnit = "Day";
+                }
+                //如果选择历史某天，则检索前后3天数据
+                else
+                {
+                    startTime = startTime.AddDays(-3);
+                    endTime = endTime.AddDays(3);
+                    AxisXUnit = "Day";
+                }
+            }
+
+            //如果选择的是 某月 中的一段时间，按“天”显示数据
+            else if (startTime.Month == endTime.Month)
+            {
+                AxisXUnit = "Day";
+            }
+
+            //如果选择的是当年的某段时间，且不在同一个月份中，按“月份”显示数据
+            else if (startTime.Year == endTime.Year)
+            {
+                startTime = DateTime.Parse(startTime.ToString("yyyy-01-01"));
+                endTime = DateTime.Parse(endTime.ToString("yyyy-12-31"));
+                AxisXUnit = "Month";
+            }
+            Object resultTemp = DataBase.GetElectricityTotal_Period(_condition.PID, _condition.MID,
+               startTime, endTime, isSecond);
+            if (resultTemp == null)
+            {
+                result = -1;
+                LogHelper.WriteLog(typeof (TaskChargeFilter), string.Format("获取 {0} 至 {1} 电量信息", startTime, endTime));
+            }
+            result = (resultTemp as List<ChargeInfo>).Count;
+            return (List<ChargeInfo>)resultTemp;
+        }
+
+
+        private List<ElectricityParameter> GetElectricityParameter()
         {
             Object resultTemp = DataBase.GetElectricityparameter();
             if (resultTemp == null)
             {
                 result = -1;
-                LogHelper.WriteLog(typeof(TaskChargeFilter), "无法读取电量参数信息");
+                LogHelper.WriteLog(typeof (TaskChargeFilter), "无法读取电量参数信息");
             }
             result = (resultTemp as List<ElectricityParameter>).Count;
             return (List<ElectricityParameter>) resultTemp;
         }
 
-        private List<ElectricityPeriod> getElectricityPeriodInfo()
+        private List<ElectricityPeriod> GetElectricityPeriodInfo()
         {
             Object resultTemp = DataBase.GetElectricityPeriods();
             if (resultTemp == null)
             {
                 result = -1;
-                LogHelper.WriteLog(typeof(TaskChargeFilter), "无法读取电费时段信息");
+                LogHelper.WriteLog(typeof (TaskChargeFilter), "无法读取电费时段信息");
             }
             result = (resultTemp as List<ElectricityPeriod>).Count;
             return (List<ElectricityPeriod>) resultTemp;
         }
 
-        private ChargeInfo GetFirstCharge()
+        private CalculateChargeClass GetFirstCharge()
         {
-            ChargeInfo charge = new ChargeInfo();
-            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.MiddleTime, false);
-            return charge;
+            CalculateChargeClass calculateCharge = new CalculateChargeClass();
+            calculateCharge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.MiddleTime,
+                false);
+            return calculateCharge;
         }
 
-        private ChargeInfo GetSecondCharge()
+        private CalculateChargeClass GetSecondCharge()
         {
-            ChargeInfo charge = new ChargeInfo();
-            charge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.EndTime, true);
-            return charge;
+            CalculateChargeClass calculateCharge = new CalculateChargeClass();
+            calculateCharge.Calculating(_condition.PID, _condition.MID, _condition.StartTime, _condition.EndTime, true);
+            return calculateCharge;
         }
     }
 }

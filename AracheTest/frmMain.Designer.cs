@@ -148,7 +148,6 @@
             DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series28 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series29 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
             this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -689,7 +688,6 @@
             ((System.ComponentModel.ISupportInitialize)(series26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series29)).BeginInit();
             this.SuspendLayout();
             // 
             // barAndDockingController1
@@ -4672,7 +4670,7 @@
             // 
             // ChargePropotionChart
             // 
-            this.ChargePropotionChart.AppearanceNameSerializable = "Nature Colors";
+            this.ChargePropotionChart.AppearanceNameSerializable = "Pastel Kit";
             xyDiagram7.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram7.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram7.EnableAxisXScrolling = true;
@@ -4689,19 +4687,16 @@
             series25.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
             series25.Name = "总电费";
             series26.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series26.Name = "有功（尖）";
+            series26.Name = "尖";
             series27.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series27.Name = "有功（峰）";
+            series27.Name = "峰";
             series28.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series28.Name = "有功（谷）";
-            series29.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series29.Name = "无功（QI象限）";
+            series28.Name = "谷";
             this.ChargePropotionChart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series25,
         series26,
         series27,
-        series28,
-        series29};
+        series28};
             this.ChargePropotionChart.Size = new System.Drawing.Size(486, 330);
             this.ChargePropotionChart.TabIndex = 0;
             chartTitle9.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
@@ -4961,7 +4956,6 @@
             ((System.ComponentModel.ISupportInitialize)(series26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChargePropotionChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

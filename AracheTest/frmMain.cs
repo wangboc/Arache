@@ -103,14 +103,14 @@ namespace AracheTest
             _chargeControlsFirst.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion, ChargePropotionChart, gridControl_1_1,
                 gridControl_1_2,
                 gridControl_1_3, gridControl_1_4, documentViewer1);
-            _chargeControlsFirst.SetChargeData(_chargeObjects);
+            _chargeControlsFirst.UpdateChargeGrid(_chargeObjects);
 
             _chargeControlsSecond.SetChargeUiControls(chartControlChargeProportion, Fe_CuPropotion,ChargePropotionChart, gridControl_2_1,
                 gridControl_2_2,
                 gridControl_2_3, gridControl_2_4, documentViewer2);
-            _chargeControlsSecond.SetChargeData(_chargeObjects);
+            _chargeControlsSecond.UpdateChargeGrid(_chargeObjects);
 
-            _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
+            _chargeControlsFirst.UpdateChargeChart(_chargeObjects);
             xtraTabControl2.SelectedTabPageIndex = 0;
             xtraTabControl4.SelectedTabPageIndex = 0;
         }
@@ -230,6 +230,8 @@ namespace AracheTest
                 new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0), DateTime.Now,
                 DateTime.Now, _nodeTreeControl.CurrentNodeMid, CurrentPID), SetChargeData);
             TaskPool.AddTask(taskCharge, TaskScheduler.FromCurrentSynchronizationContext());
+
+//            var taskChargeEachDay = 
         }
 
         /// <summary>
@@ -597,7 +599,7 @@ namespace AracheTest
                 this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl1;
                 documentViewerBarManager1.DocumentViewer = documentViewer1;
                 if (!_chargeObjects.ContainsKey("第一阶段")) return;
-                _chargeControlsFirst.SetPropotionData(_chargeObjects["第一阶段"] as ChargeInfo);
+                _chargeControlsFirst.UpdateChargeChart(_chargeObjects);
             }
             else
             {
@@ -605,7 +607,7 @@ namespace AracheTest
                 this.previewBar1.StandaloneBarDockControl = this.standaloneBarDockControl2;
                 documentViewerBarManager1.DocumentViewer = documentViewer2;
                 if (!_chargeObjects.ContainsKey("第二阶段")) return;
-                _chargeControlsSecond.SetPropotionData(_chargeObjects["第二阶段"] as ChargeInfo);
+                _chargeControlsSecond.UpdateChargeChart(_chargeObjects);
             }
         }
 

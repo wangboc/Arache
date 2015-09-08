@@ -105,6 +105,7 @@
     <Compile Include="AracheRobbinControl.Designer.cs">
       <DependentUpon>AracheRobbinControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\CalculateChargeClass.cs" />
     <Compile Include="Data\ChargeInfo.cs" />
     <Compile Include="Data\Correspondnode.cs" />
     <Compile Include="Data\DataBase.cs" />

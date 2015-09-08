@@ -21,8 +21,7 @@ namespace AracheTest.Tools
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     connection.Close();
-                    return dt;
-                }
+                    return dt;}
                 catch (Exception e)
                 {
                     LogHelper.WriteLog(typeof (frmMain), "数据库连接失败" + " " + DateTime.Now.ToString("D"));

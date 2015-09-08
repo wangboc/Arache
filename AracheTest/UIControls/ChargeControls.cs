@@ -76,7 +76,7 @@ namespace AracheTest.UIControls
         {
         }
 
-        public virtual void SetChargeData(Object _chargeObjects)
+        public virtual void UpdateChargeGrid(Object _chargeObjects)
         {
             _chargeTable_1.Rows.Clear();
             _chargeTable_2.Rows.Clear();
@@ -85,26 +85,35 @@ namespace AracheTest.UIControls
             InitChargePropotionControl();
         }
 
-        public virtual void SetPropotionData(ChargeInfo chargeInfo)
+        public virtual void UpdateChargeChart(Object chargeObjects)
         {
         }
 
         protected void InitChargePropotionControl()
         {
             var diagram = ChargeChart.Diagram as XYDiagram;
-            
+            foreach (Series s in ChargeChart.Series)
+            {
+                s.ArgumentDataMember = "StartTime";
+                s.ArgumentScaleType = ScaleType.DateTime;
+            }
             ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
             var axisX = diagram.AxisX;
             diagram.EnableAxisYZooming = false;
             diagram.EnableAxisYScrolling = true;
             diagram.EnableAxisXScrolling = true;
             diagram.EnableAxisXZooming = true;
-            axisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Continuous;
-           // axisX.Label.TextPattern = "{A:MM/dd HH:mm}";
+            axisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Manual;
+            // axisX.Label.TextPattern = "{A:MM/dd HH:mm}";
             axisX.DateTimeScaleOptions.GridSpacing = 1;
             axisX.Tickmarks.MinorVisible = false;
             axisX.Label.Angle = -5;
             axisX.DateTimeScaleOptions.AutoGrid = true;
+
+            ChargeChart.Series[0].ValueDataMembers.AddRange("ChargeTotal");
+            ChargeChart.Series[1].ValueDataMembers.AddRange("ChargeSpike");
+            ChargeChart.Series[2].ValueDataMembers.AddRange("ChargePeak");
+            ChargeChart.Series[3].ValueDataMembers.AddRange("ChargeValley");
         }
     }
 
@@ -130,82 +139,101 @@ namespace AracheTest.UIControls
             documentViewer = documentView;
         }
 
-        public override void SetPropotionData(ChargeInfo chargeInfo)
+        public override void UpdateChargeChart(Object chargeObjects)
         {
+            CalculateChargeClass calculateChargeClass =
+                (chargeObjects as Dictionary<string, object>)["第一阶段"] as CalculateChargeClass;
             ChargeProportion.Series[0].Points.Clear();
             ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("尖峰", chargeInfo.spikePower.ToString("#0.00")),
-                new SeriesPoint("峰", chargeInfo.peakPower.ToString("#0.00")),
-                new SeriesPoint("谷", chargeInfo.valleyPower.ToString("#0.00"))
+                new SeriesPoint("尖峰", calculateChargeClass.spikePower.ToString("#0.00")),
+                new SeriesPoint("峰", calculateChargeClass.peakPower.ToString("#0.00")),
+                new SeriesPoint("谷", calculateChargeClass.valleyPower.ToString("#0.00"))
             });
 
             Fe_CuPropotion.Series[0].Points.Clear();
             Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("有功铜损", chargeInfo.activeCopperLoss.ToString("#0.00")),
-                new SeriesPoint("无功铜损", chargeInfo.reactiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("有功铁损", chargeInfo.activeCoreLoss.ToString("#0.00")),
-                new SeriesPoint("无功铁损", chargeInfo.reactiveCoreLoss.ToString("#0.00"))
+                new SeriesPoint("有功铜损", calculateChargeClass.activeCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", calculateChargeClass.reactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", calculateChargeClass.activeCoreLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", calculateChargeClass.reactiveCoreLoss.ToString("#0.00"))
             });
+
+            List<ChargeInfo> chargeInfos = (chargeObjects as Dictionary<string, object>)["每日电量（一阶段）"] as List<ChargeInfo>;
+            string AxisUnit = (chargeObjects as Dictionary<string, object>)["横坐标单位"] as string;
+            switch (AxisUnit)
+            {
+                case "Day": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
+                    var axisX = (ChargeChart.Diagram as XYDiagram).AxisX;
+                    axisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day;
+                    break;
+                case "Month": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM}";
+                    var axisXM = (ChargeChart.Diagram as XYDiagram).AxisX;
+                    axisXM.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                    break;
+            }
+            ChargeChart.DataSource = chargeInfos;
         }
 
-        public override void SetChargeData(Object _chargeObjects)
+        public override void UpdateChargeGrid(Object _chargeObjects)
         {
-            ChargeInfo chargeInfo = (_chargeObjects as Dictionary<string, object>)["第一阶段"] as ChargeInfo;
-            base.SetChargeData(chargeInfo);
-            if (chargeInfo != null)
+            CalculateChargeClass calculateChargeClass =
+                (_chargeObjects as Dictionary<string, object>)["第一阶段"] as CalculateChargeClass;
+            base.UpdateChargeGrid(calculateChargeClass);
+            if (calculateChargeClass != null)
             {
                 DataRow row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（总）";
-                row[2] = chargeInfo.endEnergy.ToString("#0.00");
-                row[3] = chargeInfo.startEnergy.ToString("#0.00");
+                row[2] = calculateChargeClass.endEnergy.ToString("#0.00");
+                row[3] = calculateChargeClass.startEnergy.ToString("#0.00");
                 row[4] = "30";
-                row[5] = chargeInfo.totalPower.ToString("#0.00");
+                row[5] = calculateChargeClass.totalPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（尖峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.spikePower.ToString("#0.00");
+                row[5] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
-                row[1] = "有功（峰）";row[2] = "";
+                row[0] = calculateChargeClass.MID;
+                row[1] = "有功（峰）";
+                row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.peakPower.ToString("#0.00");
+                row[5] = calculateChargeClass.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（谷）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.valleyPower.ToString("#0.00");
+                row[5] = calculateChargeClass.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "无功（QI象限）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.ReactiveQI.ToString("#0.00");
+                row[5] = calculateChargeClass.ReactiveQI.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 DataRow row1 = _chargeTable_2.NewRow();
-                row1[0] = chargeInfo.activeCopperLoss.ToString("#0.00");
-                row1[1] = chargeInfo.activeCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.activeAll.ToString("#0.00");
-                row1[3] = chargeInfo.reactiveCopperLoss.ToString("#0.00");
-                row1[4] = chargeInfo.reactiveCoreLoss.ToString("#0.00");
-                row1[5] = chargeInfo.reactiveAll.ToString("#0.00");
-                row1[6] = chargeInfo.peakPower.ToString("#0.00");
-                row1[7] = chargeInfo.valleyPower.ToString("#0.00");
-                row1[8] = chargeInfo.spikePower.ToString("#0.00");
+                row1[0] = calculateChargeClass.activeCopperLoss.ToString("#0.00");
+                row1[1] = calculateChargeClass.activeCoreLoss.ToString("#0.00");
+                row1[2] = calculateChargeClass.activeAll.ToString("#0.00");
+                row1[3] = calculateChargeClass.reactiveCopperLoss.ToString("#0.00");
+                row1[4] = calculateChargeClass.reactiveCoreLoss.ToString("#0.00");
+                row1[5] = calculateChargeClass.reactiveAll.ToString("#0.00");
+                row1[6] = calculateChargeClass.peakPower.ToString("#0.00");
+                row1[7] = calculateChargeClass.valleyPower.ToString("#0.00");
+                row1[8] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_2.Rows.Add(row1);
 
                 DataRow row2 = _chargeTable_3.NewRow();
@@ -223,7 +251,7 @@ namespace AracheTest.UIControls
                 DataRow row3 = _chargeTable_4.NewRow();
                 Double total = 0;
                 row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.spikePower.ToString("#0.00");
+                row3[1] = calculateChargeClass.spikePower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -233,7 +261,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.peakPower.ToString("#0.00");
+                row3[1] = calculateChargeClass.peakPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -243,7 +271,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.valleyPower.ToString("#0.00");
+                row3[1] = calculateChargeClass.valleyPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -271,7 +299,7 @@ namespace AracheTest.UIControls
                 XtraReport1 report = new XtraReport1();
                 report.ExportOptions.PrintPreview.DefaultFileName = "国网浙江慈溪市供电公司非居民用户电费复核单据 （一次抄表）" +
                                                                     DateTime.Now.ToString("D");
- 
+
 
                 documentViewer.DocumentSource = report;
                 report.SetReportDataSource(_chargeTable_1, _chargeTable_2, _chargeTable_3, _chargeTable_4);
@@ -301,82 +329,99 @@ namespace AracheTest.UIControls
             documentViewer = documentView;
         }
 
-        public override void SetPropotionData(ChargeInfo chargeInfo)
+        public override void UpdateChargeChart(Object chargeObjects)
         {
+            CalculateChargeClass calculateChargeClass = (chargeObjects as Dictionary<string, object>)["第二阶段"] as CalculateChargeClass;
             ChargeProportion.Series[0].Points.Clear();
             ChargeProportion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("尖峰", chargeInfo.spikePower.ToString("#0.00")),
-                new SeriesPoint("峰", chargeInfo.peakPower.ToString("#0.00")),
-                new SeriesPoint("谷", chargeInfo.valleyPower.ToString("#0.00")),
+                new SeriesPoint("尖峰", calculateChargeClass.spikePower.ToString("#0.00")),
+                new SeriesPoint("峰", calculateChargeClass.peakPower.ToString("#0.00")),
+                new SeriesPoint("谷", calculateChargeClass.valleyPower.ToString("#0.00")),
             });
 
             Fe_CuPropotion.Series[0].Points.Clear();
             Fe_CuPropotion.Series[0].Points.AddRange(new SeriesPoint[]
             {
-                new SeriesPoint("有功铜损", chargeInfo.activeCopperLoss.ToString("#0.00")),
-                new SeriesPoint("无功铜损", chargeInfo.reactiveCopperLoss.ToString("#0.00")),
-                new SeriesPoint("有功铁损", chargeInfo.activeCoreLoss.ToString("#0.00")),
-                new SeriesPoint("无功铁损", chargeInfo.reactiveCoreLoss.ToString("#0.00"))
+                new SeriesPoint("有功铜损", calculateChargeClass.activeCopperLoss.ToString("#0.00")),
+                new SeriesPoint("无功铜损", calculateChargeClass.reactiveCopperLoss.ToString("#0.00")),
+                new SeriesPoint("有功铁损", calculateChargeClass.activeCoreLoss.ToString("#0.00")),
+                new SeriesPoint("无功铁损", calculateChargeClass.reactiveCoreLoss.ToString("#0.00"))
             });
+
+            List<ChargeInfo> chargeInfos = (chargeObjects as Dictionary<string, object>)["每日电量（二阶段）"] as List<ChargeInfo>;
+            string AxisUnit = (chargeObjects as Dictionary<string, object>)["横坐标单位"] as string;
+            switch (AxisUnit)
+            {
+                case "Day": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
+                    var axisX = (ChargeChart.Diagram as XYDiagram).AxisX;
+                    axisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day;
+                    break;
+                case "Month": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM}";
+                    var axisXM = (ChargeChart.Diagram as XYDiagram).AxisX;
+                    axisXM.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                    break;
+            }
+            ChargeChart.DataSource = chargeInfos;
         }
 
-        public override void SetChargeData(Object _chargeObjects)
+        public override void UpdateChargeGrid(Object _chargeObjects)
         {
-            ChargeInfo chargeInfo = (_chargeObjects as Dictionary<string, object>)["第二阶段"] as ChargeInfo;
-            base.SetChargeData(chargeInfo);
-            if (chargeInfo != null)
+            CalculateChargeClass calculateChargeClass =
+                (_chargeObjects as Dictionary<string, object>)["第二阶段"] as CalculateChargeClass;
+            base.UpdateChargeGrid(calculateChargeClass);
+            if (calculateChargeClass != null)
             {
                 DataRow row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（总）";
-                row[2] = chargeInfo.endEnergy.ToString("#0.00");
+                row[2] = calculateChargeClass.endEnergy.ToString("#0.00");
                 row[4] = "30";
-                row[5] = chargeInfo.totalPower.ToString("#0.00");
+                row[5] = calculateChargeClass.totalPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（尖峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.spikePower.ToString("#0.00");
+                row[5] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（峰）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.peakPower.ToString("#0.00");
+                row[5] = calculateChargeClass.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "有功（谷）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.valleyPower.ToString("#0.00");
+                row[5] = calculateChargeClass.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 row = _chargeTable_1.NewRow();
-                row[0] = chargeInfo.MID;
+                row[0] = calculateChargeClass.MID;
                 row[1] = "无功（QI象限）";
                 row[2] = "";
                 row[4] = "30";
-                row[5] = chargeInfo.ReactiveQI.ToString("#0.00");
+                row[5] = calculateChargeClass.ReactiveQI.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
 
                 DataRow row1 = _chargeTable_2.NewRow();
-                row1[0] = chargeInfo.activeCopperLoss.ToString("#0.00");
-                row1[1] = chargeInfo.activeCoreLoss.ToString("#0.00");
-                row1[2] = chargeInfo.activeAll.ToString("#0.00");
-                row1[3] = chargeInfo.reactiveCopperLoss.ToString("#0.00");
-                row1[4] = chargeInfo.reactiveCoreLoss.ToString("#0.00");
-                row1[5] = chargeInfo.reactiveAll.ToString("#0.00");
-                row1[6] = chargeInfo.peakPower.ToString("#0.00");
-                row1[7] = chargeInfo.valleyPower.ToString("#0.00");
-                row1[8] = chargeInfo.spikePower.ToString("#0.00");
+                row1[0] = calculateChargeClass.activeCopperLoss.ToString("#0.00");
+                row1[1] = calculateChargeClass.activeCoreLoss.ToString("#0.00");
+                row1[2] = calculateChargeClass.activeAll.ToString("#0.00");
+                row1[3] = calculateChargeClass.reactiveCopperLoss.ToString("#0.00");
+                row1[4] = calculateChargeClass.reactiveCoreLoss.ToString("#0.00");
+                row1[5] = calculateChargeClass.reactiveAll.ToString("#0.00");
+                row1[6] = calculateChargeClass.peakPower.ToString("#0.00");
+                row1[7] = calculateChargeClass.valleyPower.ToString("#0.00");
+                row1[8] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_2.Rows.Add(row1);
 
                 DataRow row2 = _chargeTable_3.NewRow();
@@ -393,7 +438,7 @@ namespace AracheTest.UIControls
                 DataRow row3 = _chargeTable_4.NewRow();
                 Double total = 0;
                 row3[0] = "尖 一般工商";
-                row3[1] = chargeInfo.spikePower.ToString("#0.00");
+                row3[1] = calculateChargeClass.spikePower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -403,7 +448,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "峰 一般工商";
-                row3[1] = chargeInfo.peakPower.ToString("#0.00");
+                row3[1] = calculateChargeClass.peakPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =
@@ -413,7 +458,7 @@ namespace AracheTest.UIControls
                 _chargeTable_4.Rows.Add(row3);
                 row3 = _chargeTable_4.NewRow();
                 row3[0] = "谷 一般工商";
-                row3[1] = chargeInfo.valleyPower.ToString("#0.00");
+                row3[1] = calculateChargeClass.valleyPower.ToString("#0.00");
                 row3[2] = 0;
                 row3[3] = "kW.h";
                 row3[4] =

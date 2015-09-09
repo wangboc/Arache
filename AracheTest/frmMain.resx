@@ -892,7 +892,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SharedImageCollection.Timestamp" type="System.DateTime, mscorlib">
-    <value>09/08/2015 23:04:06</value>
+    <value>09/09/2015 17:39:01</value>
   </data>
   <data name="SharedImageCollection.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>

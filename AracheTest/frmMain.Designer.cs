@@ -145,6 +145,7 @@
             DevExpress.XtraCharts.ChartTitle chartTitle8 = new DevExpress.XtraCharts.ChartTitle();
             DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series25 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.Series series26 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series27 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.Series series28 = new DevExpress.XtraCharts.Series();
@@ -685,6 +686,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChargePropotionChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series28)).BeginInit();
@@ -2362,7 +2364,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
@@ -2375,7 +2377,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(279, 3);
             this.label2.Name = "label2";
@@ -2388,7 +2390,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(112, 3);
             this.label3.Name = "label3";
@@ -2401,7 +2403,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(385, 3);
             this.label4.Name = "label4";
@@ -2438,7 +2440,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(621, 3);
             this.label10.Name = "label10";
@@ -2451,7 +2453,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(525, 3);
             this.label9.Name = "label9";
@@ -2464,7 +2466,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(430, 3);
             this.label8.Name = "label8";
@@ -2477,7 +2479,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(80, 3);
             this.label7.Name = "label7";
@@ -2490,7 +2492,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(334, 3);
             this.label6.Name = "label6";
@@ -2503,7 +2505,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(6, 3);
             this.label5.Name = "label5";
@@ -2527,7 +2529,7 @@
             // 
             // gridView2
             // 
-            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -2633,7 +2635,7 @@
             // 
             // gridView4
             // 
-            this.gridView4.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.gridView4.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.gridView4.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView4.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -2743,7 +2745,7 @@
             // 
             // gridView3
             // 
-            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -2853,7 +2855,7 @@
             // 
             // gridView5
             // 
-            this.gridView5.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.gridView5.Appearance.HeaderPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.gridView5.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView5.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView5.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -4685,6 +4687,10 @@
             this.ChargePropotionChart.Location = new System.Drawing.Point(0, 0);
             this.ChargePropotionChart.Name = "ChargePropotionChart";
             series25.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.TopInside;
+            sideBySideBarSeriesLabel1.TextPattern = "{V}";
+            series25.Label = sideBySideBarSeriesLabel1;
+            series25.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series25.Name = "总电费";
             series26.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
             series26.Name = "尖";
@@ -4700,7 +4706,7 @@
             this.ChargePropotionChart.Size = new System.Drawing.Size(486, 330);
             this.ChargePropotionChart.TabIndex = 0;
             chartTitle9.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            chartTitle9.Text = "用电";
+            chartTitle9.Text = "电费";
             chartTitle9.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ChargePropotionChart.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle9});
@@ -4952,6 +4958,7 @@
             this.xtraTabControl3.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series27)).EndInit();

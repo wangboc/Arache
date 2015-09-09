@@ -104,11 +104,12 @@ namespace AracheTest.UIControls
             diagram.EnableAxisXScrolling = true;
             diagram.EnableAxisXZooming = true;
             axisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Manual;
-            // axisX.Label.TextPattern = "{A:MM/dd HH:mm}";
-            axisX.DateTimeScaleOptions.GridSpacing = 1;
-            axisX.Tickmarks.MinorVisible = false;
+          
+            axisX.Tickmarks.MinorVisible = true;
+            axisX.Tickmarks.Visible = true;
             axisX.Label.Angle = -5;
             axisX.DateTimeScaleOptions.AutoGrid = true;
+            axisX.DateTimeScaleOptions.GridSpacing = 1;
 
             ChargeChart.Series[0].ValueDataMembers.AddRange("ChargeTotal");
             ChargeChart.Series[1].ValueDataMembers.AddRange("ChargeSpike");
@@ -167,10 +168,15 @@ namespace AracheTest.UIControls
                 case "Day": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
                     var axisX = (ChargeChart.Diagram as XYDiagram).AxisX;
                     axisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day;
+                    axisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Day;
+                    axisX.Label.TextPattern = "{A:dd'日'}";
                     break;
                 case "Month": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM}";
                     var axisXM = (ChargeChart.Diagram as XYDiagram).AxisX;
                     axisXM.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                    axisXM.DateTimeScaleOptions.AggregateFunction = AggregateFunction.Sum;
+                    axisXM.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+                    axisXM.Label.TextPattern = "{A:MM'月'}";
                     break;
             }
             ChargeChart.DataSource = chargeInfos;
@@ -195,7 +201,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（尖峰）";
-                row[2] = "";
+                row[2] = calculateChargeClass.spikeEnergy.ToString("#0.00");
                 row[4] = "30";
                 row[5] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -203,7 +209,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（峰）";
-                row[2] = "";
+                row[2] = calculateChargeClass.peakEnergy.ToString("#0.00"); ;
                 row[4] = "30";
                 row[5] = calculateChargeClass.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -211,7 +217,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（谷）";
-                row[2] = "";
+                row[2] = calculateChargeClass.valleyEnergy.ToString("#0.00"); ;
                 row[4] = "30";
                 row[5] = calculateChargeClass.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -356,10 +362,15 @@ namespace AracheTest.UIControls
                 case "Day": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM/dd}";
                     var axisX = (ChargeChart.Diagram as XYDiagram).AxisX;
                     axisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day;
+                    axisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Day;
+                    axisX.Label.TextPattern = "{A:dd'日'}";
                     break;
                 case "Month": ChargeChart.CrosshairOptions.GroupHeaderPattern = "{A:yyyy/MM}";
                     var axisXM = (ChargeChart.Diagram as XYDiagram).AxisX;
                     axisXM.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                    axisXM.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+                    axisXM.DateTimeScaleOptions.AggregateFunction = AggregateFunction.Sum;
+                    axisXM.Label.TextPattern = "{A:MM'月'}";
                     break;
             }
             ChargeChart.DataSource = chargeInfos;
@@ -376,6 +387,7 @@ namespace AracheTest.UIControls
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（总）";
                 row[2] = calculateChargeClass.endEnergy.ToString("#0.00");
+                row[3] = calculateChargeClass.startEnergy.ToString("#0.00");
                 row[4] = "30";
                 row[5] = calculateChargeClass.totalPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -383,7 +395,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（尖峰）";
-                row[2] = "";
+                row[2] = calculateChargeClass.spikeEnergy.ToString("#0.00");
                 row[4] = "30";
                 row[5] = calculateChargeClass.spikePower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -391,7 +403,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（峰）";
-                row[2] = "";
+                row[2] = calculateChargeClass.peakEnergy.ToString("#0.00");
                 row[4] = "30";
                 row[5] = calculateChargeClass.peakPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
@@ -399,7 +411,7 @@ namespace AracheTest.UIControls
                 row = _chargeTable_1.NewRow();
                 row[0] = calculateChargeClass.MID;
                 row[1] = "有功（谷）";
-                row[2] = "";
+                row[2] = calculateChargeClass.valleyEnergy.ToString("#0.00"); ;
                 row[4] = "30";
                 row[5] = calculateChargeClass.valleyPower.ToString("#0.00");
                 _chargeTable_1.Rows.Add(row);
